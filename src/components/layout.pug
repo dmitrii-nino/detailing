@@ -1,0 +1,28 @@
+include ../blocks/_libs
+
+block indexVars
+
+doctype html
+html(lang="ru-RU")
+    head
+        meta(charset="utf-8")
+        meta(http-equiv='X-UA-Compatible', content="IE=edge")
+        meta(name="viewport" content="width=device-width,initial-scale=1")
+        meta(name="keywords" content="")
+        title='ПРЕМИАЛЬНЫЙ ДЕТЕЙЛИНГ'
+        link(rel="preconnect" href="https://fonts.googleapis.com")
+        link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+        link(rel="stylesheet" type='text/css' href="./css/style.min.css")
+        block head
+
+    body
+        div.container
+            include header
+
+            block main
+
+            include footer
+
+            block modal
+
+    script(src='./js/app.min.js')

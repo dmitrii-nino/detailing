@@ -1,0 +1,10 @@
+.idea/
+dist/
+node_modules/
+.DS_Store
+.env
+.storybook-dist/
+config.dev.json
+npm-debug.log
+package-lock.json
+yarn-error.log

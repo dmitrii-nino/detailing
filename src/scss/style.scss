@@ -1,0 +1,95 @@
+@import './nullstyle';
+
+/* all doc styles */
+
+html {
+	font-family: 'Montserrat';
+	scroll-behavior: smooth;
+}
+
+body {
+	width: 100vw;
+}
+
+.container {
+	min-width: 320px;
+	max-width: 430px;
+	margin: 0 auto;
+}
+
+section {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	padding: 12px 16px;
+}
+
+h1 {
+	font-weight: 700;
+	font-size: 26px;
+	line-height: 32px;
+	text-transform: uppercase;
+	margin: 4px 0;
+}
+
+h2 {
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 24px;
+}
+
+h3 {
+	font-size: 20px;
+	line-height: 24px;
+}
+
+h4 {
+	font-size: 18px;
+	line-height: 22px;
+	margin-bottom: 12px;
+}
+
+p {
+	font-size: 14px;
+	line-height: 18px;
+}
+
+.frame {
+	overflow: hidden;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+	border-radius: 10px;
+	position: relative;
+}
+
+.btn {
+	font-weight: 700;
+	font-size: 18px;
+	line-height: 22px;
+	text-align: center;
+	color: #FFFFFF;
+	padding: 14px;
+	width: available;
+	width: -moz-available;
+	background: linear-gradient(222.31deg, #F9556B 3.76%, #DA3831 82.36%);
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+	border-radius: 10px;
+}
+
+.accent {
+	color: #DA3831;
+}
+
+/* components styles */
+
+@import './components/header';
+@import './components/footer';
+
+/* blocks styles */
+
+@import './blocks/slider';
+@import './blocks/cards';
+@import './blocks/carousel';
+
+/* pages styles */
+@import './pages/index';

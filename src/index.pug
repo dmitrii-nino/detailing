@@ -1,0 +1,81 @@
+extends ./components/layout
+
+block indexVars
+	-
+		const services = [{"className":"services_item","id":1, link: '/ceramic.html', "text":"Керамическое покрытие","img":"./assets/img/index/services_1.png"},
+			{"className":"services_item","id":2,link: '/film.html', "text":"Оклейка защитной пленкой","img":"./assets/img/index/services_2.png"},
+			{"className":"services_item","id":3,link: '/dry_cleaning.html', "text":"Химчистка автомобиля","img":"./assets/img/index/services_3.png"},
+			{"className":"services_item","id":4,link: '/toning.html', "text":"Тонировка","img":"./assets/img/index/services_4.png"}]
+	-
+		const indexCards = ['smile', 'shield', 'like', 'hand', 'clock', 'location']
+	-
+		const ceramicExSlider = [{ className:"ceramica_ex_item", id: 1, img: './assets/img/index/ceramica_1.png'},
+			{ className: "ceramica_ex_item", id: 2, img: './assets/img/index/ceramica_2.png'}]
+	-
+		const filmExSlider = [{className: "film_ex_item", id: 1, img: './assets/img/index/film_1.png'},
+			{className: "film_ex_item", id: 2, img: './assets/img/index/film_2.png'},
+			{className: "film_ex_item", id: 3, img: './assets/img/index/film_3.png'}]
+	-
+		const drycleaningExSlider = [{className: "drycleaning_ex_item", id: 1, img: './assets/img/index/drycleaning_1.png'},
+			{className: "drycleaning_ex_item", id: 2, img: './assets/img/index/drycleaning_2.png'},
+			{className: "drycleaning_ex_item", id: 3, img: './assets/img/index/drycleaning_3.png'},]
+
+block main
+	section
+		div(class='frame primary_title')
+			h1 Премиальный детейлинг
+			h4 с вниманием к мелочам
+
+		p Вернем автомобилю безупречный внешний вид за 2 дня с оплатой после работы и гарантией 1 год по договору
+
+	section
+		h1 Наши услуги
+		+carousel(services)
+		+btn('Рассчитать стоимость *')
+
+		p * Узнайте точную стоимость и получите подарок на выбор
+
+	section
+		h1 Сэкономьте деньги
+			br
+			span.accent на ближайшие 10 лет
+
+		.longitude
+			.longitude_content
+				img(src='./assets/img/index/car.png', alt="")
+
+		p Детейлинг сохранит авто в первозданном виде и защитит лакокрасочное покрытие от сколов и вмятин
+		+btn('Рассчитать стоимость ')
+
+	section
+		h1 Наши преимущества
+		+cards(indexCards)
+
+		p Оставьте заявку на бесплатную консультацию, и мы перезвоним вам в течение
+			b  2х минут
+
+		+btn('Оставить заявку *')
+
+		p * Если заявка пришла после 9 вечера — перезвоним в 10 утра на следующий день
+
+	section
+		h1 Наши работы
+		h2 Керамическое покрытие
+		+slider(ceramicExSlider)
+
+		h2 Оклейка защитной пленкой
+		p Пример того, как пленка защитила корпус автомобиля после ДТП
+		+slider(filmExSlider)
+
+		h2 Химчистка автомобиля
+		+slider(drycleaningExSlider)
+
+		//h2 Тонировка
+		//+slider()
+
+	section
+		div(class='promotion frame')
+			h1 Акция!
+			//img(src='./assets/img/index/primary.png', alt="")
+			p Запишитесь на бексплатную мойку-консультацию и получите полировку фар за X.XXX ₽
+			+btn('Записаться')

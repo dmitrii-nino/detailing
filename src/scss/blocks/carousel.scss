@@ -1,0 +1,24 @@
+.carousel {
+  overflow: scroll;
+  overflow-scrolling: touch;
+
+  &_box {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    flex-wrap: nowrap;
+  }
+
+  &_item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    width: 140px;
+    color: #FFFFFF;
+    padding: 8px;
+    text-align: center;
+    background-size: cover;
+    border-radius: 10px;
+  }
+}

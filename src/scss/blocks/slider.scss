@@ -1,0 +1,54 @@
+.slider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &_item {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    position: relative;
+    max-width: 100%;
+  }
+
+  &_input {
+    display: none;
+  }
+
+  &_controls {
+    display: flex;
+
+    &_item {
+      display: inline-block;
+      position: relative;
+      border: 2px solid #231F20;
+      height: 12px;
+      width: 12px;
+      margin: 12px;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: ease-in-out .5s;
+
+      //&.checked {
+      //  border: 2px solid #FF1430;
+      //  background: #FF1430;
+      //}
+
+      &:hover {
+        background: #231F20;
+      }
+
+      &.checked {
+        border: 2px solid #DA3831;
+        background: #DA3831;
+      }
+    }
+  }
+}
+
+input[type=radio]:checked + .slider_item {
+  display: flex;
+}

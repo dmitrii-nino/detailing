@@ -1,0 +1,12 @@
+mixin carousel(items)
+    div.carousel
+        div.carousel_box
+            each item in items
+                - const {className, link, text, img} = item
+                - if (link)
+                    a(href=link)
+                        div(class=`carousel_item ${className}` style=`background-image: url("${img}")`)
+                            h2=text
+                - else
+                    div(class=`carousel_item ${className}` style=`background-image: url("${img}")`)
+                        h2=text

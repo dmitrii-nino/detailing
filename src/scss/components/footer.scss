@@ -1,0 +1,21 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+  padding: 24px 24px 48px 24px;
+  background: linear-gradient(129.53deg, #F9556B 4.33%, #717070 72.61%);
+  border-radius: 10px 10px 0 0;
+
+  &_links {
+    width: 60%;
+    min-width: 240px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+  }
+
+  * {
+    color: #FFFFFF;
+  }
+}
