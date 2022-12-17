@@ -1,0 +1,41 @@
+-
+    const pricesList = {
+        mini: {
+            header: 'Малый класс',
+            img: './assets/img/prices/car_1.png',
+            text: 'ДЛИНА: 3,6 — 3,9 м &nbsp;ШИРИНА: 1,5 — 1,7 м'
+        },
+        first: {
+            header: 'Первый класс или гольф класс',
+            img: './assets/img/prices/car_2.png',
+            text: 'ДЛИНА: 3,9 — 4,4 м &nbsp;ШИРИНА: 1,6 — 1,75 м'
+        },
+        second: {
+            header: 'Второй средний класс',
+            img: './assets/img/prices/car_3.png',
+            text: 'ДЛИНА: 4,4 — 4,8 м &nbsp;ШИРИНА: 1,7 — 1,8 м'
+        },
+        business: {
+            header: 'Бизнес-класс',
+            img: './assets/img/prices/car_4.png',
+            text: 'ДЛИНА: > 4,8 м &nbsp;ШИРИНА: > 1,8 м'
+        },
+        grand: {
+            header: 'Представительский класс',
+            img: './assets/img/prices/car_5.png',
+            text: 'ДЛИНА: > 5 м &nbsp;ШИРИНА: > 1,8 м'
+        },
+    }
+
+mixin prices(items)
+    div.prices
+        each item in items
+            - const {header, img, text} = pricesList[item.name]
+            - const str = [text.split('&nbsp;', 1).toString()+' ', text.split('&nbsp;').slice(1).join(' ')];
+                div(class='prices_item frame')
+                    h2=header
+                    img(src=img alt="#")
+                    div
+                        p=str[0]
+                        p=str[1]
+                    h2.accent=item.price

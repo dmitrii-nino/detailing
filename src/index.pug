@@ -7,8 +7,6 @@ block indexVars
 			{"className":"services_item","id":3,link: '/dry_cleaning.html', "text":"Химчистка автомобиля","img":"./assets/img/index/services_3.png"},
 			{"className":"services_item","id":4,link: '/toning.html', "text":"Тонировка","img":"./assets/img/index/services_4.png"}]
 	-
-		const indexCards = ['smile', 'shield', 'like', 'hand', 'clock', 'location']
-	-
 		const ceramicExSlider = [{ className:"ceramica_ex_item", id: 1, img: './assets/img/index/ceramica_1.png'},
 			{ className: "ceramica_ex_item", id: 2, img: './assets/img/index/ceramica_2.png'}]
 	-
@@ -47,16 +45,8 @@ block main
 		p Детейлинг сохранит авто в первозданном виде и защитит лакокрасочное покрытие от сколов и вмятин
 		+btn('Рассчитать стоимость ')
 
-	section
-		h1 Наши преимущества
-		+cards(indexCards)
 
-		p Оставьте заявку на бесплатную консультацию, и мы перезвоним вам в течение
-			b  2х минут
-
-		+btn('Оставить заявку *')
-
-		p * Если заявка пришла после 9 вечера — перезвоним в 10 утра на следующий день
+		include ./components/advantages
 
 	section
 		h1 Наши работы

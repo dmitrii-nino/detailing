@@ -1,0 +1,15 @@
+div.ceramic_title {
+  height: 40vh;
+
+  > img {
+    height: 100%;
+    max-width: fit-content;
+  }
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  gap: 12px;
+}

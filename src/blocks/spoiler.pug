@@ -1,0 +1,9 @@
+mixin spoiler(items)
+    div.spoiler
+        each item in items
+            div(class='spoiler_item frame')
+                div.spoiler_header
+                    h4=item.header
+                    img(src='./assets/icons/plus.svg' class='spoiler_icon plus' alt="#")
+                    img(src='./assets/icons/minus.svg' class='spoiler_icon minus hidden' alt="#")
+                div(class='spoiler_body hidden')=item.body

@@ -87,9 +87,13 @@ p {
 
 /* blocks styles */
 
-@import './blocks/slider';
 @import './blocks/cards';
 @import './blocks/carousel';
+@import './blocks/points';
+@import './blocks/prices';
+@import './blocks/slider';
+@import './blocks/spoiler';
 
 /* pages styles */
 @import './pages/index';
+@import './pages/ceramic';

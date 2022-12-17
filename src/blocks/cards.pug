@@ -1,35 +1,6 @@
--
-    const cardsList = {
-        smile: {
-            'text': `Более 20.000 довольных клиентов за 8 лет работы`,
-            'icon': './assets/img/cards/smile.png'
-        },
-        shield: {
-            'text': 'Территория охраняется 24/7, вход в боксы по специальным ключам',
-            'icon': './assets/img/cards/shield.png'
-        },
-        like: {
-            'text': 'Официальная гарантия 1 год на все работы',
-            'icon': './assets/img/cards/like.png'
-        },
-        hand: {
-            'text': 'Чистые и отапливаемые боксы с оборудованием',
-            'icon': './assets/img/cards/hand.png'
-        },
-        clock: {
-            'text': 'Проверенные временем и климатом материалы',
-            'icon': './assets/img/cards/clock.png'
-        },
-        location: {
-            'text': 'Сервис в самом центре Петербурга',
-            'icon': './assets/img/cards/location.png'
-        }
-    }
-
 mixin cards(items)
     div.cards
         each item in items
-            - const {text, icon} = cardsList[item]
-                div.cards_item
-                    img(src=icon alt="#")
-                    h3=text
+            div(class='cards_item frame')
+                img(src=item.icon alt="#")
+                h3=item.text

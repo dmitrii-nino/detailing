@@ -1,0 +1,18 @@
+.prices {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+
+  &_item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    height: 100%;
+    flex: 1;
+    padding: 12px;
+    text-align: center;
+    border-radius: 10px;
+  }
+}
