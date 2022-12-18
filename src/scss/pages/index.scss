@@ -36,6 +36,13 @@
   text-align: center;
   padding: 16px 12px;
 
+  &_img {
+    height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: stretch;
+  }
+
   .btn {
     background: #FFFFFF;
     color: #DA3831;

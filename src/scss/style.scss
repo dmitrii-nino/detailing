@@ -37,17 +37,20 @@ h2 {
 	font-weight: 700;
 	font-size: 20px;
 	line-height: 24px;
+	text-transform: uppercase;
 }
 
 h3 {
 	font-size: 20px;
 	line-height: 24px;
+	text-transform: uppercase;
 }
 
 h4 {
 	font-size: 18px;
 	line-height: 22px;
 	margin-bottom: 12px;
+	text-transform: uppercase;
 }
 
 p {
@@ -76,6 +79,38 @@ p {
 	border-radius: 10px;
 }
 
+.info {
+	position: relative;
+	padding: 10px;
+	color: #FFFFFF;
+	background: linear-gradient(129.53deg, #F9556B 4.33%, #717070 72.61%);
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+	border-radius: 10px;
+
+	&_icon {
+		width: 30px;
+		height: 30px;
+		margin-bottom: 8px;
+	}
+
+	p {
+		padding-right: 20%;
+	}
+
+	&_list {
+		display: grid;
+		gap: 4px;
+		padding: 16px;
+	}
+
+	&_img {
+		position: absolute;
+		bottom: -20%;
+		right: -5%;
+		max-width: 20vh;
+	}
+}
+
 .accent {
 	color: #DA3831;
 }
@@ -97,3 +132,5 @@ p {
 /* pages styles */
 @import './pages/index';
 @import './pages/ceramic';
+@import './pages/film';
+@import './pages/dry_cleaning';

@@ -17,7 +17,10 @@ block indexVars
 		const drycleaningExSlider = [{className: "drycleaning_ex_item", id: 1, img: './assets/img/index/drycleaning_1.png'},
 			{className: "drycleaning_ex_item", id: 2, img: './assets/img/index/drycleaning_2.png'},
 			{className: "drycleaning_ex_item", id: 3, img: './assets/img/index/drycleaning_3.png'},]
-
+	-
+		const toningExSlider = [{className: "toning_ex_item", id: 1, img: './assets/img/index/toning_1.png'},
+			{className: "toning_ex_item", id: 2, img: './assets/img/index/toning_2.png'},
+			{className: "toning_ex_item", id: 3, img: './assets/img/index/toning_3.png'},]
 block main
 	section
 		div(class='frame primary_title')
@@ -27,14 +30,14 @@ block main
 		p Вернем автомобилю безупречный внешний вид за 2 дня с оплатой после работы и гарантией 1 год по договору
 
 	section
-		h1 Наши услуги
+		h2 Наши услуги
 		+carousel(services)
 		+btn('Рассчитать стоимость *')
 
 		p * Узнайте точную стоимость и получите подарок на выбор
 
 	section
-		h1 Сэкономьте деньги
+		h2 Сэкономьте деньги
 			br
 			span.accent на ближайшие 10 лет
 
@@ -49,23 +52,24 @@ block main
 		include ./components/advantages
 
 	section
-		h1 Наши работы
-		h2 Керамическое покрытие
+		h2 Наши работы
+		h3 Керамическое покрытие
 		+slider(ceramicExSlider)
 
-		h2 Оклейка защитной пленкой
+		h3 Оклейка защитной пленкой
 		p Пример того, как пленка защитила корпус автомобиля после ДТП
 		+slider(filmExSlider)
 
-		h2 Химчистка автомобиля
+		h3 Химчистка автомобиля
 		+slider(drycleaningExSlider)
 
-		//h2 Тонировка
-		//+slider()
+		h3 Тонировка
+		+slider(toningExSlider)
 
 	section
 		div(class='promotion frame')
-			h1 Акция!
-			//img(src='./assets/img/index/primary.png', alt="")
+			h2 Акция!
+			div(class='promotion_img frame')
+				img(src='./assets/img/index/primary.png', alt="")
 			p Запишитесь на бексплатную мойку-консультацию и получите полировку фар за X.XXX ₽
 			+btn('Записаться')
