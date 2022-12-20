@@ -1,0 +1,48 @@
+.table {
+  max-width: inherit;
+  overflow-x: scroll;
+
+  &_header {
+    display: grid;
+    width: max-content;
+    background: linear-gradient(222.31deg, #F9556B 3.76%, #DA3831);
+    border-radius: 10px;
+    color: #FFFFFF;
+
+    &_cell {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-weight: bold;
+      padding: 8px 4px;
+      word-break: break-word;
+    }
+  }
+
+  &_body {
+
+    &_group {
+      padding: 12px 4px 4px;
+      color: #DA3831;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+
+    &_row {
+      display: grid;
+      width: max-content;
+      border-bottom: 1px solid #717070;
+    }
+
+    &_cell {
+      text-align: center;
+      padding: 8px 4px;
+
+      &:first-child {
+        font-weight: bold;
+        text-align: left;
+      }
+    }
+  }
+}
