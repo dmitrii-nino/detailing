@@ -47,15 +47,16 @@ h3 {
 }
 
 h4 {
-	font-size: 16px;
-	line-height: 22px;
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 20px;
 	margin-bottom: 12px;
 	text-transform: uppercase;
 }
 
 p {
 	font-size: 14px;
-	line-height: 18px;
+	line-height: 20px;
 }
 
 .frame {
@@ -71,7 +72,7 @@ p {
 	line-height: 22px;
 	text-align: center;
 	color: #FFFFFF;
-	padding: 14px;
+	padding: 16px;
 	width: available;
 	width: -moz-available;
 	background: linear-gradient(222.31deg, #F9556B 3.76%, #DA3831 82.36%);
@@ -81,7 +82,7 @@ p {
 
 .info {
 	position: relative;
-	padding: 10px;
+	padding: 16px;
 	color: #FFFFFF;
 	background: linear-gradient(129.53deg, #F9556B 4.33%, #717070 72.61%);
 	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
@@ -94,7 +95,7 @@ p {
 	}
 
 	p {
-		padding-right: 20%;
+		padding-right: 25%;
 	}
 
 	&_list {

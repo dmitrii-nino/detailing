@@ -3,6 +3,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: relative;
 
   &_item {
     display: none;
@@ -20,11 +21,13 @@
 
   &_controls {
     display: flex;
+    position: absolute;
+    bottom: 3%;
 
     &_item {
       display: inline-block;
       position: relative;
-      border: 2px solid #231F20;
+      border: 2px solid #FFFFFF;
       height: 12px;
       width: 12px;
       margin: 12px;
@@ -32,18 +35,12 @@
       cursor: pointer;
       transition: ease-in-out .5s;
 
-      //&.checked {
-      //  border: 2px solid #FF1430;
-      //  background: #FF1430;
-      //}
-
       &:hover {
-        background: #231F20;
+        background: rgba(255, 255, 255, 0.5);
       }
 
       &.checked {
-        border: 2px solid #DA3831;
-        background: #DA3831;
+        background: #FFFFFF;
       }
     }
   }

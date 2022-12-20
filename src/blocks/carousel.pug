@@ -6,7 +6,7 @@ mixin carousel(items)
                 - if (link)
                     a(href=link)
                         div(class=`carousel_item ${className}` style=`background-image: url("${img}")`)
-                            h2=text
+                            h4=text
                 - else
                     div(class=`carousel_item ${className}` style=`background-image: url("${img}")`)
-                        h2=text
+                        h4=text

@@ -16,7 +16,7 @@
 .longitude {
   overflow: scroll;
   overflow-scrolling: touch;
-  margin: -24px -16px 0;
+  margin: -16px -16px 0;
 
   &_content {
     display: flex;
@@ -41,6 +41,7 @@
     display: flex;
     align-items: center;
     justify-content: stretch;
+    margin: 8px 0;
   }
 
   .btn {

@@ -46,15 +46,16 @@ block main
         +btn('Рассчитать стоимость')
 
     section
+        h2 Преимущества тонировки
+        +points(toningPoints)
+
+
+    section
         div.info
             img.info_icon(src='./assets/icons/info.svg', alt="")
             div Мы используем
                 b  сертифицированные материалы разрешенные ГОСТом
                 span  и тонируем стекла автомобиля с учетом всех требований законодательства
-
-    section
-        h2 Преимущества тонировки
-        +points(toningPoints)
 
     section
         h2 Виды тонировочных пленок
@@ -78,7 +79,6 @@ block main
 
     section
         h2 Результаты
-        p Пример того, как пленка защитила корпус автомобиля после ДТП
         +slider(toningExSlider)
 
     section
