@@ -16,10 +16,10 @@
     text-align: center;
     background-size: cover;
     border-radius: 10px;
+  }
 
-    img {
-      max-width: 50px;
-      max-height: 50px;
-    }
+  &_icon {
+    max-width: 50px;
+    max-height: 50px;
   }
 }
