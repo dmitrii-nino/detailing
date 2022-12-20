@@ -1,0 +1,103 @@
+extends components/layout
+
+block drycleaningVars
+    -
+        const drycleaningPrimarySlider = [{ className: "drycleaning_title", id: 1, img: './assets/img/dry_cleaning/primary_1.png'},
+            { className: "drycleaning_title", id: 2, img: './assets/img/dry_cleaning/primary_2.png'},
+            { className: "drycleaning_title", id: 3, img: './assets/img/dry_cleaning/primary_3.png'},
+            { className: "drycleaning_title", id: 4, img: './assets/img/dry_cleaning/primary_4.png'}]
+    -
+        const drycleaningCards = [{ header: 'пятна', text: `Следы от пищи, косметических средств`, icon: './assets/img/cards/spot.png'},
+            { header: 'сложные загрязнения', text: `Въевшиеся следы от табака, масла, дорожной химии, соли`, icon: './assets/img/cards/hand.png'},
+            { header: 'запах', text: `Придание салону свежести озона`, icon: './assets/img/cards/smell.png'},
+            { header: 'бактерии', text: `Обработка салона дезинфецирующими средствами`, icon: './assets/img/cards/cross.png'},]
+    -
+        const drycleaningExSlider = [{ className: "drycleaning_ex_item", id: 1, img: './assets/img/index/drycleaning_1.png'},
+            { className: "drycleaning_ex_item", id: 2, img: './assets/img/index/drycleaning_2.png'},
+            { className: "drycleaning_ex_item", id: 3, img: './assets/img/index/drycleaning_3.png'}]
+    -
+        const drycleaningPrices = [{ name: 'mini', price: '12 000 ₽' },
+            { name: 'first', price: '14 000 ₽' },
+            { name: 'second', price: '16 000 ₽' },
+            { name: 'business', price: '18 000 ₽' },
+            { name: 'grand', price: '20 000 ₽' }]
+    -
+        const drycleaningFAQ = [{ header: 'Есть ли разница между химчисткой кожаного и тканевого салона?', body: 'Конечно есть. Важно правильный выбор средств: для каждого вида обивки используется свое. Для тканевого салона обязательным этапом является очистка с помощью пылесоса'},
+            { header: 'Вредны ли для человека средства, применяемые при химчистке салона?', body: 'Мы используем безопасные для человека очищающие средства, которые разлагаются через 30 минут'},
+            { header: 'Может ли не подойти средство для химчистки тканевого салона?', body: 'Перед началом работ проводится тестирование средств. Нескольких капель на незаметный фрагмент обивки хватает, чтобы поверить средство'},
+            { header: 'Нужна ли сушка после химчистки?', body: 'Она необходима. Влажная среда способствует появлению грибка. Поэтому после всех очищающих этапов мы сушим салон и детали'},
+            { header: 'Как часто необходима химчистка салона?', body: 'Это определяется уровнем загрязненности. Также рекомендуется комплексная химчистка перед продажей автомобиля'},
+            { header: 'Что входит в понятие “комплексная химчистка салона”?', body: 'При комплексной химчистке очищаются: обивка, потолок, коврики, багажник, производится чистка пластиковых деталей'},
+            { header: 'Нужны ли особые условия для химчистки салона автомобиля?', body: 'Проводить химчистку нужно в помещениях с хорошей вентиляцией и особым температурным режимом. Правильные условия для химчистки созданы в наших рабочих боксах'},
+            { header: 'Можно ли самостоятельно сделать химчистку салона?', body: 'Необходимо иметь большое количество проверенных средств, дополнительное оборудование, создать условия для работы. Если вы этого никогда не делали — рекомендуем обратиться в детейлинг центр'}]
+
+block main
+    section
+        h1 Химчистка автомобиля
+        +slider(drycleaningPrimarySlider)
+
+        h2 Комплексная химчистка автомобиля от
+            span.accent  12 000 ₽
+
+        p Вернем салону первозданный вид без вреда для обивки. Очистим сложные загрязнения, въевшиеся пятна и неприятный запах.
+
+        +btn('Рассчитать стоимость')
+    section
+        h2 почему нужно выбрать химчистку в
+            span.accent  автоцентре полимер?
+
+        div.frame(style='padding: 10px')
+            h3 Самостоятельная химчистка
+            ul.info_list
+                li Удаление только поверхностного слоя грязи
+
+        div.info
+            h3 Профессиональная химчистка
+            ul.info_list
+                li Глубокое очищение от бактерий и клещей
+                li Удаление сложных загрязнений
+                li Профессиональная химия
+                li Безопасные химические составы, которые разлагаются в течение 30 минут после химчистки
+                li Озонирование: процедура для дезинфекции салона и устранения неприятных запахов
+
+    section
+        h2
+            span.accent Загрязнения
+            span , которые удаляет химчистка
+
+        +cards(drycleaningCards)
+
+        +btn('Записаться на химчистку')
+
+    section
+        h2 Результаты
+        +slider(drycleaningExSlider)
+
+    section
+        h2 Цены
+        +prices(drycleaningPrices)
+
+        +btn('Рассчитать стоимость')
+
+    section
+        h2 Таблица с ценами
+
+        p Возможна поэлементная химчистка
+            span.accent от 200 ₽
+
+        p Со стоимостью вы можете
+            button.accent ознакомиться здесь >>
+
+    section
+        h2 При химчистке мы используем
+        div.usage
+            img(src='./assets/img/dry_cleaning/brand_1.png', alt="")
+            img(src='./assets/img/dry_cleaning/brand_2.png', alt="")
+            img(src='./assets/img/dry_cleaning/brand_3.png', alt="")
+            img(src='./assets/img/dry_cleaning/brand_4.png', alt="")
+
+    include ./components/advantages
+
+    section
+        h2 Популярные вопросы
+        +spoiler(drycleaningFAQ)
