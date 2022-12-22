@@ -125,7 +125,12 @@ p {
 }
 
 .accent {
-	color: #DA3831;
+	color: #DA3831 !important;
+}
+
+.link {
+	color: #DA3831 !important;
+	text-decoration: underline !important;
 }
 
 /* components styles */
@@ -144,7 +149,4 @@ p {
 @import './blocks/table';
 
 /* pages styles */
-@import './pages/index';
-@import './pages/ceramic';
-@import './pages/film';
-@import './pages/dry_cleaning';
+@import 'pages';
