@@ -11,7 +11,7 @@ button, button * {cursor: pointer;}
 button::-moz-focus-inner{padding:0;border:0;}
 a,a:visited{text-decoration: none;color: inherit}
 a:hover{text-decoration: none;}
-img{vertical-align: top; max-width: 100%; max-height: inherit;}
+img{vertical-align: top; max-width: 100%; max-height: inherit; object-fit: cover;}
 h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
 div{position: relative}
 /*--------------------*/

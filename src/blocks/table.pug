@@ -1,6 +1,7 @@
 mixin table(columns, data)
     div.table
-        div.table_header(style=`grid-template-columns: 240px repeat(${Object.keys(columns).length-1}, 84px)`)
+        div width is: #{clientWidth} px
+        div.table_header(style=`grid-template-columns: 240px repeat(${Object.keys(columns).length-1}, ${clientWidth} px)`)
             each column in Object.keys(columns)
                 div.table_header_cell=columns[column]
 

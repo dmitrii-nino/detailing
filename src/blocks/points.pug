@@ -1,9 +1,6 @@
 mixin points(items)
     div.points
         each item in items
-            - const str = [item.text.split(' ', 1).toString()+' ', item.text.split(' ').slice(1).join('  ')];
-                div(class='points_item frame')
-                    div.points_icon=item.id
-                    div
-                        b=str[0]
-                        span=str[1]
+            div(class='points_item frame')
+                div.points_icon=item.id
+                div!=item.text

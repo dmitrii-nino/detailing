@@ -1,2 +1,2 @@
-mixin btn(text, onclick)
-    button.btn(onclick=onclick)=text
+mixin btn(text, invert, onclick)
+    button(class=`btn ${invert && 'invert'}` onclick=onclick)=text

@@ -8,6 +8,7 @@
     width: max-content;
     flex-wrap: nowrap;
     gap: 8px;
+    margin: 0 auto;
   }
 
   &_item {
@@ -20,7 +21,42 @@
     color: #FFFFFF;
     padding: 12px;
     text-align: center;
-    background-size: cover;
+    background-size: 105%;
     border-radius: 10px;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    * {
+      color: #FFFFFF;
+    }
+  }
+}
+
+@media (min-width: 600px) {
+  .carousel {
+
+    &_item {
+      width: 25vw;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .carousel {
+
+    &_item {
+      width: 20vw;
+      max-width: 320px;
+      height: 25vw;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .carousel {
+
+    &_item {
+      padding: 25px;
+    }
   }
 }

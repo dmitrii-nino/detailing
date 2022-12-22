@@ -6,6 +6,7 @@
   padding: 24px 24px 48px 24px;
   background: linear-gradient(129.53deg, #F9556B 4.33%, #717070 72.61%);
   border-radius: 10px 10px 0 0;
+  position: relative;
 
   &_links {
     width: 60%;
@@ -13,6 +14,7 @@
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
+    padding-top: 20px;
   }
 
   * {

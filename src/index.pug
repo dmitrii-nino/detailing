@@ -22,14 +22,20 @@ block indexVars
 			{className: "toning_ex_item", id: 2, img: './assets/img/index/toning_2.png'},
 			{className: "toning_ex_item", id: 3, img: './assets/img/index/toning_3.png'},]
 block main
-	section
+	section.index
 		div(class='frame primary_title')
 			h1 Премиальный детейлинг
 			h4 с вниманием к мелочам
 
+			div.primary_title_block
+				p Вернем автомобилю безупречный внешний вид за 2 дня с оплатой после работы и гарантией 1 год по договору
+				+btn('Рассчитать стоимость *')
+				p * Узнайте точную стоимость и получите подарок на выбор
+
 		p Вернем автомобилю безупречный внешний вид за 2 дня с оплатой после работы и гарантией 1 год по договору
 
 	section
+		a.anchor(id='services')
 		h2 Наши услуги
 		+carousel(services)
 		+btn('Рассчитать стоимость *')
@@ -38,8 +44,7 @@ block main
 
 	section
 		h2 Сэкономьте деньги
-			br
-			span.accent на ближайшие 10 лет
+			span.accent  на ближайшие 10 лет
 
 		.longitude
 			.longitude_content
@@ -49,27 +54,36 @@ block main
 		+btn('Рассчитать стоимость ')
 
 
-		include ./components/advantages
+	include ./components/advantages
 
-	section
+	section.examples
+		a.anchor(id='examples')
 		h2 Наши работы
-		h4 Керамическое покрытие
-		+slider(ceramicExSlider)
+		div.examples_item
+			h4 Керамическое покрытие
+			+slider(ceramicExSlider)
 
-		h4 Оклейка защитной пленкой
-		p Пример того, как пленка защитила корпус автомобиля после ДТП
-		+slider(filmExSlider)
+		div.examples_item
+			h4 Оклейка защитной пленкой
+			p Пример того, как пленка защитила корпус автомобиля после ДТП
+			+slider(filmExSlider)
 
-		h4 Химчистка автомобиля
-		+slider(drycleaningExSlider)
+		div.examples_item
+			h4 Химчистка автомобиля
+			+slider(drycleaningExSlider)
 
-		h4 Тонировка
-		+slider(toningExSlider)
+		div.examples_item
+			h4 Тонировка
+			+slider(toningExSlider)
 
 	section
 		div(class='promotion frame')
 			h2 Акция!
 			div(class='promotion_img frame')
 				img(src='./assets/img/index/primary.png', alt="")
-			p Запишитесь на бексплатную мойку-консультацию и получите полировку фар за X.XXX ₽
+			p Запишитесь на
+				b  бексплатную мойку-консультацию
+				span  и получите
+				b  полировку фар за X.XXX ₽
 			+btn('Записаться')
+			img.promotion_bg(src='./assets/img/index/promo.png', alt="")

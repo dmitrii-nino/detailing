@@ -35,3 +35,27 @@
     display: none;
   }
 }
+
+@media (min-width: 768px) {
+  .spoiler {
+    &_item {
+      padding: 16px;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .spoiler {
+    &_item {
+      padding: 20px;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .spoiler {
+    &_item {
+      padding: 24px;
+    }
+  }
+}

@@ -1,13 +1,25 @@
 header.header
-  div.header_logo
-    img(src='./assets/icons/logo.svg', alt="")
+    div.header_container
+        a(href='/')
+            div.header_logo
+              img(src='./assets/icons/logo.svg', alt="")
 
-  div
-    a(class='header_info' href="tel:+78122419767")
-      b +7 (812) 241-97-67
-      img(src='./assets/icons/phone.svg', alt="")
+        div.header_btns
+            a(href='/')
+                h4 Главная
+            a(href='/#services')
+                h4 Наши Услуги
+            a(href='/#examples')
+                h4 Наши Работы
+            a(href='#contacts')
+                h4 Контакты
 
-    a(class='header_info' target="_blank"  href='https://yandex.com.ge/maps/-/CCUnEPT~gA')
-      b СПб, ул. Моховая 37 "Б"
-      img(src='./assets/icons/geo.svg', alt="")
+        div
+            a(class='header_info' href="tel:+78122419767")
+              b +7 (812) 241-97-67
+              img(src='./assets/icons/phone.svg', alt="")
+
+            a(class='header_info' target="_blank"  href='https://yandex.com.ge/maps/-/CCUnEPT~gA')
+              b СПб, ул. Моховая 37 "Б"
+              img(src='./assets/icons/geo.svg', alt="")
 

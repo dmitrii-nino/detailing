@@ -4,9 +4,8 @@ mixin carousel(items)
             each item in items
                 - const {className, link, text, img} = item
                 - if (link)
-                    a(href=link)
-                        div(class=`carousel_item ${className}` style=`background-image: url("${img}")`)
-                            h4=text
+                    a(href=link class=`carousel_item ${className}` style=`background-image: url("${img}")`)
+                        h4=text
                 - else
                     div(class=`carousel_item ${className}` style=`background-image: url("${img}")`)
                         h4=text

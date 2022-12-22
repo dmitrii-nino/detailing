@@ -18,10 +18,26 @@
     min-width: 30px;
     max-width: 30px;
     height: 30px;
+    max-height: 30px;
     color: #DA3831;
     font-size: 18px;
     font-weight: bold;
     border: 2px solid #DA3831;
     border-radius: 100%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .points {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+
+    &_item {
+      flex-direction: column;
+      gap: 20px;
+      height: auto;
+      padding: 36px 20px;
+    }
   }
 }

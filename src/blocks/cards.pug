@@ -4,4 +4,4 @@ mixin cards(items)
             div(class='cards_item frame')
                 h4=item.header
                 img(class='cards_icon' src=item.icon alt="#")
-                p=item.text
+                p!=item.text

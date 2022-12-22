@@ -1,16 +1,16 @@
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr;
-  align-items: center;
   gap: 12px;
 
   &_item {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: flex-start;
     gap: 8px;
-    height: 100%;
+    min-width: 45%;
+    height: inherit;
     flex: 1;
     padding: 12px;
     text-align: center;
@@ -21,5 +21,30 @@
   &_icon {
     max-width: 50px;
     max-height: 50px;
+  }
+}
+
+@media (min-width: 768px) {
+  .cards {
+    max-width: 60vw;
+    margin: 0 auto;
+
+    &_item {
+      padding: 20px;
+      gap: 12px;
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: unset;
+
+    &_item {
+      min-width: auto;
+      gap: 16px;
+    }
   }
 }

@@ -6,4 +6,4 @@ mixin spoiler(items)
                     h4=item.header
                     img(src='./assets/icons/plus.svg' class='spoiler_icon plus' alt="#")
                     img(src='./assets/icons/minus.svg' class='spoiler_icon minus hidden' alt="#")
-                div(class='spoiler_body hidden')=item.body
+                div(class='spoiler_body hidden')!=item.body
