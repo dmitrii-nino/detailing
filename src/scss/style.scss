@@ -15,6 +15,7 @@ body {
 	min-width: 320px;
 	max-width: 1960px;
 	margin: 0 auto;
+	position: relative;
 }
 
 section {
@@ -79,6 +80,13 @@ p {
 	background: linear-gradient(222.31deg, #F9556B 3.76%, #DA3831 82.36%);
 	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
 	border-radius: 10px;
+}
+
+.input {
+	font-size: 18px;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+	border-radius: 10px;
+	padding: 8px 16px;
 }
 
 .info {
@@ -152,11 +160,18 @@ p {
 	white-space: nowrap;
 }
 
+.row {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+}
+
 /* components styles */
 
 @import './components/advantages';
 @import './components/header';
 @import './components/footer';
+@import './components/modal';
 
 /* blocks styles */
 

@@ -1,6 +1,6 @@
 extends components/layout
 
-block toningVars
+block variables
     -
         const toningPrimarySlider = [{ className: "toning_title", id: 1, img: './assets/img/toning/primary_1.png'},
             { className: "toning_title", id: 2, img: './assets/img/toning/primary_2.png'},
@@ -44,7 +44,7 @@ block main
                 b  безопасность автомобилю
                 span  с помощью тонировки стекол и получите мойку в подарок
 
-            +btn('Рассчитать стоимость')
+            +modalBtn('Рассчитать стоимость', 'full')
 
     section
         h2 Преимущества тонировки
@@ -87,7 +87,7 @@ block main
         h2 Стоимость евротонировки
         +prices(toningPrices)
 
-        +btn('Рассчитать стоимость')
+        +modalBtn('Рассчитать стоимость', 'full')
 
     section
         h2 Таблица с ценами

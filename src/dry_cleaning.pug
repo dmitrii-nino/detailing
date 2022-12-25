@@ -1,6 +1,6 @@
 extends components/layout
 
-block drycleaningVars
+block variables
     -
         const drycleaningPrimarySlider = [{ className: "drycleaning_title", id: 1, img: './assets/img/dry_cleaning/primary_1.png'},
             { className: "drycleaning_title", id: 2, img: './assets/img/dry_cleaning/primary_2.png'},
@@ -42,7 +42,7 @@ block main
 
             p Вернем салону первозданный вид без вреда для обивки. Очистим сложные загрязнения, въевшиеся пятна и неприятный запах.
 
-            +btn('Рассчитать стоимость')
+            +modalBtn('Рассчитать стоимость','full')
     section
         h2 почему нужно выбрать химчистку в
             span.accent  автоцентре полимер?
@@ -69,7 +69,7 @@ block main
 
         +cards(drycleaningCards)
 
-        +btn('Записаться на химчистку')
+        +modalBtn('Записаться на химчистку', 'min')
 
     section
         h2 Результаты
@@ -79,7 +79,7 @@ block main
         h2 Цены
         +prices(drycleaningPrices)
 
-        +btn('Рассчитать стоимость')
+        +modalBtn('Рассчитать стоимость', 'full')
 
     section
         h2 Таблица с ценами

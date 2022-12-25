@@ -1,6 +1,6 @@
 extends components/layout
 
-block drycleaningPricesVars
+block variables
     - const columns = {name: ' ', mini: 'Малый класс', first: 'Первый класс или гольф класс', second: 'Второй средний класс', business: 'Бизнес-класс', grand: 'Представительский класс'};
     -
         const data = [
@@ -47,6 +47,6 @@ block main
         p Оставьте заявку на бесплатную консультацию, и мы перезвоним вам в течение
             b  2х минут
 
-        +btn('Оставить заявку *')
+        +modalBtn('Оставить заявку *', 'min')
 
         p * Если заявка пришла после 9 вечера — перезвоним в 10 утра на следующий день

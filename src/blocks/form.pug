@@ -1,0 +1,86 @@
+mixin form(step)
+    case step
+        when 'car_model'
+            div(class=`modal_content ${step}`)
+                h4 Модель вашего автомобиля
+                input.input(type='text' id='car_model')
+                button(class=`btn` onclick=`onClick('car_model')`) Далее
+
+        when 'used_car'
+            div(class=`modal_content ${step} hidden`)
+                h4 Автомобиль новый, или с пробегом?
+
+                div.row
+                    input.input_radio(type='radio' name='used_car' id='new' value='new')
+                    label(for='new') Новый, без пробега
+                div.row
+                    input.input_radio(type='radio' name='used_car' id='less3' value='less3' checked)
+                    label(for='less3') С небольшим пробегом (до 3 тыс.)
+                div.row
+                    input.input_radio(type='radio' name='used_car' id='more3' value='more3')
+                    label(for='more3') С пробегом (больше 3 тыс.)
+
+                button(class=`btn` onclick=`onClick('used_car')`) Далее
+
+        when 'service'
+            div(class=`modal_content ${step} hidden`)
+                h4 Услуга
+
+                div.row
+                    input.input_check(type='checkbox' id='ceramic' value='ceramic')
+                    label(for='ceramic') Керамическое покрытие
+                div.row
+                    input.input_check(type='checkbox' id='film' value='film')
+                    label(for='film') Оклейка бронепленкой
+                div.row
+                    input.input_check(type='checkbox' id='dry_cleaning' value='dry_cleaning')
+                    label(for='dry_cleaning') Химчистка
+                div.row
+                    input.input_check(type='checkbox' id='toning' value='toning')
+                    label(for='toning') Тонировка
+                div.row
+                    input.input_check(type='checkbox' id='polish' value='polish')
+                    label(for='polish') Полировка кузова
+                div.row
+                    input.input_check(type='checkbox' id='other' value='other')
+                    label(for='other') Другое
+
+                button(class=`btn` onclick=`onClick('service')`) Далее
+
+        when 'gift'
+            div(class=`modal_content ${step} hidden`)
+                h4 Подарок
+
+                div.row
+                    input.input_radio(type='radio' name='gift' id='2k' value='2k')
+                    label(for='2k') Купон 2.000 ₽ на оклейку фар
+                div.row
+                    input.input_radio(type='radio' name='gift' id='moika' value='moika' checked)
+                    label(for='moika') Бесплатная мойка-консультация
+                div.row
+                    input.input_radio(type='radio' name='gift' id='antirain' value='antirain')
+                    label(for='antirain') Антидождь стекол
+
+                button(class=`btn` onclick=`onClick('gift')`) Далее
+
+        when 'phone_number'
+            div(class=`modal_content ${step} hidden`)
+                h4 Чтобы закрепить за собой подарок — оставьте ваш номер телефона ☎️
+                input.input(type='number' id='phone_number')
+                button(class=`btn` onclick=`onClick('phone_number')`) Далее
+
+        when 'final'
+            div(class=`modal_content ${step} hidden`)
+                h4 Мы закрепили купон на подарок за вами 😎
+                    br
+                    | Скоро наш менеджер позвонит вам, подскажет стоимость выбранной услуги и проконсультирует по всем вопросам 🙌🏻
+                button(class=`btn` onclick=`onClick('final')`) Завершить
+
+        when 'min_phone_number'
+            div(class=`modal_content ${step}`)
+                h4 Оставьте ваш номер телефона ☎️
+                    br
+                    | Мы свяжемся с Вами в ближйшее время *
+                input.input(type='number' id='min_phone_number')
+                span * Если заявка пришла после 9 вечера — перезвоним в 10 утра на следующий день
+                button(class=`btn` onclick=`onClick('min_phone_number')`) Отправить заявку

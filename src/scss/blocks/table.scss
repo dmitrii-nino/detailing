@@ -3,7 +3,8 @@
   overflow-x: scroll;
 
   &_header {
-    display: grid;
+    display: flex;
+    align-items: center;
     width: max-content;
     background: linear-gradient(222.31deg, #F9556B 3.76%, #DA3831);
     border-radius: 10px;
@@ -17,6 +18,11 @@
       font-weight: bold;
       padding: 8px 4px;
       word-break: break-word;
+      width: 90px;
+
+      &:first-child {
+        width: 240px;
+      }
     }
   }
 
@@ -30,7 +36,8 @@
     }
 
     &_row {
-      display: grid;
+      display: flex;
+      align-items: center;
       width: max-content;
       border-bottom: 1px solid #717070;
     }
@@ -38,8 +45,10 @@
     &_cell {
       text-align: center;
       padding: 8px 4px;
+      width: 90px;
 
       &:first-child {
+        width: 240px;
         font-weight: bold;
         text-align: left;
       }
@@ -50,5 +59,43 @@
 @media (min-width: 768px) {
   .table {
     margin: 0 auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .table {
+
+    &_header {
+
+      &_cell {
+        width: 130px;
+      }
+    }
+
+    &_body {
+
+      &_cell {
+        width: 130px;
+      }
+    }
+  }
+}
+
+@media (min-width: 1240px) {
+  .table {
+
+    &_header {
+
+      &_cell {
+        width: 164px;
+      }
+    }
+
+    &_body {
+
+      &_cell {
+        width: 164px;
+      }
+    }
   }
 }

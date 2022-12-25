@@ -1,14 +1,13 @@
 mixin table(columns, data)
     div.table
-        div width is: #{clientWidth} px
-        div.table_header(style=`grid-template-columns: 240px repeat(${Object.keys(columns).length-1}, ${clientWidth} px)`)
+        div.table_header
             each column in Object.keys(columns)
                 div.table_header_cell=columns[column]
 
         div.table_body
             - if (Array.isArray(data))
                 each row in data
-                    div.table_body_row(style=`grid-template-columns: 240px repeat(${Object.keys(row).length-1}, 84px)`)
+                    div.table_body_row
                         each cell in Object.keys(row)
                             div.table_body_cell=row[cell]
 
@@ -17,6 +16,6 @@ mixin table(columns, data)
                     div.table_body_group=data[group].group
 
                     each row in data[group].data
-                        div.table_body_row(style=`grid-template-columns: 240px repeat(${Object.keys(row).length - 1}, 84px)`)
+                        div.table_body_row
                             each cell in Object.keys(row)
                                 div.table_body_cell=row[cell]

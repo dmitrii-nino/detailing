@@ -1,0 +1,57 @@
+- const modalBlocks = ['car_model', 'used_car', 'service', 'gift', 'phone_number', 'final']
+
+block modal
+    script.
+        const modalBlocks = ['car_model', 'used_car', 'service', 'gift', 'phone_number', 'final'];
+
+        const changeModal = (id, current) => {
+            document.querySelector(`.modal_content.${id}`).classList.add('hidden')
+            document.querySelector(`.modal_content.${modalBlocks[current + 1]}`).classList.remove('hidden')
+            document.getElementById(`tab_full-${current}`).classList.remove('checked')
+            document.getElementById(`tab_full-${current + 1}`).classList.add('checked')
+        }
+
+        const closeModal = (size) => {
+            document.querySelector(`.modal.blur`).classList.add("hidden")
+            document.querySelector(`.modal.${size}`).classList.add("hidden")
+        }
+
+        const onClick = (id) => {
+            if (id === 'min_phone_number') {
+                localStorage.setItem('phone_number', document.getElementById(id).value);
+                closeModal('min')
+            }
+            else if (id === 'final') {
+                closeModal('full')
+            }
+            else {
+                if (id === 'car_model' || id === 'phone_number') localStorage.setItem(id, document.getElementById(id).value);
+                if (id === 'used_car' || id === 'gift') localStorage.setItem(id, document.querySelector(`input[name=${id}]:checked`).value);
+                if (id === 'service') localStorage.setItem(id, Array.from(document.querySelectorAll(`input[type=checkbox]:checked`)).map(item => item.value));
+
+                const current = modalBlocks.indexOf(id)
+                changeModal(id, current);
+            }
+
+        }
+
+    div(class='modal blur hidden')
+
+    div(class='modal full hidden')
+        div.modal_close(data-value='full')
+            img(src='./assets/icons/cross.svg')
+
+        each block,i in modalBlocks
+            +form(block)
+
+        div.modal_tabs
+            - for (let i = 0; i < modalBlocks.length; i++)
+                label(class=`modal_tabs_item full ${i === 0 && 'checked'}` id=`tab_full-${i}`)
+
+    div(class='modal min hidden')
+        div.modal_close(data-value='min')
+            img(src='./assets/icons/cross.svg')
+
+        +form('min_phone_number')
+
+        span

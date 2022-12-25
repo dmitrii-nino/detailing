@@ -1,6 +1,6 @@
 extends ./components/layout
 
-block indexVars
+block variables
 	-
 		const services = [{"className":"services_item","id":1, link: '/ceramic.html', "text":"Керамическое покрытие","img":"./assets/img/index/services_1.png"},
 			{"className":"services_item","id":2,link: '/film.html', "text":"Оклейка защитной пленкой","img":"./assets/img/index/services_2.png"},
@@ -29,7 +29,7 @@ block main
 
 			div.primary_title_block
 				p Вернем автомобилю безупречный внешний вид за 2 дня с оплатой после работы и гарантией 1 год по договору
-				+btn('Рассчитать стоимость *')
+				+modalBtn('Рассчитать стоимость *', 'full')
 				p * Узнайте точную стоимость и получите подарок на выбор
 
 		p Вернем автомобилю безупречный внешний вид за 2 дня с оплатой после работы и гарантией 1 год по договору
@@ -38,7 +38,7 @@ block main
 		a.anchor(id='services')
 		h2 Наши услуги
 		+carousel(services)
-		+btn('Рассчитать стоимость *')
+		+modalBtn('Рассчитать стоимость *', 'full')
 
 		p * Узнайте точную стоимость и получите подарок на выбор
 
@@ -51,7 +51,7 @@ block main
 				img(src='./assets/img/index/car.png', alt="")
 
 		p Детейлинг сохранит авто в первозданном виде и защитит лакокрасочное покрытие от сколов и вмятин
-		+btn('Рассчитать стоимость ')
+		+modalBtn('Рассчитать стоимость', 'full')
 
 
 	include ./components/advantages
@@ -85,5 +85,6 @@ block main
 				b  бексплатную мойку-консультацию
 				span  и получите
 				b  полировку фар за X.XXX ₽
-			+btn('Записаться')
+			+modalBtn('Записаться', 'full')
+
 			img.promotion_bg(src='./assets/img/index/promo.png', alt="")

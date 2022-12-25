@@ -1,6 +1,6 @@
 extends components/layout
 
-block filmVars
+block variables
     -
         const filmPrimarySlider = [{ className: "film_title", id: 1, img: './assets/img/film/primary_1.png'},
             { className: "film_title", id: 2, img: './assets/img/film/primary_2.png'},
@@ -46,7 +46,7 @@ block main
             p Рассчитайте стоимость, и получите  детейлинг
                 b  мойку в подарок
 
-            +btn('Рассчитать стоимость')
+            +modalBtn('Рассчитать стоимость', 'full')
 
     section
         div(class='info info_box')
@@ -75,7 +75,7 @@ block main
         h2 Цены
         +prices(filmPrices)
 
-        +btn('Рассчитать стоимость')
+        +modalBtn('Рассчитать стоимость', 'full')
 
     section
         div.list
@@ -106,7 +106,7 @@ block main
                     b Экономию до 300.000 рублей.
                     span  Ухоженный автомобиль при продаже будет стоить дороже
 
-            +btn('Оставить заявку на бесплатную консультацию')
+            +modalBtn('Оставить заявку на бесплатную консультацию', 'min')
 
     include ./components/advantages
 

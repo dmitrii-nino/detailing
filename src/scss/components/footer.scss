@@ -8,6 +8,14 @@
   border-radius: 10px 10px 0 0;
   position: relative;
 
+  &_contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+  }
+
   &_links {
     width: 60%;
     min-width: 240px;
@@ -19,5 +27,25 @@
 
   * {
     color: #FFFFFF;
+  }
+}
+
+@media (min-width: 1024px) {
+  .footer {
+
+    display: grid;
+    align-items: flex-start;
+    grid-template-columns: 64px 1fr 1fr;
+    padding: 40px 80px;
+
+    &_contacts {
+      align-items: flex-start;
+    }
+
+    &_links {
+      width: 100%;
+      justify-content: flex-end;
+      gap: 48px;
+    }
   }
 }

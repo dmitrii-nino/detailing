@@ -1,2 +1,8 @@
-mixin btn(text, invert, onclick)
-    button(class=`btn ${invert && 'invert'}` onclick=onclick)=text
+mixin modalBtn(text, modalType)
+    case modalType
+        when 'full'
+            button(class=`btn` onclick='modalOpen("full")')=text
+        when 'min'
+            button(class=`btn` onclick='modalOpen("min")')=text
+        default
+            button(class=`btn`)=text
