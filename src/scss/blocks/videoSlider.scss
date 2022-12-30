@@ -1,0 +1,27 @@
+.video.slider {
+
+  &_arrow {
+    display: flex;
+    position: absolute;
+
+    &.left {
+      left: -24px;
+    }
+
+    &.right {
+      right: -24px;
+    }
+
+    img {
+      min-height: 32px;
+    }
+  }
+
+  &_controls {
+    display: none;
+  }
+}
+
+iframe {
+  height: 35vh;
+}

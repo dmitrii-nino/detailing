@@ -24,6 +24,13 @@ block variables
             { className: "film_ex_item", id: 2, img: './assets/img/index/film_2.png'},
             { className: "film_ex_item", id: 3, img: './assets/img/index/film_3.png'}]
     -
+        const filmVideoSlider = [{className: "film_video_item", id: 1, src: 'http://www.youtube.com/embed/QUHaj6jPBos'},
+            {className: "film_video_item", id: 2, src: 'http://www.youtube.com/embed/VzKPZIpGQvk'},
+            {className: "film_video_item", id: 3, src: 'http://www.youtube.com/embed/NnbNGmGt89U'},
+            {className: "film_video_item", id: 4, src: 'http://www.youtube.com/embed/eFW-CivShqs'},
+            {className: "film_video_item", id: 5, src: 'http://www.youtube.com/embed/IC7LhgvKpSE'},
+            {className: "film_video_item", id: 6, src: 'http://www.youtube.com/embed/4zM405lkW5o'}]
+    -
         const filmPrices = [{ name: 'mini', price: '28 000 — 34 000 ₽' },
             { name: 'first', price: '32 000 — 38 000 ₽' },
             { name: 'second', price: '36 000 — 42 000 ₽' },
@@ -70,6 +77,7 @@ block main
         h2 Результаты
         p Пример того, как пленка защитила корпус автомобиля после ДТП
         +slider(filmExSlider)
+        +videoSlider(filmVideoSlider)
 
     section
         h2 Цены
