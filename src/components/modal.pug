@@ -7,29 +7,55 @@ block modal
         const changeModal = (id, current) => {
             document.querySelector(`.modal_content.${id}`).classList.add('hidden')
             document.querySelector(`.modal_content.${modalBlocks[current + 1]}`).classList.remove('hidden')
-            document.getElementById(`tab_full-${current}`).classList.remove('checked')
-            document.getElementById(`tab_full-${current + 1}`).classList.add('checked')
+            document.getElementById(`tab-${current}`).classList.remove('checked')
+            document.getElementById(`tab-${current + 1}`).classList.add('checked')
         }
 
         const closeModal = (size) => {
+            document.querySelector(`.modal_content.final`).classList.add('hidden')
+            document.querySelector(`.modal_content.car_model`).classList.remove('hidden')
+            document.getElementById(`tab-${modalBlocks.length - 1}`).classList.remove('checked')
+            document.getElementById(`tab-0`).classList.add('checked')
+
             document.querySelector(`.modal.blur`).classList.add("hidden")
             document.querySelector(`.modal.${size}`).classList.add("hidden")
         }
 
+        const onSubmit = () => {
+            const data = {};
+
+            modalBlocks.forEach(item => {
+                if (item !== 'final') data[item] = localStorage.getItem(item)
+            })
+
+            fetch('https://autocentr-polimer.ru/api/add_lead', {
+                method: "POST",
+                body: JSON.stringify(data)
+            })
+
+            localStorage.clear();
+        }
+
         const onClick = (id) => {
+            const current = modalBlocks.indexOf(id)
+
             if (id === 'min_phone_number') {
                 localStorage.setItem('phone_number', document.getElementById(id).value);
-                closeModal('min')
+                onSubmit();
+                closeModal('min');
+            }
+            if (id === 'phone_number') {
+                localStorage.setItem(id, document.getElementById(id).value);
+                onSubmit();
+                changeModal(id, current);
             }
             else if (id === 'final') {
-                closeModal('full')
+                closeModal('full');
             }
             else {
-                if (id === 'car_model' || id === 'phone_number') localStorage.setItem(id, document.getElementById(id).value);
+                if (id === 'car_model') localStorage.setItem(id, document.getElementById(id).value);
                 if (id === 'used_car' || id === 'gift') localStorage.setItem(id, document.querySelector(`input[name=${id}]:checked`).value);
                 if (id === 'service') localStorage.setItem(id, Array.from(document.querySelectorAll(`input[type=checkbox]:checked`)).map(item => item.value));
-
-                const current = modalBlocks.indexOf(id)
                 changeModal(id, current);
             }
 
@@ -46,7 +72,7 @@ block modal
 
         div.modal_tabs
             - for (let i = 0; i < modalBlocks.length; i++)
-                label(class=`modal_tabs_item full ${i === 0 && 'checked'}` id=`tab_full-${i}`)
+                label(class=`modal_tabs_item full ${i === 0 && 'checked'}` id=`tab-${i}`)
 
     div(class='modal min hidden')
         div.modal_close(data-value='min')

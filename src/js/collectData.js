@@ -13,6 +13,15 @@ closeBtns.forEach(btn => {
         modals.forEach(modal => {
             if (modal.classList.contains(btn.dataset.value) || modal.classList.contains('blur')) modal.classList.add('hidden')
         })
+
+        document.querySelectorAll('.modal_content')
+            .forEach(slide => slide.classList.add('hidden'))
+        document.querySelector(`.modal_content.car_model`).classList.remove('hidden')
+
+        document.querySelectorAll('.modal_tabs_item')
+            .forEach(tab => tab.classList.remove('checked'))
+        document.getElementById(`tab-0`).classList.add('checked')
+
     })
 });
 
