@@ -1,0 +1,16 @@
+mixin slipper(items)
+    div.slipper
+        each item in items
+            - const {className, img} = item
+                div(class=`slipper_item frame ${className}`)
+                    img(src=`${img}`, alt="")
+
+        div(class=`slipper_arrow left ${items[0].className}`)
+            img(src='./assets/icons/arrow-left.svg', alt="")
+        div(class=`slipper_arrow right ${items[0].className}`)
+            img(src='./assets/icons/arrow-right.svg', alt="")
+
+        .slipper_controls
+            each item in items
+                - const {className, id} = item
+                    label(class=`slipper_controls_item ${className} ${id === 1 && 'checked'}` id=`control_${className}-${id}` for=`${className}-${id}`)
