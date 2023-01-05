@@ -4,7 +4,7 @@ block modal
     script.
         const modalBlocks = ['car_model', 'used_car', 'service', 'gift', 'phone_number', 'final'];
 
-        const changeModal = (id, current) => {
+        const nextModal = (id, current) => {
             document.querySelector(`.modal_content.${id}`).classList.add('hidden')
             document.querySelector(`.modal_content.${modalBlocks[current + 1]}`).classList.remove('hidden')
             document.getElementById(`tab-${current}`).classList.remove('checked')
@@ -36,7 +36,7 @@ block modal
             localStorage.clear();
         }
 
-        const onClick = (id) => {
+        const toNext = (id) => {
             const current = modalBlocks.indexOf(id)
 
             if (id === 'min_phone_number') {
@@ -47,7 +47,7 @@ block modal
             if (id === 'phone_number') {
                 localStorage.setItem(id, document.getElementById(id).value);
                 onSubmit();
-                changeModal(id, current);
+                nextModal(id, current);
             }
             else if (id === 'final') {
                 closeModal('full');
@@ -56,9 +56,18 @@ block modal
                 if (id === 'car_model') localStorage.setItem(id, document.getElementById(id).value);
                 if (id === 'used_car' || id === 'gift') localStorage.setItem(id, document.querySelector(`input[name=${id}]:checked`).value);
                 if (id === 'service') localStorage.setItem(id, Array.from(document.querySelectorAll(`input[type=checkbox]:checked`)).map(item => item.value));
-                changeModal(id, current);
+                nextModal(id, current);
             }
 
+        }
+
+        const toPrev = (id) => {
+            const current = modalBlocks.indexOf(id);
+
+            document.querySelector(`.modal_content.${id}`).classList.add('hidden')
+            document.querySelector(`.modal_content.${modalBlocks[current - 1]}`).classList.remove('hidden')
+            document.getElementById(`tab-${current}`).classList.remove('checked')
+            document.getElementById(`tab-${current - 1}`).classList.add('checked')
         }
 
     div(class='modal blur hidden')

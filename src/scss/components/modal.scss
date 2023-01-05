@@ -10,10 +10,9 @@
   transform: translate(-50%, -50%);
 
   min-width: 280px;
-  max-width: 680px;
-  //min-height: 340px;
+  max-width: 500px;
   min-height: max-content;
-  max-height: 560px;
+  max-height: 500px;
 
   width: 94vw;
   height: 60vh;
@@ -40,7 +39,7 @@
       display: none;
     }
 
-    & > div {
+    & .box {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -50,6 +49,14 @@
     .btn {
       border: 2px solid white;
       margin-top: 16px;
+
+      &.prev {
+        max-width: 25%;
+      }
+
+      &:not(.prev) {
+        min-width: 75%;
+      }
     }
   }
 
