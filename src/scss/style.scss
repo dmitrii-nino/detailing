@@ -85,6 +85,17 @@ p {
 		cursor: not-allowed;
 		opacity: .5;
 	}
+
+	&_back {
+		border-radius: 100%;
+		width: 94px !important;
+		height: 94px !important;
+
+		position: fixed;
+		right: 4%;
+		bottom: 8%;
+		z-index: 5;
+	}
 }
 
 .input {

@@ -70,6 +70,10 @@
 
   .btn {
     width: 400px;
+
+    &_back {
+      display: none;
+    }
   }
 
   .info {

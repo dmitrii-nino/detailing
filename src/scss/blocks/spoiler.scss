@@ -6,7 +6,7 @@
   &_item {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    //gap: 10px;
     padding: 12px;
   }
 
@@ -23,16 +23,28 @@
 
   &_icon {
     margin-left: 5px;
+
+    &.hidden {
+      display: none;
+    }
   }
 
   &_body {
+    max-height: 100px;
+    opacity: 1;
+    padding-top: 10px;
+
     display: flex;
     flex-direction: column;
     gap: 10px;
-  }
+    -webkit-transition: all .5s;
+    transition: all .5s;
 
-  & .hidden {
-    display: none;
+    &.hidden {
+      max-height: 0;
+      opacity: 0;
+      padding-top: 0;
+    }
   }
 }
 

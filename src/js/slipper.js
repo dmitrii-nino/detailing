@@ -76,6 +76,8 @@ const createListeners = (name) => {
         let event,
             action;
 
+        slide.addEventListener("click", () => null)
+
         slide.addEventListener("touchstart", (e) => event = e);
 
         slide.addEventListener("touchmove", (e) => {
@@ -90,6 +92,8 @@ const createListeners = (name) => {
 
             if (action === 'next') toNext()
             if (action === 'prev') toPrev()
+
+            action = undefined
         });
     })
 

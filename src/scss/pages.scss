@@ -147,8 +147,18 @@
     justify-content: center;
 
     &_item {
-      width: 40vw;
+      width: 100%;
+      flex-direction: row;
+      flex-wrap: wrap;
       text-align: center;
+
+      & > * {
+        width: 48%;
+      }
+
+      & > h4, & > p {
+        width: 100%;
+      }
     }
   }
 
@@ -177,10 +187,10 @@
   .examples {
     gap: 60px;
 
-    &_item {
-      width: 38vw;
-      max-width: 800px;
-    }
+    //&_item {
+    //  width: 38vw;
+    //  max-width: 800px;
+    //}
   }
 
   section.index {
@@ -252,10 +262,10 @@
         text-align: left;
       }
 
-     .slider {
+     .slider, .slipper {
        grid-area: slider;
        max-width: 40vw;
-    }
+      }
 
       &_content {
         grid-area: content;

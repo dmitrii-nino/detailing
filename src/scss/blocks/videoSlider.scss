@@ -1,27 +1,26 @@
-.video.slider {
+.video.slipper {
 
   &_arrow {
-    display: flex;
+    //display: block;
     position: absolute;
+    top: 50%;
+    cursor: pointer;
 
     &.left {
-      left: -24px;
+      left: 8px;
     }
 
     &.right {
-      right: -24px;
+      right: 8px;
     }
 
     img {
       min-height: 32px;
     }
   }
-
-  &_controls {
-    display: none;
-  }
 }
 
 iframe {
-  height: 35vh;
+  height: 350px;
+  border-radius: 10px;
 }
