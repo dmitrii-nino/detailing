@@ -39,12 +39,7 @@ export const scss = () => {
 		.pipe(
 			app.plugins.if(
 				app.isBuild,
-				webpcss(
-					{
-						webpClass: ".webp",
-						noWebpClass: ".no-webp"
-					}
-				)
+				webpcss({})
 			)
 		)
 		// Раскомментировать если нужен не сжатый дубль файла стилей

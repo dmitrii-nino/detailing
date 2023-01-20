@@ -2,27 +2,27 @@ extends components/layout
 
 block variables
     -
-        const filmPrimarySlider = [{ className: "film_title", id: 1, img: './assets/img/film/primary_1.png'},
-            { className: "film_title", id: 2, img: './assets/img/film/primary_2.png'},
-            { className: "film_title", id: 3, img: './assets/img/film/primary_3.png'},
-            { className: "film_title", id: 4, img: './assets/img/film/primary_4.png'}]
+        const filmPrimarySlider = [{ className: "film_title", id: 1, img: './assets/img/film/primary_1.webp'},
+            { className: "film_title", id: 2, img: './assets/img/film/primary_2.webp'},
+            { className: "film_title", id: 3, img: './assets/img/film/primary_3.webp'},
+            { className: "film_title", id: 4, img: './assets/img/film/primary_4.webp'}]
     -
         const filmPoints = [{ id: 1, text: '<b>Защита</b> автомобиля от сколов, царапин, мелких ДТП и профилактика коррозии'},
-            { id: 2, text: '<b>Защита</b> автомобиля от сколов, царапин, мелких ДТП и профилактика коррозии'},
+            { id: 2, text: '<b>Сохранение</b> и консервация ЛКП автомобиля в идеальном состоянии'},
             { id: 3, text: '<b>Самоочищение</b> — грязь и пыль будут скатываться с поверхности авто. Можно реже мыть машину'},
             { id: 4, text: '<b>Экономия</b> от 300 000 ₽ при продаже авто, так как пленка сохраняет ЛКП авто'},
             { id: 5, text: '<b>Долговечность</b> — срок службы пленок в среднем 5-10 лет'}]
     -
-        const filmSteps = [{ className: 'film_step', id: 1, text: 'Приём автомобиля', desc: 'Первичная мойка, осмотр и выписка заказ-наряда', img: './assets/img/film/step_1.png'},
-            { className: 'film_step', id: 2, text: 'Мойка автомобиля', desc: 'Бесконтактная мойка автомобиля, обезжиривание кузова', img: './assets/img/film/step_2.png'},
-            { className: 'film_step', id: 3, text: 'Подготовка пленки', desc: 'Резка лекал на плоттере, раскрой пленки', img: './assets/img/film/step_3.png'},
-            { className: 'film_step', id: 4, text: 'Подготовка лкп', desc: 'Чистится ЛКП с помощью специальной глины, обезжиривание поверхностипервого слоя керамики', img: './assets/img/film/step_4.png'},
-            { className: 'film_step', id: 5, text: 'Установка пленки', desc: 'Установка пленки, финальная сушка', img: './assets/img/film/step_5.png'},
-            { className: 'film_step', id: 6, text: 'Выдача автомобиля клиенту', desc: 'Обсуждение даты (не менее чем через 5 дней) бесплатной контрольной мойки для проверки работы', img: './assets/img/film/step_6.png'}]
+        const filmSteps = [{ className: 'film_step', id: 1, text: 'Приём автомобиля', desc: 'Первичная мойка, осмотр и выписка заказ-наряда', img: './assets/img/film/step_1.webp'},
+            { className: 'film_step', id: 2, text: 'Мойка автомобиля', desc: 'Бесконтактная мойка автомобиля, обезжиривание кузова', img: './assets/img/film/step_2.webp'},
+            { className: 'film_step', id: 3, text: 'Подготовка пленки', desc: 'Резка лекал на плоттере, раскрой пленки', img: './assets/img/film/step_3.webp'},
+            { className: 'film_step', id: 4, text: 'Подготовка лкп', desc: 'Чистится ЛКП с помощью специальной глины, обезжиривание поверхностипервого слоя керамики', img: './assets/img/film/step_4.webp'},
+            { className: 'film_step', id: 5, text: 'Установка пленки', desc: 'Установка пленки, финальная сушка', img: './assets/img/film/step_5.webp'},
+            { className: 'film_step', id: 6, text: 'Выдача автомобиля клиенту', desc: 'Обсуждение даты (не менее чем через 5 дней) бесплатной контрольной мойки для проверки работы', img: './assets/img/film/step_6.webp'}]
     -
-        const filmExSlider = [{ className: "film_ex_item", id: 1, img: './assets/img/index/film_1.png'},
-            { className: "film_ex_item", id: 2, img: './assets/img/index/film_2.png'},
-            { className: "film_ex_item", id: 3, img: './assets/img/index/film_3.png'}]
+        const filmExSlider = [{ className: "film_ex_item", id: 1, img: './assets/img/index/film_1.webp'},
+            { className: "film_ex_item", id: 2, img: './assets/img/index/film_2.webp'},
+            { className: "film_ex_item", id: 3, img: './assets/img/index/film_3.webp'}]
     -
         const filmVideoSlider = [{className: "film_video_item", id: 1, src: 'https://www.youtube.com/embed/QUHaj6jPBos'},
             {className: "film_video_item", id: 2, src: 'https://www.youtube.com/embed/VzKPZIpGQvk'},
@@ -49,9 +49,7 @@ block main
         +slipper(filmPrimarySlider)
 
         div.main_content
-            p Оклеим автомобиль антигравийной пленкой за 7 дней с гарантией на отсутствие дефектов до 10 лет по договору.
-            p Рассчитайте стоимость, и получите  детейлинг
-                b  мойку в подарок
+            p Оклеим автомобиль антигравийной пленкой с гарантией на отсутствие дефектов до 10 лет по договору.
 
             +modalBtn('Рассчитать стоимость', 'full')
 
@@ -59,15 +57,27 @@ block main
         div(class='info info_box')
             img.info_icon(src='./assets/icons/info.svg', alt="")
             p
-                b Бронепленка
-                span  — это прозрачное покрытие, которое наклеивается на весь кузов или отдельные элементы для
-                b  защиты от царапин и сколов
-            img.info_img(src='./assets/img/film/info.png', alt="")
+                b Антигравийная пленка
+                span  — это защита для кузова автомобиля, поэтому услугу часто называют
+                b  бронирование.
+                span  Она представляет собой абсолютно прозрачную, визуально невидимую пленку,защищающую ЛПК автомобиля от сколов, царапин, мелких ДТП и коррозии
+            img.info_img(src='./assets/img/film/info.webp', alt="")
 
     section
         h2 5 причин нанести защитную пленку
         +points(filmPoints)
 
+    section
+        h2
+            span.accent Защитите
+            span  свой автомобиль
+
+        .longitude
+            .longitude_content
+                img(src='./assets/img/index/car.webp', alt="")
+
+        p Детейлинг сохранит авто в первозданном виде и защитит лакокрасочное покрытие от сколов и вмятин
+        +modalBtn('Рассчитать стоимость', 'full')
 
     section
         h2 Этапы оклейки
@@ -76,8 +86,10 @@ block main
     section
         h2 Результаты
         p Пример того, как пленка защитила корпус автомобиля после ДТП
-        +slipper(filmExSlider)
-        +videoSlipper(filmVideoSlider)
+        p
+        div.examples_item
+            +slipper(filmExSlider)
+            +videoSlipper(filmVideoSlider)
 
     section
         h2 Цены

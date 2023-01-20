@@ -2,10 +2,10 @@ extends components/layout
 
 block variables
     -
-        const ceramicPrimarySlider = [{ className: "ceramic_title", id: 1, img: './assets/img/ceramic/primary_1.png'},
-            { className: "ceramic_title", id: 2, img: './assets/img/ceramic/primary_2.png'},
-            { className: "ceramic_title", id: 3, img: './assets/img/ceramic/primary_3.png'},
-            { className: "ceramic_title", id: 4, img: './assets/img/ceramic/primary_4.png'}]
+        const ceramicPrimarySlider = [{ className: "ceramic_title", id: 1, img: './assets/img/ceramic/primary_1.webp'},
+            { className: "ceramic_title", id: 2, img: './assets/img/ceramic/primary_2.webp'},
+            { className: "ceramic_title", id: 3, img: './assets/img/ceramic/primary_3.webp'},
+            { className: "ceramic_title", id: 4, img: './assets/img/ceramic/primary_4.webp'}]
     -
         const ceramicPoints = [{ id: 1, text: '<b>Защита</b> от  выцветания, абразивов, коррозии и насекомых'},
              { id: 2, text: '<b>Cамоочищение</b> — на ЛКП не скапливается вода, грязь, битум, дорожная сажа. Защита от дорожных реагентов, масел, ГСМУ '},
@@ -13,17 +13,17 @@ block variables
              { id: 4, text: '<b>Сохранение</b> свойств покрытия в течение 1 года с момента нанесения'},
              { id: 5, text: '<b>Новизна</b> — с керамическим покрытием автомобиль будет выглядеть, как новый'}]
     -
-        const ceramicSteps = [{ className: 'ceramic_step', id: 1, text: 'Подготовка поверхности', desc: 'Мойка, обезжиривание автомобиля, очистка ЛКП специальной глиной от остатков загрязнений', img: './assets/img/ceramic/step_1.png'},
-            { className: 'ceramic_step', id: 2, text: 'Полировка кузова', desc: 'Устранение царапин и паутины с ЛКП автомобиля', img: './assets/img/ceramic/step_2.png'},
-            { className: 'ceramic_step', id: 3, text: 'Промежуточная мойка', desc: 'Удаление остатков пасты, сушка перед нанесением керамики', img: './assets/img/ceramic/step_3.png'},
-            { className: 'ceramic_step', id: 4, text: 'Первый слой керамики', desc: 'Подкрашивание сколов в цвет автомобиля, нанесение первого слоя керамики', img: './assets/img/ceramic/step_4.png'},
-            { className: 'ceramic_step', id: 5, text: 'Сушка под лампами', desc: 'Подготовка автомобиля ко второму слоя покрытия', img: './assets/img/ceramic/step_5.png'},
-            { className: 'ceramic_step', id: 6, text: 'Второй слой керамики', desc: 'Придание авто безупречного внешнего вида и гидрофобных свойств', img: './assets/img/ceramic/step_6.png'},
-            { className: 'ceramic_step', id: 7, text: 'Финальная сушка', desc: 'Образование прочной прозрачной пленки в течение 12 часов', img: './assets/img/ceramic/step_7.png'},
-            { className: 'ceramic_step', id: 8, text: 'Выдача автомобиля клиенту', desc: 'Полная готовность через 2-е суток. Индивидуальные исключения обсуждаются перед началом работ', img: './assets/img/ceramic/step_8.png'}]
+        const ceramicSteps = [{ className: 'ceramic_step', id: 1, text: 'Подготовка поверхности', desc: 'Мойка, обезжиривание автомобиля, очистка ЛКП специальной глиной от остатков загрязнений', img: './assets/img/ceramic/step_1.webp'},
+            { className: 'ceramic_step', id: 2, text: 'Полировка кузова', desc: 'Устранение царапин и паутины с ЛКП автомобиля', img: './assets/img/ceramic/step_2.webp'},
+            { className: 'ceramic_step', id: 3, text: 'Промежуточная мойка', desc: 'Удаление остатков пасты, сушка перед нанесением керамики', img: './assets/img/ceramic/step_3.webp'},
+            { className: 'ceramic_step', id: 4, text: 'Первый слой керамики', desc: 'Подкрашивание сколов в цвет автомобиля, нанесение первого слоя керамики', img: './assets/img/ceramic/step_4.webp'},
+            { className: 'ceramic_step', id: 5, text: 'Сушка под лампами', desc: 'Подготовка автомобиля ко второму слоя покрытия', img: './assets/img/ceramic/step_5.webp'},
+            { className: 'ceramic_step', id: 6, text: 'Второй слой керамики', desc: 'Придание авто безупречного внешнего вида и гидрофобных свойств', img: './assets/img/ceramic/step_6.webp'},
+            { className: 'ceramic_step', id: 7, text: 'Финальная сушка', desc: 'Образование прочной прозрачной пленки в течение 12 часов', img: './assets/img/ceramic/step_7.webp'},
+            { className: 'ceramic_step', id: 8, text: 'Выдача автомобиля клиенту', desc: 'Полная готовность через 2-е суток. Индивидуальные исключения обсуждаются перед началом работ', img: './assets/img/ceramic/step_8.webp'}]
     -
-        const ceramicExSlider = [{ className: "ceramica_ex_item", id: 1, img: './assets/img/index/ceramica_1.png'},
-            { className: "ceramica_ex_item", id: 2, img: './assets/img/index/ceramica_2.png'}]
+        const ceramicExSlider = [{ className: "ceramica_ex_item", id: 1, img: './assets/img/index/ceramica_1.webp'},
+            { className: "ceramica_ex_item", id: 2, img: './assets/img/index/ceramica_2.webp'}]
     -
          const ceramicPrices = [{ name: 'mini', price: '28 000 — 34 000 ₽' },
              { name: 'first', price: '32 000 — 38 000 ₽' },
@@ -57,12 +57,23 @@ block main
                 b Керамическое покрытие
                 span  — это полимер, который вступает в реакцию с ЛКП автомобиля и создает на нем
                 b  прозрачную защитную пленку
-            img.info_img(src='./assets/img/ceramic/info.png', alt="")
+            img.info_img(src='./assets/img/ceramic/info.webp', alt="")
 
     section
         h2 5 причин нанести керамическое покрытие
         +points(ceramicPoints)
 
+    section
+        h2
+            span.accent Защитите
+            span  свой автомобиль
+
+        .longitude
+            .longitude_content
+                img(src='./assets/img/index/car.webp', alt="")
+
+        p Детейлинг сохранит авто в первозданном виде и защитит лакокрасочное покрытие от сколов и вмятин
+        +modalBtn('Рассчитать стоимость', 'full')
 
     section
         h2 Этапы нанесения керамики
@@ -70,9 +81,10 @@ block main
 
     section
         h2 Результаты
-        +slipper(ceramicExSlider)
-        iframe(id="ceramic_video" type="text/html" width="100%" height="100%"
-            src="https://www.youtube.com/embed/pjxQ_dzkVR8")
+        div.examples_item
+            +slipper(ceramicExSlider)
+            iframe(id="ceramic_video" type="text/html" width="100%" height="100%"
+                src="https://www.youtube.com/embed/pjxQ_dzkVR8")
 
     section
         h2 Цены

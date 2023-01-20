@@ -3,11 +3,13 @@ const slippers = ['ceramica_ex_item', 'film_ex_item', 'drycleaning_ex_item', 'to
 
 const slides = {};
 const slidesLabels = {};
+const slidesFrames = {};
 
 slippers.forEach(item => {
     if (document.querySelectorAll(`.slipper_item.${item}`).length > 0 ) {
         slides[item] = document.querySelectorAll(`.slipper_item.${item}`);
         slidesLabels[item] = document.querySelectorAll(`.slipper_controls_item.${item}`);
+        slidesFrames[item] = document.querySelectorAll(`iframe.${item}`)
     }
 });
 
@@ -17,6 +19,22 @@ Object.keys(slides).forEach((group) => {
         slide.style.transform = `translateX(${i * 100}%)`;
     });
 });
+
+// height style
+const fixHeight = () => {
+    const width = document.querySelector(`.slipper_item`).clientWidth;
+    const height = width / 16 * 9;
+
+    document.querySelectorAll(`.slipper_item`).forEach(slide => slide.style.height = `${height}px`)
+    document.querySelectorAll(`iframe`).forEach(frame => frame.style.height = `${height}px`)
+    document.querySelectorAll(`.slipper`).forEach(container => {
+        container.style.width = `${width}px`
+        container.style.height = `${height}px`
+    })
+}
+
+fixHeight();
+window.addEventListener('resize', fixHeight);
 
 const createListeners = (name) => {
     let curSlide = 0;
@@ -28,6 +46,15 @@ const createListeners = (name) => {
 
         const label = document.getElementById(`control_${name}-${newId}`)
         label.classList.add('checked')
+    }
+
+    // stop video if slide changed
+    const stopVideo = (currentSlide) => {
+        slidesFrames[name].forEach(item => {
+            if (item.id === `${name}-${currentSlide}`) {
+                item.src = item.src
+            }
+        })
     }
 
     // steps
@@ -42,6 +69,8 @@ const createListeners = (name) => {
         slides[name].forEach((slide, i) => {
             slide.style.transform = `translateX(${100 * (i - curSlide)}%)`;
         });
+
+        if (slidesFrames[name]) stopVideo(curSlide)
     };
 
     const toPrev = () => {
@@ -55,6 +84,8 @@ const createListeners = (name) => {
         slides[name].forEach((slide, i) => {
             slide.style.transform = `translateX(${100 * (i - curSlide)}%)`;
         });
+
+        if (slidesFrames[name]) stopVideo(curSlide)
     }
 
     const toCurrent = (newSlide) => {
@@ -104,3 +135,6 @@ const createListeners = (name) => {
 };
 
 Object.keys(slides).forEach(item => createListeners(item))
+
+// const frames = document.querySelectorAll('iframe');
+// frames.forEach(frame => frame.style.height = `${frame.clientWidth / 16 * 9}px`)

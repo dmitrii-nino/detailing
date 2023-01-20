@@ -6,6 +6,12 @@ modals.forEach(modal => {
     modal.addEventListener('touchmove', (event) => event.preventDefault());
 });
 
+// close modals by click on blur
+const blur = document.querySelector('.blur')
+blur.addEventListener('click', () => {
+    modals.forEach(modal => modal.classList.add('hidden'))
+})
+
 // nav by tabs
 const tabs = document.querySelectorAll('.modal_tabs_item')
 
@@ -34,19 +40,26 @@ const textInputs = document.querySelectorAll('.form_input');
 const services = document.querySelectorAll('input[name="service"]');
 const carUsed = document.querySelectorAll('input[name="used_car"]');
 const gifts = document.querySelectorAll('input[name="gift"]');
+const userAgreements = document.querySelectorAll('input[value="agree"]');
 
-    // pre added value of service
-    window.onload = () => {
-        services.forEach(item => {
-            if (window.location.pathname === '/') return null
-            if (item.value.includes( window.location.pathname.replaceAll("/","").replaceAll(".html",""))) item.checked = true
-        })
-    }
+// pre added value of service
+window.onload = () => {
+    services.forEach(item => {
+        if (window.location.pathname === '/') return null
+        if (item.value.includes(window.location.pathname
+                    .replaceAll("/","")
+                    .replaceAll(".html",""))) {
+            item.checked = true;
+            document.getElementById(`for_service`).classList.remove('disabled');
+        }
+    })
+}
 
-const onInputChange = (input, event) => {
+const onInputChange = (input, valueLength) => {
     const btn = document.getElementById(`for_${input.id}`);
+    const agreement = document.getElementById(`agree_${input.id}`);
 
-    if (event.currentTarget.value.length > 0) {
+    if (valueLength > 0 && (!agreement || agreement.checked)) {
         btn.disabled = false
         btn.classList.remove('disabled')
     }
@@ -69,7 +82,15 @@ const onSelectChange = (arr, input) => {
     }
 }
 
-textInputs.forEach(input => input.addEventListener('change', (event) => onInputChange(input, event)))
+userAgreements.forEach((agreement) => {
+    agreement.addEventListener('change', (e) => {
+        const current = document.getElementById(e.currentTarget.id.split('agree_')[1]);
+        onInputChange(current, current.value.length)
+    })
+})
+
+textInputs.forEach(input => input.addEventListener('keyup', (event) => onInputChange(input, event.currentTarget.value.length)))
+textInputs.forEach(input => input.addEventListener('change', (event) => onInputChange(input, event.currentTarget.value.length)))
 services.forEach(input => input.addEventListener('click', () => onSelectChange(services, input)))
 carUsed.forEach(input => input.addEventListener('click', () => onSelectChange(carUsed, input)))
 gifts.forEach(input => input.addEventListener('click', () => onSelectChange(gifts, input)))

@@ -7,7 +7,7 @@
     display: none;
   }
 
-  * {
+  &>div, &>p, &>button {
     z-index: 5;
   }
 }

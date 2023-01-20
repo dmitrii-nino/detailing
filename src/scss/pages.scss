@@ -9,7 +9,8 @@
   padding: 60px 20px;
   color: #FFFFFF;
   text-align: center;
-  background-image: url("../assets/img/index/primary.png");
+  background-color: gray;
+  background-image: url("../assets/img/index/primary.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -89,7 +90,7 @@
     color: #DA3831;
   }
 
-  * {
+  & h2, & p, & button {
     z-index: 5;
   }
 }
@@ -107,7 +108,7 @@
 .list {
   display: flex;
   flex-direction: column;
-  background-image: url("../assets/img/index/logo_red.png");
+  background-image: url("../assets/img/index/logo_red.webp");
   background-repeat: no-repeat;
   background-size: 40%;
   background-position: right;
@@ -156,7 +157,7 @@
         width: 48%;
       }
 
-      & > h4, & > p {
+      & > h4 {
         width: 100%;
       }
     }
@@ -256,6 +257,7 @@
       "slider content";
     margin-bottom: 16px;
     gap: 36px;
+    align-items: center;
 
       h1 {
         grid-area: header;

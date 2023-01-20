@@ -2,17 +2,17 @@ extends ./components/layout
 
 block variables
 	-
-		const services = [{"className":"services_item","id":1, link: '/ceramic.html', "text":"Керамическое покрытие","img":"./assets/img/index/services_1.png"},
-			{"className":"services_item","id":2,link: '/film.html', "text":"Оклейка защитной пленкой","img":"./assets/img/index/services_2.png"},
-			{"className":"services_item","id":3,link: '/dry_cleaning.html', "text":"Химчистка автомобиля","img":"./assets/img/index/services_3.png"},
-			{"className":"services_item","id":4,link: '/toning.html', "text":"Тонировка","img":"./assets/img/index/services_4.png"}]
+		const services = [{"className":"services_item","id":1, link: '/ceramic.html', "text":"Керамическое покрытие","img":"./assets/img/index/services_1.webp"},
+			{"className":"services_item","id":2,link: '/film.html', "text":"Оклейка защитной пленкой","img":"./assets/img/index/services_2.webp"},
+			{"className":"services_item","id":3,link: '/dry_cleaning.html', "text":"Химчистка автомобиля","img":"./assets/img/index/services_3.webp"},
+			{"className":"services_item","id":4,link: '/toning.html', "text":"Тонировка","img":"./assets/img/index/services_4.webp"}]
 	-
-		const ceramicExSlider = [{ className:"ceramica_ex_item", id: 1, img: './assets/img/index/ceramica_1.png'},
-			{ className: "ceramica_ex_item", id: 2, img: './assets/img/index/ceramica_2.png'}]
+		const ceramicExSlider = [{ className:"ceramica_ex_item", id: 1, img: './assets/img/index/ceramica_1.webp'},
+			{ className: "ceramica_ex_item", id: 2, img: './assets/img/index/ceramica_2.webp'}]
 	-
-		const filmExSlider = [{className: "film_ex_item", id: 1, img: './assets/img/index/film_1.png'},
-			{className: "film_ex_item", id: 2, img: './assets/img/index/film_2.png'},
-			{className: "film_ex_item", id: 3, img: './assets/img/index/film_3.png'}]
+		const filmExSlider = [{className: "film_ex_item", id: 1, img: './assets/img/index/film_1.webp'},
+			{className: "film_ex_item", id: 2, img: './assets/img/index/film_2.webp'},
+			{className: "film_ex_item", id: 3, img: './assets/img/index/film_3.webp'}]
 	-
 		const filmVideoSlider = [{ className: "film_video_item", id: 1, src: 'https://www.youtube.com/embed/QUHaj6jPBos'},
 			{ className: "film_video_item", id: 2, src: 'https://www.youtube.com/embed/VzKPZIpGQvk'},
@@ -21,13 +21,13 @@ block variables
 			{ className: "film_video_item", id: 5, src: 'https://www.youtube.com/embed/IC7LhgvKpSE'},
 			{ className: "film_video_item", id: 6, src: 'https://www.youtube.com/embed/4zM405lkW5o'}]
 	-
-		const drycleaningExSlider = [{className: "drycleaning_ex_item", id: 1, img: './assets/img/index/drycleaning_1.png'},
-			{className: "drycleaning_ex_item", id: 2, img: './assets/img/index/drycleaning_2.png'},
-			{className: "drycleaning_ex_item", id: 3, img: './assets/img/index/drycleaning_3.png'},]
+		const drycleaningExSlider = [{className: "drycleaning_ex_item", id: 1, img: './assets/img/index/drycleaning_1.webp'},
+			{className: "drycleaning_ex_item", id: 2, img: './assets/img/index/drycleaning_2.webp'},
+			{className: "drycleaning_ex_item", id: 3, img: './assets/img/index/drycleaning_3.webp'},]
 	-
-		const toningExSlider = [{className: "toning_ex_item", id: 1, img: './assets/img/index/toning_1.png'},
-			{className: "toning_ex_item", id: 2, img: './assets/img/index/toning_2.png'},
-			{className: "toning_ex_item", id: 3, img: './assets/img/index/toning_3.png'},]
+		const toningExSlider = [{className: "toning_ex_item", id: 1, img: './assets/img/index/toning_1.webp'},
+			{className: "toning_ex_item", id: 2, img: './assets/img/index/toning_2.webp'},
+			{className: "toning_ex_item", id: 3, img: './assets/img/index/toning_3.webp'},]
 block main
 	section.index
 		div(class='frame primary_title')
@@ -55,7 +55,7 @@ block main
 
 		.longitude
 			.longitude_content
-				img(src='./assets/img/index/car.png', alt="")
+				img(src='./assets/img/index/car.webp', alt="")
 
 		p Детейлинг сохранит авто в первозданном виде и защитит лакокрасочное покрытие от сколов и вмятин
 		+modalBtn('Рассчитать стоимость', 'full')
@@ -75,6 +75,7 @@ block main
 		div.examples_item
 			h4 Оклейка защитной пленкой
 			p Пример того, как пленка защитила корпус автомобиля после ДТП
+			p
 			+slipper(filmExSlider)
 			+videoSlipper(filmVideoSlider)
 
@@ -92,11 +93,11 @@ block main
 		div(class='promotion frame')
 			h2 Акция!
 			div(class='promotion_img frame')
-				img(src='./assets/img/index/primary.png', alt="")
-			p Запишитесь на
-				b  бексплатную мойку-консультацию
+				img(src='./assets/img/index/primary.webp', alt="")
+			p Оставьте
+				b  заявку на консультацию
 				span  и получите
-				b  полировку фар за X.XXX ₽
+				b  купон на 2000 ₽ на оклейку фар
 			+modalBtn('Записаться', 'full')
 
-			img.promotion_bg(src='./assets/img/index/promo.png', alt="")
+			img.promotion_bg(src='./assets/img/index/promo.webp', alt="")

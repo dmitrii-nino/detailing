@@ -7,7 +7,7 @@ const slidesControls = {};
 const slidesLabels = {};
 const slidesArrows = {};
 
-const slidesFrames = {};
+// const slidesFrames = {};
 
 sliders.forEach(item => {
     slides[item] = document.querySelectorAll(`.slider_item.${item}`);
@@ -15,7 +15,7 @@ sliders.forEach(item => {
     slidesLabels[item] = document.querySelectorAll(`.slider_controls_item.${item}`);
     slidesArrows[item] = document.querySelectorAll(`.slider_arrow.${item}`);
 
-    slidesFrames[item] = document.querySelectorAll(`.frame.${item}`)
+    // slidesFrames[item] = document.querySelectorAll(`.frame.${item}`)
 });
 
 const createListeners = (name) => {
@@ -31,14 +31,14 @@ const createListeners = (name) => {
         item.addEventListener('click', () => changeLabels(item.id.split('-')[1]))
     })
 
-    // если в слайдере видос - переназначаем сурс для остановки видео
-    const stopVideo = (currentSlide) => {
-        slidesFrames[name].forEach(item => {
-            if (item.id === `${name}-${currentSlide}`) {
-                item.src = item.src
-            }
-        })
-    }
+    // // если в слайдере видос - переназначаем сурс для остановки видео
+    // const stopVideo = (currentSlide) => {
+    //     slidesFrames[name].forEach(item => {
+    //         if (item.id === `${name}-${currentSlide}`) {
+    //             item.src = item.src
+    //         }
+    //     })
+    // }
 
     // событие prev
     const goPrev = (currentSlide) => {
@@ -58,7 +58,7 @@ const createListeners = (name) => {
             })
         }
 
-        if (slidesFrames[name]) stopVideo(currentSlide)
+        // if (slidesFrames[name]) stopVideo(currentSlide)
     }
 
     // событие next
@@ -79,7 +79,7 @@ const createListeners = (name) => {
             })
         }
 
-        if (slidesFrames[name]) stopVideo(currentSlide)
+        // if (slidesFrames[name]) stopVideo(currentSlide)
     }
 
     // стрелки управления

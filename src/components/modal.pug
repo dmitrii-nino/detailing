@@ -40,11 +40,13 @@ block modal
             const current = modalBlocks.indexOf(id)
 
             if (id === 'min_phone_number') {
+                ym(91958676, 'reachGoal', 'lead');
                 localStorage.setItem('phone_number', document.getElementById(id).value);
                 onSubmit();
                 closeModal('min');
             }
             if (id === 'phone_number') {
+                ym(91958676, 'reachGoal', 'lead');
                 localStorage.setItem(id, document.getElementById(id).value);
                 onSubmit();
                 nextModal(id, current);
@@ -53,6 +55,7 @@ block modal
                 closeModal('full');
             }
             else {
+                ym(91958676, 'reachGoal', 'next');
                 if (id === 'car_model') localStorage.setItem(id, document.getElementById(id).value);
                 if (id === 'used_car' || id === 'gift') localStorage.setItem(id, document.querySelector(`input[name=${id}]:checked`).value);
                 if (id === 'service') localStorage.setItem(id, Array.from(document.querySelectorAll(`input[type=checkbox]:checked`)).map(item => item.value));

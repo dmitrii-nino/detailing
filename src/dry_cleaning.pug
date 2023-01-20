@@ -2,19 +2,19 @@ extends components/layout
 
 block variables
     -
-        const drycleaningPrimarySlider = [{ className: "drycleaning_title", id: 1, img: './assets/img/dry_cleaning/primary_1.png'},
-            { className: "drycleaning_title", id: 2, img: './assets/img/dry_cleaning/primary_2.png'},
-            { className: "drycleaning_title", id: 3, img: './assets/img/dry_cleaning/primary_3.png'},
-            { className: "drycleaning_title", id: 4, img: './assets/img/dry_cleaning/primary_4.png'}]
+        const drycleaningPrimarySlider = [{ className: "drycleaning_title", id: 1, img: './assets/img/dry_cleaning/primary_1.webp'},
+            { className: "drycleaning_title", id: 2, img: './assets/img/dry_cleaning/primary_2.webp'},
+            { className: "drycleaning_title", id: 3, img: './assets/img/dry_cleaning/primary_3.webp'},
+            { className: "drycleaning_title", id: 4, img: './assets/img/dry_cleaning/primary_4.webp'}]
     -
-        const drycleaningCards = [{ header: 'пятна', text: `Следы от пищи, косметических средств`, icon: './assets/img/cards/spot.png'},
-            { header: 'сложные загрязнения', text: `Въевшиеся следы от табака, масла, дорожной химии, соли`, icon: './assets/img/cards/hand.png'},
-            { header: 'запах', text: `Придание салону свежести озона`, icon: './assets/img/cards/smell.png'},
-            { header: 'бактерии', text: `Обработка салона дезинфецирующими средствами`, icon: './assets/img/cards/cross.png'},]
+        const drycleaningCards = [{ header: 'пятна', text: `Следы от пищи, косметических средств`, icon: './assets/img/cards/spot.webp'},
+            { header: 'сложные загрязнения', text: `Въевшиеся следы от табака, масла, дорожной химии, соли`, icon: './assets/img/cards/hand.webp'},
+            { header: 'запах', text: `Придание салону свежести озона`, icon: './assets/img/cards/smell.webp'},
+            { header: 'бактерии', text: `Обработка салона дезинфецирующими средствами`, icon: './assets/img/cards/cross.webp'},]
     -
-        const drycleaningExSlider = [{ className: "drycleaning_ex_item", id: 1, img: './assets/img/index/drycleaning_1.png'},
-            { className: "drycleaning_ex_item", id: 2, img: './assets/img/index/drycleaning_2.png'},
-            { className: "drycleaning_ex_item", id: 3, img: './assets/img/index/drycleaning_3.png'}]
+        const drycleaningExSlider = [{ className: "drycleaning_ex_item", id: 1, img: './assets/img/index/drycleaning_1.webp'},
+            { className: "drycleaning_ex_item", id: 2, img: './assets/img/index/drycleaning_2.webp'},
+            { className: "drycleaning_ex_item", id: 3, img: './assets/img/index/drycleaning_3.webp'}]
     -
         const drycleaningPrices = [{ name: 'mini', price: '12 000 ₽' },
             { name: 'first', price: '14 000 ₽' },
@@ -73,9 +73,10 @@ block main
 
     section
         h2 Результаты
-        +slipper(drycleaningExSlider)
-        iframe(id="dry-cleaning_video" type="text/html" width="100%" height="100%"
-            src="https://www.youtube.com/embed/38e4AXi-UF4")
+        div.examples_item
+            +slipper(drycleaningExSlider)
+            iframe(id="dry-cleaning_video" type="text/html" width="100%" height="100%"
+                src="https://www.youtube.com/embed/38e4AXi-UF4")
 
     section
         h2 Цены
@@ -84,21 +85,15 @@ block main
         +modalBtn('Рассчитать стоимость', 'full')
 
     section
-        h2 Таблица с ценами
-
-        p Возможна поэлементная химчистка
-            span.accent  от 200 ₽
-
-        p Со стоимостью вы можете
-            a.link(href='prices_dry_cleaning.html')   ознакомиться здесь >>
-
-    section
         h2 При химчистке мы используем
         div.usage
-            img(src='./assets/img/dry_cleaning/brand_1.png', alt="")
-            img(src='./assets/img/dry_cleaning/brand_2.png', alt="")
-            img(src='./assets/img/dry_cleaning/brand_3.png', alt="")
-            img(src='./assets/img/dry_cleaning/brand_4.png', alt="")
+            img(src='./assets/img/dry_cleaning/brand_1.webp', alt="")
+            img(src='./assets/img/dry_cleaning/brand_2.webp', alt="")
+            img(src='./assets/img/dry_cleaning/brand_3.webp', alt="")
+            img(src='./assets/img/dry_cleaning/brand_4.webp', alt="")
+
+    section
+        a.btn(href='prices_dry_cleaning.html' style='color: #fff') Таблица с ценами
 
     include ./components/advantages
 

@@ -16,14 +16,14 @@ mixin form(step)
                     h4 Автомобиль новый, или с пробегом?
 
                     div.row
-                        input.input_radio(type='radio' name='used_car' id='new' value='new')
-                        label(for='new') Новый, без пробега
+                        input.input_radio(type='radio' name='used_car' id='new_car' value='new_car')
+                        label(for='new_car') Новый, без пробега
                     div.row
-                        input.input_radio(type='radio' name='used_car' id='less3' value='less3')
-                        label(for='less3') С небольшим пробегом (до 3 тыс.)
+                        input.input_radio(type='radio' name='used_car' id='less_than_3' value='less_than_3')
+                        label(for='less_than_3') С небольшим пробегом (до 3 тыс.)
                     div.row
-                        input.input_radio(type='radio' name='used_car' id='more3' value='more3')
-                        label(for='more3') С пробегом (больше 3 тыс.)
+                        input.input_radio(type='radio' name='used_car' id='more_than_3' value='more_than_3')
+                        label(for='more_than_3') С пробегом (больше 3 тыс.)
 
                 div.row
                     button(class='btn prev' onclick=`toPrev('used_car')`) Назад
@@ -65,14 +65,14 @@ mixin form(step)
                     h4 Подарок
 
                     div.row
-                        input.input_radio(type='radio' name='gift' id='2k' value='2k')
-                        label(for='2k') Купон 2.000 ₽ на оклейку фар
+                        input.input_radio(type='radio' name='gift' id='coupon' value='coupon')
+                        label(for='coupon') Купон 2.000 ₽ на оклейку фар
                     div.row
-                        input.input_radio(type='radio' name='gift' id='moika' value='moika')
-                        label(for='moika') Бесплатная мойка-консультация
+                        input.input_radio(type='radio' name='gift' id='washing' value='washing')
+                        label(for='washing') Мойка Премиум за 1900 ₽
                     div.row
                         input.input_radio(type='radio' name='gift' id='antirain' value='antirain')
-                        label(for='antirain') Антидождь стекол
+                        label(for='antirain') Антидождь
 
                 div.row
                     button(class='btn prev' onclick=`toPrev('gift')`) Назад
@@ -85,6 +85,12 @@ mixin form(step)
                     h4 Чтобы закрепить за собой подарок — оставьте ваш номер телефона ☎️
 
                     input(class='input form_input' type='tel' id='phone_number')
+
+                    div.row
+                        input.input_check(type='checkbox' id='agree_phone_number' value='agree' checked)
+                        label(for='agree_phone_number')
+                            div(style='display: grid') Заполняя форму, я принимаю
+                                a(target="_blank" href='/user_agreement.html' style='text-decoration: underline') условия передачи информации
 
                 div.row
                     button(class='btn prev' onclick=`toPrev('phone_number')`) Назад
@@ -110,4 +116,12 @@ mixin form(step)
 
                     input(class='input form_input' type='tel' id='min_phone_number')
                     span * Если заявка пришла после 9 вечера — перезвоним в 10 утра на следующий день
+
+                    div.row
+                        input.input_check(type='checkbox' id='agree_min_phone_number' value='agree' checked)
+
+                        label(for='agree_min_phone_number')
+                            div(style='display: grid') Заполняя форму, я принимаю
+                                a(target="_blank" href='/user_agreement.html' style='text-decoration: underline') условия передачи информации
+
                 button(class=`btn disabled` disabled id='for_min_phone_number' onclick=`toNext('min_phone_number')`) Отправить заявку

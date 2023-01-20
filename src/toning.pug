@@ -2,24 +2,24 @@ extends components/layout
 
 block variables
     -
-        const toningPrimarySlider = [{ className: "toning_title", id: 1, img: './assets/img/toning/primary_1.png'},
-            { className: "toning_title", id: 2, img: './assets/img/toning/primary_2.png'},
-            { className: "toning_title", id: 3, img: './assets/img/toning/primary_3.png'},
-            { className: "toning_title", id: 4, img: './assets/img/toning/primary_4.png'}]
+        const toningPrimarySlider = [{ className: "toning_title", id: 1, img: './assets/img/toning/primary_1.webp'},
+            { className: "toning_title", id: 2, img: './assets/img/toning/primary_2.webp'},
+            { className: "toning_title", id: 3, img: './assets/img/toning/primary_3.webp'},
+            { className: "toning_title", id: 4, img: './assets/img/toning/primary_4.webp'}]
     -
         const toningPoints = [{ id: 1, text: '<b>Защита</b> обивки салона от выгорания на солнце'},
             { id: 2, text: '<b>Создание личного пространства</b>, вам станет комфортнее находиться внутри салона'},
             { id: 3, text: '<b>Укрепление</b> стекол от сколов и ударов'},
             { id: 4, text: '<b>Конфиденциальность:</b> тонировка боковых и задних стекол снижает привлекательность ТС для злоумышленников, скрывая от посторонних глаз вещи, оставленные внутри'}]
     -
-        const toningSteps = [{ className: 'toning_step', id: 1, text: 'Приём автомобиля', desc: 'Мойка и обезжиривание автомобиля', img: './assets/img/toning/step_1.png'},
-            { className: 'toning_step', id: 2, text: 'Подготовка пленки', desc: 'Определяемся с материалом тонировки', img: './assets/img/toning/step_2.png'},
-            { className: 'toning_step', id: 3, text: 'Установка пленки', desc: 'В зависимости от выбранного материала и объема работ тонирование занимает от 1 до 3 часов', img: './assets/img/toning/step_3.png'},
-            { className: 'toning_step', id: 4, text: 'Выдача автомобиля клиенту', desc: 'Чистится ЛКП с помощью специальной глины, обезжиривание поверхностипервого слоя керамики', img: './assets/img/toning/step_4.png'}]
+        const toningSteps = [{ className: 'toning_step', id: 1, text: 'Приём автомобиля', desc: 'Мойка и обезжиривание автомобиля', img: './assets/img/toning/step_1.webp'},
+            { className: 'toning_step', id: 2, text: 'Подготовка пленки', desc: 'Определяемся с материалом тонировки', img: './assets/img/toning/step_2.webp'},
+            { className: 'toning_step', id: 3, text: 'Установка пленки', desc: 'В зависимости от выбранного материала и объема работ тонирование занимает от 1 до 3 часов', img: './assets/img/toning/step_3.webp'},
+            { className: 'toning_step', id: 4, text: 'Выдача автомобиля клиенту', desc: 'Чистится ЛКП с помощью специальной глины, обезжиривание поверхностипервого слоя керамики', img: './assets/img/toning/step_4.webp'}]
     -
-        const toningExSlider = [{ className: "toning_ex_item", id: 1, img: './assets/img/index/toning_1.png'},
-            { className: "toning_ex_item", id: 2, img: './assets/img/index/toning_2.png'},
-            { className: "toning_ex_item", id: 3, img: './assets/img/index/toning_3.png'}]
+        const toningExSlider = [{ className: "toning_ex_item", id: 1, img: './assets/img/index/toning_1.webp'},
+            { className: "toning_ex_item", id: 2, img: './assets/img/index/toning_2.webp'},
+            { className: "toning_ex_item", id: 3, img: './assets/img/index/toning_3.webp'}]
     -
         const toningPrices = [{ name: 'mini', price: 'от 3 500 ₽' },
             { name: 'first', price: 'от 4 000 ₽' },
@@ -42,7 +42,7 @@ block main
         div.main_content
             p Обеспечьте дополнительную
                 b  безопасность автомобилю
-                span  с помощью тонировки стекол и получите мойку в подарок
+                span  с помощью тонировки стекол
 
             +modalBtn('Рассчитать стоимость', 'full')
 
@@ -64,15 +64,15 @@ block main
         div.info_box
             div(class='cards_item frame')
                 h4 атермальная
-                img.frame(src='./assets/img/toning/types_1.png')
+                img.frame(src='./assets/img/toning/types_1.webp')
                 p Прозрачная пленка для защиты салона от выгорания, разрешена ГОСТом
             div(class='cards_item frame')
                 h4 тонирующая
-                img.frame(src='./assets/img/toning/types_2.png')
+                img.frame(src='./assets/img/toning/types_2.webp')
                 p Темная пленка для защиты салона от солнечных лучей и посторонних глаз
             div(class='cards_item frame')
                 h4 бронирующая
-                img.frame(src='./assets/img/toning/types_3.png')
+                img.frame(src='./assets/img/toning/types_3.webp')
                 p Прозрачная пленка для защиты пассажиров от осколков стекла при аварии и для предотвращения проникновения. Бронированное стекло противостоит ударам кулаками, ногами, камнями и палками.
 
     section
@@ -90,24 +90,18 @@ block main
         +modalBtn('Рассчитать стоимость', 'full')
 
     section
-        h2 Таблица с ценами
-
-        p Возможна поэлементная оклейка тонирующей пленкой
-            span.accent  от 200 ₽
-
-        p Со стоимостью вы можете
-            a.link(href='prices_toning.html')  ознакомиться здесь >>
-
-    section
         h2 Бренды тонировочных пленок
         div.usage
-            img(src='./assets/img/toning/brand_1.png', alt="")
-            img(src='./assets/img/toning/brand_2.png', alt="")
-            img(src='./assets/img/toning/brand_3.png', alt="")
-            img(src='./assets/img/toning/brand_4.png', alt="")
-            img(src='./assets/img/toning/brand_5.png', alt="")
-            img(src='./assets/img/toning/brand_6.png', alt="")
-            img(src='./assets/img/toning/brand_7.png', alt="")
+            img(src='./assets/img/toning/brand_1.webp', alt="")
+            img(src='./assets/img/toning/brand_2.webp', alt="")
+            img(src='./assets/img/toning/brand_3.webp', alt="")
+            img(src='./assets/img/toning/brand_4.webp', alt="")
+            img(src='./assets/img/toning/brand_5.webp', alt="")
+            img(src='./assets/img/toning/brand_6.webp', alt="")
+            img(src='./assets/img/toning/brand_7.webp', alt="")
+
+    section
+        a.btn(href='prices_toning.html' style='color: #fff') Таблица с ценами
 
     include ./components/advantages
 
