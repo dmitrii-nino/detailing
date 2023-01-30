@@ -14,8 +14,13 @@
     text-align: center;
     border-radius: 10px;
 
-    img {
-      //max-width: 100%;
+    &_img {
+      flex: 1;
+      display: flex;
+
+      & img {
+        min-width: 100%;
+      }
     }
   }
 }
@@ -29,12 +34,16 @@
     &_item {
       padding: 18px;
       max-width: 48%;
+      min-width: 48%;
     }
   }
 }
 
 @media (min-width: 1240px) {
   .prices {
-    flex-wrap: nowrap;
+
+    &_item {
+      max-width: 25%;
+    }
   }
 }

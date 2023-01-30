@@ -30,9 +30,16 @@
 mixin prices(items)
     div.prices
         each item in items
-            - const {header, img, text} = pricesList[item.name]
+            - if (item.name && pricesList[item.name])
                 div(class='prices_item frame')
-                    h4=header
-                    img(src=img alt="#")
-                    p!=text
+                    h4=pricesList[item.name].header
+                    img(src=pricesList[item.name].img alt="#")
+                    p!=pricesList[item.name].text
+                    h4.accent=item.price
+            - else
+                div(class='prices_item frame')
+                    h4=item.header
+                    div(class='frame prices_item_img')
+                        img(src=item.img alt="#")
+                    p!=item.text
                     h4.accent=item.price

@@ -22,7 +22,10 @@ Object.keys(slides).forEach((group) => {
 
 // height style
 const fixHeight = () => {
-    const width = document.querySelector(`.slipper_item`).clientWidth;
+    const slipper = document.querySelector(`.slipper_item`);
+    if (!slipper) return
+
+    const width = slipper.clientWidth;
     const height = width / 16 * 9;
 
     document.querySelectorAll(`.slipper_item`).forEach(slide => slide.style.height = `${height}px`)

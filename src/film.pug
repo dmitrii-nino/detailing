@@ -31,11 +31,12 @@ block variables
             {className: "film_video_item", id: 5, src: 'https://www.youtube.com/embed/IC7LhgvKpSE'},
             {className: "film_video_item", id: 6, src: 'https://www.youtube.com/embed/4zM405lkW5o'}]
     -
-        const filmPrices = [{ name: 'mini', price: '28 000 — 34 000 ₽' },
-            { name: 'first', price: '32 000 — 38 000 ₽' },
-            { name: 'second', price: '36 000 — 42 000 ₽' },
-            { name: 'business', price: '44 000 — 50 000 ₽' },
-            { name: 'grand', price: '54 000 — 60 000 ₽' }]
+        const filmPrices = [{ price: 'от 2 800 ₽', header: 'Фары', img: './assets/img/film/film_lights.webp' },
+            { price: 'от 19 000 ₽', header: 'Пакет минимальный', img: './assets/img/film/film_min.webp' },
+            { price: 'от 34 000 ₽', header: 'Пакет средний', img: './assets/img/film/film_midl.webp' },
+            { price: 'от 49 000 ₽', header: 'Пакет максимальный', img: './assets/img/film/film_max.webp' },
+            { price: 'от 99 000 ₽', header: 'Полная оклейка', img: './assets/img/film/film_full.webp' }
+        ]
     -
         const filmFAQ = [{ header: 'Какой срок эксплуатации пленки?', body: 'На все пленки действует гарантия производителя от 5 до 10 лет. При должном уходе пленка прослужит максимально долго.'},
             { header: 'Изменится ли внешний вид авто после оклейки?', body: 'Пленку на автомобиле невозможно заметить невооруженным глазом, поэтому внешний вид авто никак не изменится. Автомобиль станет лучше выглядеть за счет грязеотталкивающего свойства пленки.'},
@@ -90,6 +91,14 @@ block main
         div.examples_item
             +slipper(filmExSlider)
             +videoSlipper(filmVideoSlider)
+
+    section
+        h2 Пленки, которые мы используем
+        div.usage
+            img(src='./assets/img/film/brand_1.webp', alt="")
+            img(src='./assets/img/film/brand_2.webp', alt="")
+            img(src='./assets/img/film/brand_3.webp', alt="")
+            img(src='./assets/img/film/brand_4.webp', alt="")
 
     section
         h2 Цены

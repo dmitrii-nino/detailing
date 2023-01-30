@@ -1,0 +1,75 @@
+extends components/layout
+
+block variables
+    -
+        const glassSteps = [{ className: 'glass_step', id: 1, text: 'Подготавливаем  участок', desc: 'Проверяем наличие скрытых повреждений', img: './assets/img/glass/step_1.webp'},
+            { className: 'glass_step', id: 2, text: 'Ремонт скола, трещины', desc: 'Заполняем повреждение полимером и сушим стекло под UV лампами', img: './assets/img/glass/step_2.webp'},
+            { className: 'glass_step', id: 3, text: 'Финальная проверка', desc: 'Удаляем излишки полимера', img: './assets/img/glass/step_3.webp'},
+            { className: 'glass_step', id: 4, text: 'Выдача автомобиля клиенту', desc: '', img: './assets/img/glass/step_4.webp'}]
+    -
+        const glassPrices = [{ price: 'от 1 200 ₽', header: 'Скол-глаз', img: './assets/img/glass/type_1.webp' },
+            { price: 'от 1 500 ₽', header: 'Скол-звезда', img: './assets/img/glass/type_2.webp' },
+            { price: 'от 2 000 ₽', header: 'Двойной скол', img: './assets/img/glass/type_3.webp' },
+            { price: 'от 2 000 ₽', header: 'Скол радиальный', img: './assets/img/glass/type_4.webp' },
+            { price: 'от 1 500 ₽', header: 'Трещина до 20 см', img: './assets/img/glass/type_5.webp' },
+            { price: 'от 2 000 ₽', header: 'Трещина 20-40 см', img: './assets/img/glass/type_6.webp' },
+            { price: 'от 2 500 ₽', header: 'Трещина более 40 см', img: './assets/img/glass/type_7.webp' },
+            { price: 'от 2 000 ₽', header: 'Трещина со сколом', img: './assets/img/glass/type_8.webp' },];
+    -
+        const glassFAQ = [{
+                header: 'Сколько по времени длится ремонт стекла?',
+                body: 'Время ремонта зависит от вида трещины и скола. На мелкие повреждения уходит около 20-30 минут. Более серьезные ремонтируем за 40-60 минут.'
+            },
+            {
+                header: 'Какие гарантии?',
+                body: 'Любой ремонт стекла — это отсрочка его замены, поэтому на данный вид работы гарантия не выдается.'
+            },
+            {
+                header: 'Что делать после появления трещины на лобовом стекле?',
+                body: 'Сперва надо заклеить её скотчем, чтобы туда не попали грязь и песок с дороги. И уже потом ехать в автоцентр. Чем чище трещина — тем лучше будет ремонт.'
+            },
+            {
+                header: 'Ремонт стекла делается изнутри или снаружи машины?',
+                body: 'ОЛобовое стекло в машине состоит из двух частей. При трещинах и сколах повреждается верхний слой. Поэтому стекло ремонтируются снаружи авто.'
+            },
+            {
+                header: 'Повредится ли при ремонте обогрев стекла? ',
+                body: 'Нет, он не повреждается.'
+            }]
+
+block main
+    section.main
+        h1 Ремонт стекла
+        div.glass
+            img.frame(src='./assets/img/glass/primary.webp')
+
+        div.main_content
+            p Отремонтируйте
+                b  трещину или любой вид сколов
+                span  на стекле в срочном порядке
+                b  от 500₽
+
+            +modalBtn('Оставить заявку', 'full')
+
+    section
+        h2 Результаты
+        div.glass
+            img.frame(src='./assets/img/glass/result.webp')
+
+    section
+        h2 Этапы оклейки
+        +carousel(glassSteps)
+
+    section
+        h2 Цены
+        +prices(glassPrices)
+
+        h4 Дополнительный скол — скидка на ремонт 50%
+
+        +modalBtn('Рассчитать стоимость', 'full')
+
+    include ./components/advantages
+
+    section
+        h2 Популярные вопросы
+        +spoiler(glassFAQ)

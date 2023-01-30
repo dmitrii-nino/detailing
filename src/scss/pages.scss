@@ -105,6 +105,17 @@
   }
 }
 
+.glass {
+  display: flex;
+  max-height: 450px;
+  max-width: 900px;
+  margin: 0 auto;
+
+  & img {
+    max-height: none;
+  }
+}
+
 .list {
   display: flex;
   flex-direction: column;
@@ -264,7 +275,7 @@
         text-align: left;
       }
 
-     .slider, .slipper {
+     .slider, .slipper, .glass {
        grid-area: slider;
        max-width: 40vw;
       }
