@@ -1,30 +1,37 @@
-- const modalBlocks = ['car_model', 'used_car', 'service', 'gift', 'phone_number', 'final']
+-
+    const modalBlocks = {
+        full: ['car_model', 'used_car', 'service', 'phone_number', 'final'],
+        gift: ['car_model', 'used_car', 'service', 'gift', 'phone_number', 'final']
+    }
 
 block modal
     script.
-        const modalBlocks = ['car_model', 'used_car', 'service', 'gift', 'phone_number', 'final'];
+        const modalBlocks = {
+            full: ['car_model', 'used_car', 'service', 'phone_number', 'final'],
+            gift: ['car_model', 'used_car', 'service', 'gift', 'phone_number', 'final']
+        };
 
-        const nextModal = (id, current) => {
-            document.querySelector(`.modal_content.${id}`).classList.add('hidden')
-            document.querySelector(`.modal_content.${modalBlocks[current + 1]}`).classList.remove('hidden')
-            document.getElementById(`tab-${current}`).classList.remove('checked')
-            document.getElementById(`tab-${current + 1}`).classList.add('checked')
+        const nextModal = (id, current, type) => {
+            Array.from(document.querySelectorAll(`.modal_content.${id}`)).map(item => item.classList.add('hidden'));
+            Array.from(document.querySelectorAll(`.modal_content.${modalBlocks[type][current + 1]}`)).map(item => item.classList.remove('hidden'))
+            document.getElementById(`tab-${type}-${current}`).classList.remove('checked')
+            document.getElementById(`tab-${type}-${current + 1}`).classList.add('checked')
         }
 
-        const closeModal = (size) => {
-            document.querySelector(`.modal_content.final`).classList.add('hidden')
-            document.querySelector(`.modal_content.car_model`).classList.remove('hidden')
-            document.getElementById(`tab-${modalBlocks.length - 1}`).classList.remove('checked')
-            document.getElementById(`tab-0`).classList.add('checked')
+        const closeModal = (type) => {
+            Array.from(document.querySelectorAll(`.modal_content.final`)).map(item => item.classList.add('hidden'))
+            Array.from(document.querySelectorAll(`.modal_content.car_model`)).map(item => item.classList.remove('hidden'))
+            document.getElementById(`tab-${type}-${modalBlocks[type].length - 1}`).classList.remove('checked')
+            document.getElementById(`tab-${type}-0`).classList.add('checked')
 
             document.querySelector(`.modal.blur`).classList.add("hidden")
-            document.querySelector(`.modal.${size}`).classList.add("hidden")
+            document.querySelector(`.modal.${type}`).classList.add("hidden")
         }
 
-        const onSubmit = () => {
-            const data = {};
+        const onSubmit = (type) => {
+            const data = { application_type: type };
 
-            modalBlocks.forEach(item => {
+            modalBlocks[type].forEach(item => {
                 if (item !== 'final') data[item] = localStorage.getItem(item)
             })
 
@@ -36,41 +43,43 @@ block modal
             localStorage.clear();
         }
 
-        const toNext = (id) => {
-            const current = modalBlocks.indexOf(id)
+        const toNext = (index, type) => {
+            const id = `${type}_` + index
+            const current = modalBlocks[type].indexOf(index)
 
-            if (id === 'min_phone_number') {
+            if (index === 'min_phone_number') {
                 ym(91958676, 'reachGoal', 'lead');
                 localStorage.setItem('phone_number', document.getElementById(id).value);
-                onSubmit();
+                onSubmit(type);
                 closeModal('min');
             }
-            if (id === 'phone_number') {
+            if (index === 'phone_number') {
                 ym(91958676, 'reachGoal', 'lead');
-                localStorage.setItem(id, document.getElementById(id).value);
-                onSubmit();
-                nextModal(id, current);
+                localStorage.setItem(index, document.getElementById(id).value);
+                onSubmit(type);
+                nextModal(index, current, type);
             }
-            else if (id === 'final') {
-                closeModal('full');
+            else if (index === 'final') {
+                closeModal(type);
             }
             else {
                 ym(91958676, 'reachGoal', 'next');
-                if (id === 'car_model') localStorage.setItem(id, document.getElementById(id).value);
-                if (id === 'used_car' || id === 'gift') localStorage.setItem(id, document.querySelector(`input[name=${id}]:checked`).value);
-                if (id === 'service') localStorage.setItem(id, Array.from(document.querySelectorAll(`input[type=checkbox]:checked`)).map(item => item.value));
-                nextModal(id, current);
+                if (index === 'car_model') localStorage.setItem(index, document.getElementById(id).value);
+                if (index === 'used_car' || id === 'gift') localStorage.setItem(index, document.querySelector(`input[name=${id}]:checked`).value);
+                if (index === 'service') localStorage.setItem(index, Array.from(document.querySelectorAll(`input[name=${id}]:checked`)).map(item => item.value));
+                nextModal(index, current, type);
             }
 
         }
 
-        const toPrev = (id) => {
-            const current = modalBlocks.indexOf(id);
+        const toPrev = (index, type) => {
+            const id = `${type}_` + index
+            const current = modalBlocks[type].indexOf(index);
 
-            document.querySelector(`.modal_content.${id}`).classList.add('hidden')
-            document.querySelector(`.modal_content.${modalBlocks[current - 1]}`).classList.remove('hidden')
-            document.getElementById(`tab-${current}`).classList.remove('checked')
-            document.getElementById(`tab-${current - 1}`).classList.add('checked')
+            Array.from(document.querySelectorAll(`.modal_content.${index}`)).map(item => item.classList.add('hidden'))
+            Array.from(document.querySelectorAll(`.modal_content.${modalBlocks[type][current - 1]}`)).map(item => item.classList.remove('hidden'))
+            document.getElementById(`tab-${type}-${current}`).classList.remove('checked')
+            document.getElementById(`tab-${type}-${current - 1}`).classList.add('checked')
         }
 
     div(class='modal blur hidden')
@@ -79,12 +88,23 @@ block modal
         div.modal_close(data-value='full')
             img(src='./assets/icons/cross.svg')
 
-        each block,i in modalBlocks
-            +form(block)
+        each block,i in modalBlocks.full
+            +form(block, 'full')
 
         div.modal_tabs
-            - for (let i = 0; i < modalBlocks.length; i++)
-                label(class=`modal_tabs_item full ${i === 0 && 'checked'}` id=`tab-${i}`)
+            - for (let i = 0; i < modalBlocks.full.length; i++)
+                label(class=`modal_tabs_item full ${i === 0 && 'checked'}` id=`tab-full-${i}`)
+
+    div(class='modal gift hidden')
+        div.modal_close(data-value='gift')
+            img(src='./assets/icons/cross.svg')
+
+        each block,i in modalBlocks.gift
+            +form(block, 'gift')
+
+        div.modal_tabs
+            - for (let i = 0; i < modalBlocks.gift.length; i++)
+                label(class=`modal_tabs_item gift ${i === 0 && 'checked'}` id=`tab-gift-${i}`)
 
     div(class='modal min hidden')
         div.modal_close(data-value='min')

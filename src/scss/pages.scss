@@ -111,8 +111,16 @@
   max-width: 900px;
   margin: 0 auto;
 
+  & picture {
+    display: flex;
+    justify-content: center;
+  }
+
   & img {
-    max-height: none;
+    max-height: available;
+    max-height: -moz-available;
+    max-height: -webkit-fill-available;
+    width: 100%;
   }
 }
 

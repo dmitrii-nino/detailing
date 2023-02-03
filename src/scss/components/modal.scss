@@ -12,10 +12,10 @@
   min-width: 280px;
   max-width: 500px;
   min-height: max-content;
-  max-height: 500px;
+  max-height: 528px;
 
   width: 94vw;
-  height: 70vh;
+  height: 75vh;
 
   border-radius: 10px;
   background: linear-gradient(222.31deg, #F9556B 3.76%, #DA3831 82.36%);
@@ -72,7 +72,6 @@
       width: 12px;
       margin: 12px;
       border-radius: 50%;
-      cursor: pointer;
       transition: ease-in-out .5s;
 
       &.checked {
@@ -105,7 +104,6 @@
 @media (min-width: 768px) {
   .modal {
     width: 60vw;
-    //height: 60vw;
   }
 }
 
