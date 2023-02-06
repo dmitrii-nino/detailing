@@ -8,3 +8,4 @@ config.dev.json
 npm-debug.log
 package-lock.json
 yarn-error.log
+gulp/version.json
