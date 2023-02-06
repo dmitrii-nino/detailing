@@ -6,8 +6,8 @@ mixin form(step, type)
                 div.box
                     h4 Модель вашего автомобиля
 
-                    input(class='input form_input' type='text' id=`${type}_car_model`)
-                button(class=`btn disabled` disabled id=`for_${type}_car_model` onclick=`toNext('car_model', '${type}')`) Далее
+                    input(class='input form_input' type='text' id='car_model')
+                button(class=`btn disabled` disabled id='for_car_model' onclick=`toNext('car_model', '${type}')`) Далее
 
         when 'used_car'
             div(class=`modal_content ${step} hidden`)
@@ -16,18 +16,18 @@ mixin form(step, type)
                     h4 Автомобиль новый, или с пробегом?
 
                     div.row
-                        input.input_radio(type='radio' name=`${type}_used_car` id=`${type}_new_car` value='new_car')
-                        label(for=`${type}_new_car`) Новый, без пробега
+                        input.input_radio(type='radio' name='used_car' id='new_car' value='new_car')
+                        label(for='new_car') Новый, без пробега
                     div.row
-                        input.input_radio(type='radio' name=`${type}_used_car` id=`${type}_less_than_3` value='less_than_3000_km')
-                        label(for=`${type}_less_than_3`) С небольшим пробегом (до 3 тыс.)
+                        input.input_radio(type='radio' name='used_car' id='less_than_3' value='less_than_3')
+                        label(for='less_than_3') С небольшим пробегом (до 3 тыс.)
                     div.row
-                        input.input_radio(type='radio' name=`${type}_used_car` id=`${type}_more_than_3` value='more_than_3000_km')
-                        label(for=`${type}_more_than_3`) С пробегом (больше 3 тыс.)
+                        input.input_radio(type='radio' name='used_car' id='more_than_3' value='more_than_3')
+                        label(for='more_than_3') С пробегом (больше 3 тыс.)
 
                 div.row
-                    button(class='btn prev' onclick=`toPrev('used_car', '${type}')`) Назад
-                    button(class=`btn disabled` disabled id=`for_${type}_used_car` onclick=`toNext('used_car', '${type}')`) Далее
+                    button(class='btn prev' onclick=`toPrev('used_car')`) Назад
+                    button(class=`btn disabled` disabled id='for_used_car' onclick=`toNext('used_car', '${type}')`) Далее
 
         when 'service'
             div(class=`modal_content ${step} hidden`)
@@ -36,30 +36,30 @@ mixin form(step, type)
                     h4 Услуга
 
                     div.row
-                        input.input_check(type='checkbox' name=`${type}_service` id=`${type}_ceramic` value='ceramic')
-                        label(for=`${type}_ceramic`) Керамическое покрытие
+                        input.input_check(type='checkbox' name='service' id='ceramic' value='ceramic')
+                        label(for='ceramic') Керамическое покрытие
                     div.row
-                        input.input_check(type='checkbox' name=`${type}_service` id=`${type}_film` value='film')
-                        label(for=`${type}_film`) Оклейка бронепленкой
+                        input.input_check(type='checkbox' name='service' id='film' value='film')
+                        label(for='film') Оклейка бронепленкой
                     div.row
-                        input.input_check(type='checkbox' name=`${type}_service` id=`${type}_glass_repair` value='glass_repair')
-                        label(for=`${type}_glass_repair`) Ремонт стекла
+                        input.input_check(type='checkbox' name='service' id='glass_repair' value='glass_repair')
+                        label(for='glass_repair') Ремонт стекла
                     div.row
-                        input.input_check(type='checkbox' name=`${type}_service` id=`${type}_dry_cleaning` value='dry_cleaning')
-                        label(for=`${type}_dry_cleaning`) Химчистка
+                        input.input_check(type='checkbox' name='service' id='dry_cleaning' value='dry_cleaning')
+                        label(for='dry_cleaning') Химчистка
                     div.row
-                        input.input_check(type='checkbox' name=`${type}_service` id=`${type}_toning` value='toning')
-                        label(for=`${type}_toning`) Тонировка
+                        input.input_check(type='checkbox' name='service' id='toning' value='toning')
+                        label(for='toning') Тонировка
                     div.row
-                        input.input_check(type='checkbox' name=`${type}_service` id=`${type}_polish` value='polish')
-                        label(for=`${type}_polish`) Полировка кузова
+                        input.input_check(type='checkbox' name='service' id='polish' value='polish')
+                        label(for='polish') Полировка кузова
                     div.row
-                        input.input_check(type='checkbox' name=`${type}_service` id=`${type}_other` value='other')
-                        label(for=`${type}_other`) Другое
+                        input.input_check(type='checkbox' name='service' id='other' value='other')
+                        label(for='other') Другое
 
                 div.row
-                    button(class='btn prev' onclick=`toPrev('service', '${type}')`) Назад
-                    button(class=`btn disabled` disabled id=`for_${type}_service` onclick=`toNext('service', '${type}')`) Далее
+                    button(class='btn prev' onclick=`toPrev('service')`) Назад
+                    button(class=`btn disabled` disabled id='for_service' onclick=`toNext('service', '${type}')`) Далее
 
         when 'gift'
             div(class=`modal_content ${step} hidden`)
@@ -68,18 +68,18 @@ mixin form(step, type)
                     h4 Подарок
 
                     div.row
-                        input.input_radio(type='radio' name=`${type}_gift` id=`${type}_coupon` value='coupon')
-                        label(for=`${type}_coupon`) Купон 2.000 ₽ на оклейку фар
+                        input.input_radio(type='radio' name='gift' id='coupon' value='coupon')
+                        label(for='coupon') Купон 2.000 ₽ на оклейку фар
                     div.row
-                        input.input_radio(type='radio' name=`${type}_gift` id=`${type}_washing` value='washing')
-                        label(for=`${type}_washing`) Мойка Премиум за 1.900 ₽
+                        input.input_radio(type='radio' name='gift' id='washing' value='washing')
+                        label(for='washing') Мойка Премиум за 1900 ₽
                     div.row
-                        input.input_radio(type='radio' name=`${type}_gift` id=`${type}_antirain` value='antirain')
-                        label(for=`${type}_antirain`) Антидождь
+                        input.input_radio(type='radio' name='gift' id='antirain' value='antirain')
+                        label(for='antirain') Антидождь
 
                 div.row
-                    button(class='btn prev' onclick=`toPrev('gift', '${type}')`) Назад
-                    button(class=`btn disabled` disabled id=`for_${type}_gift` onclick=`toNext('gift', '${type}')`) Далее
+                    button(class='btn prev' onclick=`toPrev('gift')`) Назад
+                    button(class=`btn disabled` disabled id='for_gift' onclick=`toNext('gift'), '${type}'`) Далее
 
         when 'phone_number'
             div(class=`modal_content ${step} hidden`)
@@ -87,17 +87,17 @@ mixin form(step, type)
                 div.box
                     h4 Чтобы закрепить за собой подарок — оставьте ваш номер телефона ☎️
 
-                    input(class='input form_input' type='tel' id=`${type}_phone_number`)
+                    input(class='input form_input' type='tel' id='phone_number')
 
                     div.row
-                        input.input_check(type='checkbox' id=`agree_${type}_phone_number` value='agree' checked)
-                        label(for=`agree_${type}_phone_number`)
+                        input.input_check(type='checkbox' id='agree_phone_number' value='agree' checked)
+                        label(for='agree_phone_number')
                             div(style='display: grid') Заполняя форму, я принимаю
                                 a(target="_blank" href='/user_agreement.html' style='text-decoration: underline') условия передачи информации
 
                 div.row
-                    button(class='btn prev' onclick=`toPrev('phone_number', '${type}')`) Назад
-                    button(class=`btn disabled` disabled id=`for_${type}_phone_number` onclick=`toNext('phone_number', '${type}')`) Далее
+                    button(class='btn prev' onclick=`toPrev('phone_number')`) Назад
+                    button(class=`btn disabled` disabled id='for_phone_number' onclick=`toNext('phone_number'), '${type}'`) Далее
 
         when 'final'
             div(class=`modal_content ${step} hidden`)
@@ -107,9 +107,9 @@ mixin form(step, type)
                     br
                     | Скоро наш менеджер позвонит вам, подскажет стоимость выбранной услуги и проконсультирует по всем вопросам 🙌🏻
 
-                button(class=`btn` onclick=`toNext('final', '${type}')`) Завершить
+                button(class=`btn` onclick=`toNext('final')`) Завершить
 
-        when 'min_phone_number'
+        when 'consultation_phone_number'
             div(class=`modal_content ${step}`)
                 span
                 div.box
@@ -117,14 +117,14 @@ mixin form(step, type)
                         br
                         | Мы свяжемся с Вами в ближйшее время *
 
-                    input(class='input form_input' type='tel' id='min_phone_number')
+                    input(class='input form_input' type='tel' id='consultation_phone_number')
                     span * Если заявка пришла после 9 вечера — перезвоним в 10 утра на следующий день
 
                     div.row
-                        input.input_check(type='checkbox' id='agree_min_phone_number' value='agree' checked)
+                        input.input_check(type='checkbox' id='agree_consultation_phone_number' value='agree' checked)
 
-                        label(for='agree_min_phone_number')
+                        label(for='agree_consultation_phone_number')
                             div(style='display: grid') Заполняя форму, я принимаю
                                 a(target="_blank" href='/user_agreement.html' style='text-decoration: underline') условия передачи информации
 
-                button(class=`btn disabled` disabled id='for_min_phone_number' onclick=`toNext('min_phone_number', '${type}')`) Отправить заявку
+                button(class=`btn disabled` disabled id='for_consultation_phone_number' onclick=`toNext('consultation_phone_number', '${type}')`) Отправить заявку

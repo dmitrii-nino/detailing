@@ -1,6 +1,5 @@
 const modals = document.querySelectorAll('.modal');
 const tabs = document.querySelectorAll('.modal_tabs_item')
-const types = ['full', 'gift'];
 
 // modal windows can't be scrolled
 modals.forEach(modal => {
@@ -10,16 +9,19 @@ modals.forEach(modal => {
 
 // close foo
 const onClose = () => {
-    modals.forEach(modal => modal.classList.add('hidden'))
+    modals.forEach(modal => {
+        modal.classList.add('hidden')
+        modal.classList.remove('gift')
+    })
 
     document.querySelectorAll('.modal_content')
         .forEach(slide => {
-            if (!slide.classList.contains('min_phone_number')) slide.classList.add('hidden')
+            if (!slide.classList.contains('consultation_phone_number')) slide.classList.add('hidden')
         })
-    document.querySelectorAll(`.modal_content.car_model`).forEach(item => item.classList.remove('hidden'))
+    document.querySelector(`.modal_content.car_model`).classList.remove('hidden')
 
     tabs.forEach(tab => tab.classList.remove('checked'))
-    types.forEach(type => document.getElementById(`tab-${type}-0`)?.classList.add('checked'));
+    document.getElementById(`tab-0`).classList.add('checked')
 }
 
 // modal windows closes with data-value of close btn
@@ -32,9 +34,9 @@ blur.addEventListener('click', onClose)
 
 // modal form
 const textInputs = document.querySelectorAll('.form_input');
-const services = types.map(type => Array.from(document.querySelectorAll(`input[name="${type}_service"]`))).flat();
-const carUsed = types.map(type => Array.from(document.querySelectorAll(`input[name="${type}_used_car"]`))).flat();
-const gifts = types.map(type => Array.from(document.querySelectorAll(`input[name="${type}_gift"]`))).flat();
+const services = document.querySelectorAll('input[name="service"]');
+const carUsed = document.querySelectorAll('input[name="used_car"]');
+const gifts = document.querySelectorAll('input[name="gift"]');
 const userAgreements = document.querySelectorAll('input[value="agree"]');
 
 // pre added value of service
@@ -46,11 +48,10 @@ window.onload = () => {
                     .replaceAll(".html",""))) {
 
             item.checked = true;
-            types.map(type => {
-                const nextBtn = document.getElementById(`for_${type}_service`)
-                nextBtn.classList.remove('disabled');
-                nextBtn.disabled = false;
-            });
+
+            const nextBtn = document.getElementById(`for_service`)
+            nextBtn.classList.remove('disabled');
+            nextBtn.disabled = false;
         }
     })
 }

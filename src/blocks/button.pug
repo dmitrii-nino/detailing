@@ -1,5 +1,7 @@
-mixin modalBtn(text, modalType)
-    if(modalType)
+mixin modalBtn(text, modalType, gift)
+    if (gift)
+        button(class=`btn` onclick=`modalOpen('${modalType}', '${gift}')`)=text
+    else if (modalType)
         button(class=`btn` onclick=`modalOpen('${modalType}')`)=text
     else
         button(class=`btn`)=text

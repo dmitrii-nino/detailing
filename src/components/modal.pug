@@ -1,37 +1,41 @@
--
-    const modalBlocks = {
-        full: ['car_model', 'used_car', 'service', 'phone_number', 'final'],
-        gift: ['car_model', 'used_car', 'service', 'gift', 'phone_number', 'final']
-    }
+- const modalBlocks = ['car_model', 'used_car', 'service', 'gift', 'phone_number', 'final']
 
 block modal
     script.
-        const modalBlocks = {
-            full: ['car_model', 'used_car', 'service', 'phone_number', 'final'],
-            gift: ['car_model', 'used_car', 'service', 'gift', 'phone_number', 'final']
-        };
+        const modalBlocks = ['car_model', 'used_car', 'service', 'gift', 'phone_number', 'final'];
 
-        const nextModal = (id, current, type) => {
-            Array.from(document.querySelectorAll(`.modal_content.${id}`)).map(item => item.classList.add('hidden'));
-            Array.from(document.querySelectorAll(`.modal_content.${modalBlocks[type][current + 1]}`)).map(item => item.classList.remove('hidden'))
-            document.getElementById(`tab-${type}-${current}`).classList.remove('checked')
-            document.getElementById(`tab-${type}-${current + 1}`).classList.add('checked')
+        const nextModal = (id, current) => {
+            document.querySelector(`.modal_content.${id}`).classList.add('hidden')
+            document.querySelector(`.modal_content.${modalBlocks[current + 1]}`).classList.remove('hidden')
+            document.getElementById(`tab-${current}`)?.classList.remove('checked')
+            document.getElementById(`tab-${current + 1}`)?.classList.add('checked')
         }
 
-        const closeModal = (type) => {
-            Array.from(document.querySelectorAll(`.modal_content.final`)).map(item => item.classList.add('hidden'))
-            Array.from(document.querySelectorAll(`.modal_content.car_model`)).map(item => item.classList.remove('hidden'))
-            document.getElementById(`tab-${type}-${modalBlocks[type].length - 1}`).classList.remove('checked')
-            document.getElementById(`tab-${type}-0`).classList.add('checked')
+        const closeModal = () => {
+            document.querySelectorAll('.modal').forEach(modal => {
+                modal.classList.add('hidden')
+                modal.classList.remove('gift')
+            })
 
-            document.querySelector(`.modal.blur`).classList.add("hidden")
-            document.querySelector(`.modal.${type}`).classList.add("hidden")
+            document.querySelectorAll('.modal_content')
+                .forEach(slide => {
+                    if (slide.classList.contains('consultation_phone_number') || slide.classList.contains('car_model')) {
+                        slide.classList.remove('hidden')
+                    }
+                    else slide.classList.add('hidden')
+                })
+
+            document.querySelectorAll('.modal_tabs_item').forEach(tab => tab.classList.remove('checked'))
+            document.getElementById(`tab-0`).classList.add('checked')
         }
 
         const onSubmit = (type) => {
+            if ((type === 'consultation') && document.querySelector(`.modal.consultation`).classList.contains('gift'))
+                type = 'gift'
+
             const data = { application_type: type };
 
-            modalBlocks[type].forEach(item => {
+            modalBlocks.forEach(item => {
                 if (item !== 'final') data[item] = localStorage.getItem(item)
             })
 
@@ -43,43 +47,41 @@ block modal
             localStorage.clear();
         }
 
-        const toNext = (index, type) => {
-            const id = `${type}_` + index
-            const current = modalBlocks[type].indexOf(index)
+        const toNext = (id, type) => {
+            const current = modalBlocks.indexOf(id)
 
-            if (index === 'min_phone_number') {
+            if (id === 'consultation_phone_number') {
                 ym(91958676, 'reachGoal', 'lead');
                 localStorage.setItem('phone_number', document.getElementById(id).value);
                 onSubmit(type);
-                closeModal('min');
+                closeModal();
             }
-            if (index === 'phone_number') {
+            if (id === 'phone_number') {
                 ym(91958676, 'reachGoal', 'lead');
-                localStorage.setItem(index, document.getElementById(id).value);
+                localStorage.setItem(id, document.getElementById(id).value);
                 onSubmit(type);
-                nextModal(index, current, type);
+                nextModal(id, current);
             }
-            else if (index === 'final') {
-                closeModal(type);
+            else if (id === 'final') {
+                closeModal();
             }
             else {
                 ym(91958676, 'reachGoal', 'next');
-                if (index === 'car_model') localStorage.setItem(index, document.getElementById(id).value);
-                if (index === 'used_car' || id === 'gift') localStorage.setItem(index, document.querySelector(`input[name=${id}]:checked`).value);
-                if (index === 'service') localStorage.setItem(index, Array.from(document.querySelectorAll(`input[name=${id}]:checked`)).map(item => item.value));
-                nextModal(index, current, type);
+                if (id === 'car_model') localStorage.setItem(id, document.getElementById(id).value);
+                if (id === 'used_car' || id === 'gift') localStorage.setItem(id, document.querySelector(`input[name=${id}]:checked`).value);
+                if (id === 'service') localStorage.setItem(id, Array.from(document.querySelectorAll(`input[name=${id}]:checked`)).map(item => item.value));
+                nextModal(id, current);
             }
 
         }
 
-        const toPrev = (index, type) => {
-            const id = `${type}_` + index
-            const current = modalBlocks[type].indexOf(index);
+        const toPrev = (id) => {
+            const current = modalBlocks.indexOf(id);
 
-            Array.from(document.querySelectorAll(`.modal_content.${index}`)).map(item => item.classList.add('hidden'))
-            Array.from(document.querySelectorAll(`.modal_content.${modalBlocks[type][current - 1]}`)).map(item => item.classList.remove('hidden'))
-            document.getElementById(`tab-${type}-${current}`).classList.remove('checked')
-            document.getElementById(`tab-${type}-${current - 1}`).classList.add('checked')
+            document.querySelector(`.modal_content.${id}`).classList.add('hidden')
+            document.querySelector(`.modal_content.${modalBlocks[current - 1]}`).classList.remove('hidden')
+            document.getElementById(`tab-${current}`).classList.remove('checked')
+            document.getElementById(`tab-${current - 1}`).classList.add('checked')
         }
 
     div(class='modal blur hidden')
@@ -88,28 +90,17 @@ block modal
         div.modal_close(data-value='full')
             img(src='./assets/icons/cross.svg')
 
-        each block,i in modalBlocks.full
+        each block,i in modalBlocks
             +form(block, 'full')
 
         div.modal_tabs
-            - for (let i = 0; i < modalBlocks.full.length; i++)
-                label(class=`modal_tabs_item full ${i === 0 && 'checked'}` id=`tab-full-${i}`)
+            - for (let i = 0; i < modalBlocks.length; i++)
+                label(class=`modal_tabs_item full ${i === 0 && 'checked'}` id=`tab-${i}`)
 
-    div(class='modal gift hidden')
-        div.modal_close(data-value='gift')
+    div(class='modal consultation hidden')
+        div.modal_close(data-value='consultation')
             img(src='./assets/icons/cross.svg')
 
-        each block,i in modalBlocks.gift
-            +form(block, 'gift')
-
-        div.modal_tabs
-            - for (let i = 0; i < modalBlocks.gift.length; i++)
-                label(class=`modal_tabs_item gift ${i === 0 && 'checked'}` id=`tab-gift-${i}`)
-
-    div(class='modal min hidden')
-        div.modal_close(data-value='min')
-            img(src='./assets/icons/cross.svg')
-
-        +form('min_phone_number')
+        +form('consultation_phone_number', 'consultation')
 
         span
