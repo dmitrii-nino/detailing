@@ -25,9 +25,7 @@ mixin form(step, type)
                         input.input_radio(type='radio' name='used_car' id='more_than_3' value='more_than_3')
                         label(for='more_than_3') С пробегом (больше 3 тыс.)
 
-                div.row
-                    button(class='btn prev' onclick=`toPrev('used_car')`) Назад
-                    button(class=`btn disabled` disabled id='for_used_car' onclick=`toNext('used_car', '${type}')`) Далее
+                button(class=`btn disabled` disabled id='for_used_car' onclick=`toNext('used_car', '${type}')`) Далее
 
         when 'service'
             div(class=`modal_content ${step} hidden`)
@@ -83,11 +81,15 @@ mixin form(step, type)
 
         when 'phone_number'
             div(class=`modal_content ${step} hidden`)
-                span
                 div.box
-                    h4 Чтобы закрепить за собой подарок — оставьте ваш номер телефона ☎️
+                    h4 Отлично, остался последний шаг
 
                     input(class='input form_input' type='tel' id='phone_number')
+
+                    p Оставьте номер телефона, по которому можно с вами связаться
+                    p Мы сообщим вам сроки и полную стоимость, ответим на все вопросы, а также закрепим подарок за указанным номером
+                    p Подарок мы закрепим за указанным номером
+
 
                     div.row
                         input.input_check(type='checkbox' id='agree_phone_number' value='agree' checked)

@@ -1,8 +1,8 @@
-- const modalBlocks = ['car_model', 'used_car', 'service', 'gift', 'phone_number', 'final']
+- const modalBlocks = ['used_car', 'service', 'gift', 'phone_number', 'final']
 
 block modal
     script.
-        const modalBlocks = ['car_model', 'used_car', 'service', 'gift', 'phone_number', 'final'];
+        const modalBlocks = ['used_car', 'service', 'gift', 'phone_number', 'final'];
 
         const nextModal = (id, current) => {
             document.querySelector(`.modal_content.${id}`).classList.add('hidden')
@@ -19,7 +19,7 @@ block modal
 
             document.querySelectorAll('.modal_content')
                 .forEach(slide => {
-                    if (slide.classList.contains('consultation_phone_number') || slide.classList.contains('car_model')) {
+                    if (slide.classList.contains('consultation_phone_number') || slide.classList.contains('used_car')) {
                         slide.classList.remove('hidden')
                     }
                     else slide.classList.add('hidden')
@@ -67,7 +67,7 @@ block modal
             }
             else {
                 ym(91958676, 'reachGoal', 'next');
-                if (id === 'car_model') localStorage.setItem(id, document.getElementById(id).value);
+                // if (id === 'car_model') localStorage.setItem(id, document.getElementById(id).value);
                 if (id === 'used_car' || id === 'gift') localStorage.setItem(id, document.querySelector(`input[name=${id}]:checked`).value);
                 if (id === 'service') localStorage.setItem(id, Array.from(document.querySelectorAll(`input[name=${id}]:checked`)).map(item => item.value));
                 nextModal(id, current);

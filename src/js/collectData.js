@@ -18,7 +18,7 @@ const onClose = () => {
         .forEach(slide => {
             if (!slide.classList.contains('consultation_phone_number')) slide.classList.add('hidden')
         })
-    document.querySelector(`.modal_content.car_model`).classList.remove('hidden')
+    document.querySelector(`.modal_content.used_car`).classList.remove('hidden')
 
     tabs.forEach(tab => tab.classList.remove('checked'))
     document.getElementById(`tab-0`).classList.add('checked')
