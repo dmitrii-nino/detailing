@@ -6,7 +6,8 @@ block variables
 			{"className":"services_item","id":2,link: '/film.html', "text":"Оклейка защитной пленкой","img":"./assets/img/index/services_2.webp"},
 			{"className":"services_item","id":3,link: '/glass_repair.html', "text":"Ремонт стекла","img":"./assets/img/glass/step_2.webp"},
 			{"className":"services_item","id":4,link: '/dry_cleaning.html', "text":"Химчистка автомобиля","img":"./assets/img/index/services_3.webp"},
-			{"className":"services_item","id":5,link: '/toning.html', "text":"Тонировка","img":"./assets/img/index/services_4.webp"}]
+			{"className":"services_item","id":5,link: '/toning.html', "text":"Тонировка","img":"./assets/img/index/services_4.webp"},
+			{"className": "services_item","id": 6,link: '/exterior.html', "text": "Оклейка экстерьера", "img": "./assets/img/index/services_5.webp"}]
 	-
 		const ceramicExSlider = [{ className:"ceramica_ex_item", id: 1, img: './assets/img/index/ceramica_1.webp'},
 			{ className: "ceramica_ex_item", id: 2, img: './assets/img/index/ceramica_2.webp'}]
@@ -29,6 +30,10 @@ block variables
 		const toningExSlider = [{className: "toning_ex_item", id: 1, img: './assets/img/index/toning_1.webp'},
 			{className: "toning_ex_item", id: 2, img: './assets/img/index/toning_2.webp'},
 			{className: "toning_ex_item", id: 3, img: './assets/img/index/toning_3.webp'},]
+	-
+		const exteriorExSlider = [{className: "exterior_ex_item", id: 1, img: './assets/img/index/exterior_1.webp'},
+			{className: "exterior_ex_item", id: 2, img: './assets/img/index/exterior_2.webp'}]
+
 block main
 	section.index
 		div(class='frame primary_title')
@@ -89,6 +94,10 @@ block main
 		div.examples_item
 			h4 Тонировка
 			+slipper(toningExSlider)
+
+		div.examples_item
+			h4 Оклейка экстерьера
+			+slipper(exteriorExSlider)
 
 	section
 		div(class='promotion frame')

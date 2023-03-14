@@ -105,7 +105,7 @@
   }
 }
 
-.glass {
+.alone {
   display: flex;
   max-height: 400px;
   max-width: 900px;
@@ -283,7 +283,7 @@
         text-align: left;
       }
 
-     .slider, .slipper, .glass {
+     .slider, .slipper, .alone {
        grid-area: slider;
        max-width: 40vw;
       }

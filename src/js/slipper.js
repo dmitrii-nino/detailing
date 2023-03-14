@@ -1,5 +1,5 @@
 // Select all slides
-const slippers = ['ceramica_ex_item', 'film_ex_item', 'drycleaning_ex_item', 'toning_ex_item', 'ceramic_title', 'film_title', 'drycleaning_title', 'toning_title', 'film_video_item']
+const slippers = ['ceramica_ex_item', 'film_ex_item', 'drycleaning_ex_item', 'toning_ex_item', 'exterior_ex_item', 'ceramic_title', 'film_title', 'drycleaning_title', 'toning_title', 'film_video_item']
 
 const slides = {};
 const slidesLabels = {};
