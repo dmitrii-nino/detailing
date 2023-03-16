@@ -7,7 +7,8 @@ block variables
 			{"className":"services_item","id":3,link: '/glass_repair.html', "text":"Ремонт стекла","img":"./assets/img/glass/step_2.webp"},
 			{"className":"services_item","id":4,link: '/dry_cleaning.html', "text":"Химчистка автомобиля","img":"./assets/img/index/services_3.webp"},
 			{"className":"services_item","id":5,link: '/toning.html', "text":"Тонировка","img":"./assets/img/index/services_4.webp"},
-			{"className": "services_item","id": 6,link: '/exterior.html', "text": "Оклейка экстерьера", "img": "./assets/img/index/services_5.webp"}]
+			{"className": "services_item","id": 6,link: '/exterior.html', "text": "Оклейка экстерьера", "img": "./assets/img/index/services_5.webp"},
+			{"className": "services_item", "id": 7, link: '/polishing.html', "text": "Полировка автомобиля", "img": "./assets/img/index/services_6.webp"}]
 	-
 		const ceramicExSlider = [{ className:"ceramica_ex_item", id: 1, img: './assets/img/index/ceramica_1.webp'},
 			{ className: "ceramica_ex_item", id: 2, img: './assets/img/index/ceramica_2.webp'}]
@@ -33,6 +34,11 @@ block variables
 	-
 		const exteriorExSlider = [{className: "exterior_ex_item", id: 1, img: './assets/img/index/exterior_1.webp'},
 			{className: "exterior_ex_item", id: 2, img: './assets/img/index/exterior_2.webp'}]
+	-
+		const polishingExSlider = [{className: "polishing_ex_item", id: 1, img: './assets/img/index/polishing_1.webp'},
+			{className: "polishing_ex_item", id: 2, img: './assets/img/index/polishing_2.webp'},
+			{className: "polishing_ex_item", id: 3, img: './assets/img/index/polishing_3.webp'},
+			{className: "polishing_ex_item", id: 4, img: './assets/img/index/polishing_4.webp'}]
 
 block main
 	section.index
@@ -66,9 +72,6 @@ block main
 		p Детейлинг сохранит авто в первозданном виде и защитит лакокрасочное покрытие от сколов и вмятин
 		+modalBtn('Оставить заявку', 'full')
 
-
-	include ./components/advantages
-
 	section.examples
 		a.anchor(id='examples')
 		h2 Наши работы
@@ -98,6 +101,12 @@ block main
 		div.examples_item
 			h4 Оклейка экстерьера
 			+slipper(exteriorExSlider)
+
+		div.examples_item
+			h4 Полировка автомобиля
+			+slipper(polishingExSlider)
+
+	include ./components/advantages
 
 	section
 		div(class='promotion frame')

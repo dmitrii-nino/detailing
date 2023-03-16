@@ -1,6 +1,6 @@
-const sliders = ['ceramica_ex_item', 'film_ex_item', 'drycleaning_ex_item', 'toning_ex_item', 'exterior_ex_item',
+const sliders = ['ceramica_ex_item', 'film_ex_item', 'drycleaning_ex_item', 'toning_ex_item', 'exterior_ex_item', 'polishing_ex_item',
                     'ceramic_title', 'film_title', 'drycleaning_title', 'toning_title',
-                    'film_video_item']
+                    'film_video_item', 'polishing_title']
 
 const slides = {};
 const slidesControls = {};

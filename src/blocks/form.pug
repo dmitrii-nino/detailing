@@ -33,30 +33,35 @@ mixin form(step, type)
                 div.box
                     h4 Услуга
 
-                    div.row
-                        input.input_check(type='checkbox' name='service' id='ceramic' value='ceramic')
-                        label(for='ceramic') Керамическое покрытие
-                    div.row
-                        input.input_check(type='checkbox' name='service' id='film' value='film')
-                        label(for='film') Оклейка бронепленкой
-                    div.row
-                        input.input_check(type='checkbox' name='service' id='glass_repair' value='glass_repair')
-                        label(for='glass_repair') Ремонт стекла
-                    div.row
-                        input.input_check(type='checkbox' name='service' id='dry_cleaning' value='dry_cleaning')
-                        label(for='dry_cleaning') Химчистка
-                    div.row
-                        input.input_check(type='checkbox' name='service' id='toning' value='toning')
-                        label(for='toning') Тонировка
-                    div.row
-                        input.input_check(type='checkbox' name='service' id='polish' value='polish')
-                        label(for='polish') Полировка кузова
-                    div.row
-                        input.input_check(type='checkbox' name='service' id='exterior' value='exterior')
-                        label(for='exterior') Оклейка экстерьера
-                    div.row
-                        input.input_check(type='checkbox' name='service' id='other' value='other')
-                        label(for='other') Другое
+                    div.box_grid
+                        div.row
+                            input.input_check(type='checkbox' name='service' id='ceramic' value='ceramic')
+                            label(for='ceramic') Керамическое покрытие
+                        div.row
+                            input.input_check(type='checkbox' name='service' id='film' value='film')
+                            label(for='film') Оклейка бронепленкой
+                        div.row
+                            input.input_check(type='checkbox' name='service' id='glass_repair' value='glass_repair')
+                            label(for='glass_repair') Ремонт стекла
+                        div.row
+                            input.input_check(type='checkbox' name='service' id='dry_cleaning' value='dry_cleaning')
+                            label(for='dry_cleaning') Химчистка
+                        div.row
+                            input.input_check(type='checkbox' name='service' id='toning' value='toning')
+                            label(for='toning') Тонировка
+                        div.row
+                            input.input_check(type='checkbox' name='service' id='polish' value='polish')
+                            label(for='polish') Полировка кузова
+                        div.row
+                            input.input_check(type='checkbox' name='service' id='exterior' value='exterior')
+                            label(for='exterior') Оклейка экстерьера
+                        div.row
+                            input.input_check(type='checkbox' name='service' id='polishing' value='polishing')
+                            label(for='polishing') Полировка автомобиля
+                            polishing
+                        div.row
+                            input.input_check(type='checkbox' name='service' id='other' value='other')
+                            label(for='other') Другое
 
                 div.row
                     button(class='btn prev' onclick=`toPrev('service')`) Назад

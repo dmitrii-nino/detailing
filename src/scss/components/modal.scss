@@ -46,6 +46,13 @@
       justify-content: space-between;
       gap: 16px;
 
+      &_grid {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 12px;
+      }
+
       & p {
         font-size: 12px;
       }
@@ -117,6 +124,14 @@
 
     &_content {
       padding: 20px 60px;
+
+      & .box {
+        &_grid {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 16px;
+        }
+      }
     }
   }
 }

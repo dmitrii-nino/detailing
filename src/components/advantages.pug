@@ -26,12 +26,16 @@ include ../blocks/cards
       'text': 'Сервис в самом <b>центре Петербурга</b>',
       'icon': './assets/img/cards/location.webp'
     }
-  ]
+  ];
 
 section
   h2 Наши преимущества
   +cards(cards)
 
+section
+  +reviews()
+
+section
   div.advantages
     div Оставьте заявку на
       b  бесплатную консультацию
@@ -42,4 +46,3 @@ section
 
     p * Если заявка пришла после 20.00 — перезвоним не позднее 11.00 на следующий день
     img.advantages_img(src='./assets/img/index/phone.webp')
-

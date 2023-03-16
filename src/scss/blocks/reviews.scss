@@ -1,0 +1,13 @@
+.reviews {
+  width:100%;
+  min-height: 65vh;
+  border:1px solid #e6e6e6;
+  border-radius:8px;
+  box-sizing:border-box
+}
+
+@media (min-width: 768px) {
+  .reviews {
+    min-height: 50vh;
+  }
+}
