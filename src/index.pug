@@ -61,17 +61,6 @@ block main
 
 		p * Узнайте точную стоимость и получите подарок на выбор
 
-	section
-		h2 Сэкономьте деньги
-			span.accent  на ближайшие 10 лет
-
-		.longitude
-			.longitude_content
-				img(src='./assets/img/index/car.webp', alt="")
-
-		p Детейлинг сохранит авто в первозданном виде и защитит лакокрасочное покрытие от сколов и вмятин
-		+modalBtn('Оставить заявку', 'full')
-
 	section.examples
 		a.anchor(id='examples')
 		h2 Наши работы
@@ -107,16 +96,3 @@ block main
 			+slipper(polishingExSlider)
 
 	include ./components/advantages
-
-	section
-		div(class='promotion frame')
-			h2 Акция!
-			div(class='promotion_img frame')
-				img(src='./assets/img/index/primary.webp', alt="")
-			p Оставьте
-				b  заявку на консультацию
-				span  и получите
-				b  купон на 2000 ₽ на оклейку фар
-			+modalBtn('Записаться', 'consultation', 'gift')
-
-			img.promotion_bg(src='./assets/img/index/promo.webp', alt="")

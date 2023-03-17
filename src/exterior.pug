@@ -61,12 +61,14 @@ block main
 
             +modalBtn('Оставить заявку', 'full')
 
+    include ./components/protect
+
     section
         h2 Результаты
         +slipper(exteriorExSlider)
 
     section
-        h2 Этапы оклейки
+        h2 Как мы работаем
         +carousel(exteriorSteps)
 
     section

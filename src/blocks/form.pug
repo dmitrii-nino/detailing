@@ -50,14 +50,11 @@ mixin form(step, type)
                             input.input_check(type='checkbox' name='service' id='toning' value='toning')
                             label(for='toning') Тонировка
                         div.row
-                            input.input_check(type='checkbox' name='service' id='polish' value='polish')
-                            label(for='polish') Полировка кузова
-                        div.row
                             input.input_check(type='checkbox' name='service' id='exterior' value='exterior')
                             label(for='exterior') Оклейка экстерьера
                         div.row
                             input.input_check(type='checkbox' name='service' id='polishing' value='polishing')
-                            label(for='polishing') Полировка автомобиля
+                            label(for='polishing') Полировка кузова
                             polishing
                         div.row
                             input.input_check(type='checkbox' name='service' id='other' value='other')
@@ -96,8 +93,6 @@ mixin form(step, type)
 
                     p Оставьте номер телефона, по которому можно с вами связаться
                     p Мы сообщим вам сроки и полную стоимость, ответим на все вопросы, а также закрепим подарок за указанным номером
-                    p Подарок мы закрепим за указанным номером
-
 
                     div.row
                         input.input_check(type='checkbox' id='agree_phone_number' value='agree' checked)
