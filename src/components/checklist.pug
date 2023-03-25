@@ -1,0 +1,43 @@
+block checklist
+    script.
+        const closeChecklistForm = () => {
+            document.querySelector('.checklist_blur').classList.add('hidden')
+            document.querySelector('.checklist').classList.add('hidden')
+        }
+        const onChecklistSubmit = () => {
+            const data = {
+                application_type: 'leadmagnet',
+                phone_number: document.getElementById('checklist_phone_number').value
+            };
+
+            fetch('https://autocentr-polimer.ru/api/add_lead', {
+                method: "POST",
+                body: JSON.stringify(data)
+            });
+
+            ym(91958676, 'reachGoal', 'lead');
+
+            closeChecklistForm()
+        }
+
+    div(class='checklist_blur hidden' onclick=`closeChecklistForm()`)
+
+    div(class='checklist hidden')
+        div.checklist_close(data-value='checklist' onclick=`closeChecklistForm()`)
+            img(src='./assets/icons/cross.svg')
+
+        div(class=`checklist_content`)
+            span
+            div.box
+                h4 Оставьте свой номер телефона, и получите чек-лист в WhatsApp
+                input(class='input form_input' id='checklist_phone_number' type='tel')
+                span Звонить не будем, обещаем 🙂
+
+                div.row
+                    input.input_check(type='checkbox' id='agree_checklist_phone_number' value='agree' checked)
+
+                    label(for='agree_checklist_phone_number')
+                        div(style='display: grid') Заполняя форму, я принимаю
+                            a(target="_blank" href='/user_agreement.html' style='text-decoration: underline') условия передачи информации
+
+            button(class=`btn disabled` disabled id='for_checklist_phone_number' onclick=`onChecklistSubmit()`) Получить

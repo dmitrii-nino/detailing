@@ -1,0 +1,19 @@
+<script>const closeModal = () => {
+    document.querySelector('.checklist_blur').classList.add('hidden')
+    document.querySelector('.checklist').classList.add('hidden')
+}
+
+const onSubmit = (type) => {
+    const data = {
+        application_type: type,
+        phone_number: document.getElementById('checklist_input').value
+    };
+
+    fetch('https://autocentr-polimer.ru/api/add_lead', {
+        method: "POST",
+        body: JSON.stringify(data)
+    });
+
+    ym(91958676, 'reachGoal', 'lead');
+}
+</script><div class="checklist_blur hidden"></div><div class="checklist hidden"><div class="modal_close" data-value="checklist" onclick="closeModal()"><img src="./assets/icons/cross.svg"/></div><div class="checklist_content"><span></span><div class="box"><h4>Оставьте свой номер телефона, и получите чек-лист в WhatsApp</h4><input class="input form_input" id="checklist_input" type="tel"/><span>Звонить не будем, обещаем 🙂</span><div class="row"><input class="input_check" type="checkbox" id="agree_consultation_phone_number" value="agree" checked="checked"/><label for="agree_consultation_phone_number"><div style="display: grid">Заполняя форму, я принимаю<a target="_blank" href="/user_agreement.html" style="text-decoration: underline">условия передачи информации</a></div></label></div></div><button class="btn" onclick="onSubmit()">Получить</button></div></div>

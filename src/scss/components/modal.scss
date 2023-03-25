@@ -1,4 +1,4 @@
-.modal {
+.modal, .checklist {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -93,7 +93,7 @@
   }
 }
 
-.modal.blur {
+.modal.blur, .checklist_blur {
   display: flex;
   position: fixed;
   top: 50%;
@@ -109,7 +109,9 @@
 }
 
 .modal.hidden,
-.modal.blur.hidden {
+.modal.blur.hidden,
+.checklist.hidden,
+.checklist_blur.hidden{
   display: none;
 }
 

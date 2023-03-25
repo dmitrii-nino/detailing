@@ -1,5 +1,13 @@
 include ../blocks/button
 
+script.
+    const openChecklistForm = () => {
+        ym(91958676, 'reachGoal', 'form')
+
+        document.querySelector('.checklist_blur').classList.remove('hidden')
+        document.querySelector('.checklist').classList.remove('hidden')
+    }
+
 section
     h2
         span.accent Защитите
@@ -11,3 +19,6 @@ section
 
     p Детейлинг сохранит авто в первозданном виде и защитит лакокрасочное покрытие от царапин, сколов, ржавчины и многого другого
     +modalBtn('Оставить заявку', 'full')
+
+    p Получите чек-лист "7  самых частых ошибок , которые допускают 8 из 10 автовладельцев при уходе за автомобилем"
+    button(class=`btn` onclick=`openChecklistForm()`) Получить
