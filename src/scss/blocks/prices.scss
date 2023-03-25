@@ -29,6 +29,15 @@
         max-height: 400px;
       }
     }
+
+    &_price {
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 20px;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      color: #DA3831;
+    }
   }
 }
 
@@ -52,6 +61,10 @@
 
     &_item {
       max-width: 25%;
+
+      &_price {
+        font-size: 20px;
+      }
     }
   }
 }

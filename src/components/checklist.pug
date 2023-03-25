@@ -3,6 +3,8 @@ block checklist
         const closeChecklistForm = () => {
             document.querySelector('.checklist_blur').classList.add('hidden')
             document.querySelector('.checklist').classList.add('hidden')
+            document.querySelector('.checklist_content.phone_number').classList.remove('hidden');
+            document.querySelector('.checklist_content.final').classList.add('hidden');
         }
         const onChecklistSubmit = () => {
             const data = {
@@ -17,7 +19,8 @@ block checklist
 
             ym(91958676, 'reachGoal', 'lead');
 
-            closeChecklistForm()
+            document.querySelector('.checklist_content.phone_number').classList.add('hidden');
+            document.querySelector('.checklist_content.final').classList.remove('hidden');
         }
 
     div(class='checklist_blur hidden' onclick=`closeChecklistForm()`)
@@ -26,7 +29,7 @@ block checklist
         div.checklist_close(data-value='checklist' onclick=`closeChecklistForm()`)
             img(src='./assets/icons/cross.svg')
 
-        div(class=`checklist_content`)
+        div(class=`checklist_content phone_number`)
             span
             div.box
                 h4 Оставьте свой номер телефона, и получите чек-лист в WhatsApp
@@ -41,3 +44,11 @@ block checklist
                             a(target="_blank" href='/user_agreement.html' style='text-decoration: underline') условия передачи информации
 
             button(class=`btn disabled` disabled id='for_checklist_phone_number' onclick=`onChecklistSubmit()`) Получить
+
+        div(class=`checklist_content final hidden`)
+            span
+            h4 Спасибо!
+                br
+                | Скоро мы вышлем чек-лист в WhatsApp 🙌🏻
+
+            button(class=`btn` onclick=`closeChecklistForm()`) Завершить
