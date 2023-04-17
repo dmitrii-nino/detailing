@@ -44,6 +44,14 @@ block modal
                 body: JSON.stringify(data)
             })
 
+            fetch('https://h.albato.com/wh/38/1lfof3t/QyxpYU43WphnEA1sR6A8rmsFmuukM9Q5f3M9-YOHtpM/', {
+                headers: {
+                    'Content-type': 'application/json; charset=UTF-8',
+                },
+                method: "POST",
+                body: JSON.stringify(data)
+            });
+
             localStorage.clear();
         }
 
@@ -72,7 +80,6 @@ block modal
                 if (id === 'service') localStorage.setItem(id, Array.from(document.querySelectorAll(`input[name=${id}]:checked`)).map(item => item.value));
                 nextModal(id, current);
             }
-
         }
 
         const toPrev = (id) => {

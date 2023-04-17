@@ -17,6 +17,14 @@ block checklist
                 body: JSON.stringify(data)
             });
 
+            fetch('https://h.albato.com/wh/38/1lfof3t/QyxpYU43WphnEA1sR6A8rmsFmuukM9Q5f3M9-YOHtpM/', {
+                headers: {
+                    'Content-type': 'application/json; charset=UTF-8',
+                },
+                method: "POST",
+                body: JSON.stringify(data)
+            });
+
             ym(91958676, 'reachGoal', 'lead');
 
             document.querySelector('.checklist_content.phone_number').classList.add('hidden');
