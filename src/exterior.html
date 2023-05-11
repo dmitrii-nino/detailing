@@ -15,8 +15,9 @@ ym(91958676, "init", {
     clickmap: true,
     trackLinks: true,
     accurateTrackBounce: true,
-    webvisor: true
-})
+    webvisor: true,
+    ecommerce: "dataLayer"
+});
 
 var _emv = _emv || [];
 _emv['campaign'] = 'e758533feded973ba4b0c779';
@@ -82,7 +83,7 @@ const onSubmit = (type) => {
         if (item !== 'final') data[item] = localStorage.getItem(item)
     })
 
-    fetch('https://autocentr-polimer.ru/api/add_lead', {
+    fetch(`https://autocentr-polimer.ru/api/add_lead/${location.search ? location.search : ''}`, {
         method: "POST",
         body: JSON.stringify(data)
     })
@@ -145,7 +146,7 @@ const onChecklistSubmit = () => {
         phone_number: document.getElementById('checklist_phone_number').value
     };
 
-    fetch('https://autocentr-polimer.ru/api/add_lead', {
+    fetch(`https://autocentr-polimer.ru/api/add_lead/${location.search ? location.search : ''}`, {
         method: "POST",
         body: JSON.stringify(data)
     });
