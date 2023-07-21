@@ -9,7 +9,7 @@ const onSubmit = (type) => {
         phone_number: document.getElementById('checklist_input').value
     };
 
-    fetch(`https://autocentr-polimer.ru/api/add_lead${location.search ? location.search : ''}`, {
+    fetch(`https://${window.location.hostname}/api/add_lead${location.search ? location.search : ''}`, {
         method: "POST",
         body: JSON.stringify(data)
     });
