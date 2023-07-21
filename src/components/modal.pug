@@ -42,7 +42,7 @@ block modal
             var _tmr = window._tmr || (window._tmr = []);
             _tmr.push({ type: 'reachGoal', id: 3350159, goal: 'Lead'});
 
-            fetch(`https://autocentr-polimer.ru/api/add_lead${location.search ? location.search : ''}`, {
+            fetch(`https://${window.location.hostname}/api/add_lead${location.search ? location.search : ''}`, {
                 method: "POST",
                 body: JSON.stringify(data)
             })
