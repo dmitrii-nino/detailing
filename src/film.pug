@@ -1,6 +1,71 @@
-extends components/layout
+doctype html
+html(lang="ru-RU")
+    head
+        meta(charset="utf-8")
+        meta(http-equiv='X-UA-Compatible', content="IE=edge")
+        meta(name="viewport" content="width=device-width,initial-scale=1")
+        meta(name="keywords" content="")
+        meta(name="description" content="Бронепленка на авто в Санкт-Петербурге от автомобильного центра “Полимер”. Современное оборудование, оклейка антигравийной пленкой и бронирование любой сложности, гарантия на все виды услуг для автомобиля, доступные цены и скидки")
+        title Бронепленка на авто в СПб — цена бронирования пленкой автомобиля и оклейки антигравийной бронепленкой 
+        link(rel="preconnect" href="https://fonts.googleapis.com")
+        link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+        link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap")
+        link(rel="stylesheet" type='text/css' href="./css/style.min.css")
+        link(rel="icon" href="./assets/icons/favicon.ico")
 
-block variables
+        script.
+            (function (m, e, t, r, i, k, a) {
+                m[i] = m[i] || function () {
+                    (m[i].a = m[i].a || []).push(arguments)
+                };
+                m[i].l = 1 * new Date();
+                for (var j = 0; j < document.scripts.length; j++) {
+                    if (document.scripts[j].src === r) {
+                        return;
+                    }
+                }
+                k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+            })
+            (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+            ym(91958676, "init", {
+                clickmap: true,
+                trackLinks: true,
+                accurateTrackBounce: true,
+                webvisor: true,
+                ecommerce: "dataLayer"
+            });
+
+            var _emv = _emv || [];
+            _emv['campaign'] = 'e758533feded973ba4b0c779';
+
+            (function () {
+                var em = document.createElement('script');
+                em.type = 'text/javascript';
+                em.async = true;
+                em.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'leadback.ru/js/leadback.js';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(em, s);
+            })();
+
+            var _tmr = window._tmr || (window._tmr = []);
+            _tmr.push({id: "3350159", type: "pageView", start: (new Date()).getTime()});
+            (function (d, w, id) {
+                if (d.getElementById(id)) return;
+                var ts = d.createElement("script");
+                ts.type = "text/javascript";
+                ts.async = true;
+                ts.id = id;
+                ts.src = "https://top-fwz1.mail.ru/js/code.js";
+                var f = function () {
+                    var s = d.getElementsByTagName("script")[0];
+                    s.parentNode.insertBefore(ts, s);
+                };
+                if (w.opera == "[object Opera]") {
+                    d.addEventListener("DOMContentLoaded", f, false);
+                } else {
+                    f();
+                }
+            })(document, window, "tmr-code");
     -
         const filmPrimarySlider = [{ className: "film_title", id: 1, img: './assets/img/film/primary_1.webp'},
             { className: "film_title", id: 2, img: './assets/img/film/primary_2.webp'},
@@ -43,95 +108,108 @@ block variables
             { header: 'Как ухаживать за покрытием автомобиля в пленке?', body: 'Так же, как и без пленки. После оклейки, вы получите памятку по уходу.'},
             { header: 'От чего защищает антигравийная пленка?', body: 'Антигравийная пленка — серьезная защита кузова от пескоструя, царапин и сколов из-за камней, которые могут привести к коррозии.'},
             { header: 'Почему оклейка так дорого стоит?', body: 'Стоимость оклейки складывается из двух частей: <br/>1. Модель авто и комплектация: один автомобиль можно оклеить за 2 дня, а на другие может уйти до 10 дней. <br/>2. Качество материала: мы работаем только с качественной пленкой, которая легче в эксплуатации и служит дольше. '}]
+    -
+        const armoredWrap = [{header: 'Оклейка авто антигравийной пленкой', body: 'Бронепленка на авто — эффективный способ защитить автомобиль от различных внешних воздействий и сохранить его привлекательный внешний вид. Это дополнительная защита для кузова, которая обладает рядом преимуществ: <br><br> Защита от механических повреждений. Защитная антигравийная полиуретановая бронепленка защищает капот, крышу, багажник и другие детали кузова от царапин, сколов и ударов, которые могут возникнуть в результате попадания камней, песка и других мелких предметов на дороге. Она создает дополнительный слой защиты, предотвращая повреждения лакокрасочного покрытия.<br>Защита от химических воздействий. Химические вещества, соли, кислоты, дожди и различные агрессивные составы могут негативно влиять на внешний вид и состояние автомобиля. Прозрачная антигравийная бронепленка обладает способностью защищать кузов от воздействия химических веществ, помогая сохранить его состояние на протяжении длительного времени.'}]
+    include blocks/_libs
+    body
+        section.main
+            h1 Оклейка защитной пленкой
+            +slipper(filmPrimarySlider)
 
-block main
-    section.main
-        h1 Оклейка защитной пленкой
-        +slipper(filmPrimarySlider)
+            div.main_content
+                p Оклеим автомобиль антигравийной пленкой с гарантией на отсутствие дефектов до 10 лет по договору.
+                p Только до 31 июля – при бронировании автомобиля защита фар + антидождь стекол в подарок.
 
-        div.main_content
-            p Оклеим автомобиль антигравийной пленкой с гарантией на отсутствие дефектов до 10 лет по договору.
-            p Только до 31 июля – при бронировании автомобиля защита фар + антидождь стекол в подарок.
+                +modalBtn('Оставить заявку', 'full')
+
+        section
+            div(class='info info_box')
+                img.info_icon(src='./assets/icons/info.svg', alt="")
+                p
+                    b Антигравийная пленка
+                    span  — это защита для кузова автомобиля, поэтому услугу часто называют
+                    b  бронирование.
+                    span  Она представляет собой абсолютно прозрачную, визуально невидимую пленку,защищающую ЛКП автомобиля от сколов, царапин, мелких ДТП и коррозии
+                img.info_img(src='./assets/img/film/info.webp', alt="")
+
+        section
+            h2 5 причин нанести защитную пленку
+            +points(filmPoints)
+
+        include ./components/protect
+
+        section
+            h2 Этапы оклейки
+            +carousel(filmSteps)
+
+        section
+            h2 Результаты
+            p Пример того, как пленка защитила корпус автомобиля после ДТП
+            p
+            div.examples_item
+                +slipper(filmExSlider)
+                +videoSlipper(filmVideoSlider)
+
+        section
+            h2 Пленки, которые мы используем
+            div.usage
+                img(src='./assets/img/film/brand_1.webp', alt="")
+                img(src='./assets/img/film/brand_2.webp', alt="")
+                img(src='./assets/img/film/brand_3.webp', alt="")
+                img(src='./assets/img/film/brand_4.webp', alt="")
+                img(src='./assets/img/film/brand_5.webp', alt="")
+                img(src='./assets/img/film/brand_6.webp', alt="")
+
+        section
+            h2 Цены
+            +prices(filmPrices)
 
             +modalBtn('Оставить заявку', 'full')
 
-    section
-        div(class='info info_box')
-            img.info_icon(src='./assets/icons/info.svg', alt="")
-            p
-                b Антигравийная пленка
-                span  — это защита для кузова автомобиля, поэтому услугу часто называют
-                b  бронирование.
-                span  Она представляет собой абсолютно прозрачную, визуально невидимую пленку,защищающую ЛКП автомобиля от сколов, царапин, мелких ДТП и коррозии
-            img.info_img(src='./assets/img/film/info.webp', alt="")
+        section
+            div.list
+                h2
+                    span С нанесением
+                    span.accent  антигравийной пленки в автоцентре “полимер”
+                    span  вы получите
 
-    section
-        h2 5 причин нанести защитную пленку
-        +points(filmPoints)
+                ul
+                    li
+                        b 1 год гарантии
+                        span  по договору
+                    li
+                        b Гарантию производителя от 5 лет
+                        span  на все пленки
+                    li
+                        b Бесплатную контрольную мойку
+                        span  через 7-10 дней для проверки качества работы
+                    li
+                        b Работа в чистых и отапливаемых боксах
+                        span  со всем необходимым оборудованием для наилучшего качества работ
+                    li
+                        b Лучшую
+                        span  в своей ценовой категории
+                        b  антигравийную пленку
+                        span , прошедшую проверку временем в климате Санкт-Петербурга
+                    li
+                        b Экономию до 300.000 рублей.
+                        span  Ухоженный автомобиль при продаже будет стоить дороже
 
-    include ./components/protect
+                +modalBtn('Оставить заявку на бесплатную консультацию', 'consultation')
 
-    section
-        h2 Этапы оклейки
-        +carousel(filmSteps)
+        include ./components/advantages
 
-    section
-        h2 Результаты
-        p Пример того, как пленка защитила корпус автомобиля после ДТП
-        p
-        div.examples_item
-            +slipper(filmExSlider)
-            +videoSlipper(filmVideoSlider)
+        section
+            h2 Популярные вопросы
+            +spoiler(filmFAQ)
 
-    section
-        h2 Пленки, которые мы используем
-        div.usage
-            img(src='./assets/img/film/brand_1.webp', alt="")
-            img(src='./assets/img/film/brand_2.webp', alt="")
-            img(src='./assets/img/film/brand_3.webp', alt="")
-            img(src='./assets/img/film/brand_4.webp', alt="")
-            img(src='./assets/img/film/brand_5.webp', alt="")
-            img(src='./assets/img/film/brand_6.webp', alt="")
+        section
+            h2 Бронирование автомобиля пленкой
+            +spoiler(armoredWrap)
+        include components/footer
 
-    section
-        h2 Цены
-        +prices(filmPrices)
+        include components/modal
 
-        +modalBtn('Оставить заявку', 'full')
-
-    section
-        div.list
-            h2
-                span С нанесением
-                span.accent  антигравийной пленки в автоцентре “полимер”
-                span  вы получите
-
-            ul
-                li
-                    b 1 год гарантии
-                    span  по договору
-                li
-                    b Гарантию производителя от 5 лет
-                    span  на все пленки
-                li
-                    b Бесплатную контрольную мойку
-                    span  через 7-10 дней для проверки качества работы
-                li
-                    b Работа в чистых и отапливаемых боксах
-                    span  со всем необходимым оборудованием для наилучшего качества работ
-                li
-                    b Лучшую
-                    span  в своей ценовой категории
-                    b  антигравийную пленку
-                    span , прошедшую проверку временем в климате Санкт-Петербурга
-                li
-                    b Экономию до 300.000 рублей.
-                    span  Ухоженный автомобиль при продаже будет стоить дороже
-
-            +modalBtn('Оставить заявку на бесплатную консультацию', 'consultation')
-
-    include ./components/advantages
-
-    section
-        h2 Популярные вопросы
-        +spoiler(filmFAQ)
+        include components/checklist
+            
+        script(async src='./js/app.min.js')

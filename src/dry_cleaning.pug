@@ -1,6 +1,71 @@
-extends components/layout
+doctype html
+html(lang="ru-RU")
+    head
+        meta(charset="utf-8")
+        meta(http-equiv='X-UA-Compatible', content="IE=edge")
+        meta(name="viewport" content="width=device-width,initial-scale=1")
+        meta(name="keywords" content="")
+        meta(name="description" content="Химчистка салона автомобиля в Санкт-Петербурге от автомобильного центра “Полимер”. Современное оборудование для детейлинга, выполнение задач любой сложности в СПб, гарантия на все виды услуг для авто, доступные цены и скидки")
+        title Химчистка салона автомобиля — цена в СПб | Заказать химчистку салона авто
+        link(rel="preconnect" href="https://fonts.googleapis.com")
+        link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+        link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap")
+        link(rel="stylesheet" type='text/css' href="./css/style.min.css")
+        link(rel="icon" href="./assets/icons/favicon.ico")
 
-block variables
+        script.
+            (function (m, e, t, r, i, k, a) {
+                m[i] = m[i] || function () {
+                    (m[i].a = m[i].a || []).push(arguments)
+                };
+                m[i].l = 1 * new Date();
+                for (var j = 0; j < document.scripts.length; j++) {
+                    if (document.scripts[j].src === r) {
+                        return;
+                    }
+                }
+                k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+            })
+            (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+            ym(91958676, "init", {
+                clickmap: true,
+                trackLinks: true,
+                accurateTrackBounce: true,
+                webvisor: true,
+                ecommerce: "dataLayer"
+            });
+
+            var _emv = _emv || [];
+            _emv['campaign'] = 'e758533feded973ba4b0c779';
+
+            (function () {
+                var em = document.createElement('script');
+                em.type = 'text/javascript';
+                em.async = true;
+                em.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'leadback.ru/js/leadback.js';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(em, s);
+            })();
+
+            var _tmr = window._tmr || (window._tmr = []);
+            _tmr.push({id: "3350159", type: "pageView", start: (new Date()).getTime()});
+            (function (d, w, id) {
+                if (d.getElementById(id)) return;
+                var ts = d.createElement("script");
+                ts.type = "text/javascript";
+                ts.async = true;
+                ts.id = id;
+                ts.src = "https://top-fwz1.mail.ru/js/code.js";
+                var f = function () {
+                    var s = d.getElementsByTagName("script")[0];
+                    s.parentNode.insertBefore(ts, s);
+                };
+                if (w.opera == "[object Opera]") {
+                    d.addEventListener("DOMContentLoaded", f, false);
+                } else {
+                    f();
+                }
+            })(document, window, "tmr-code");
     -
         const drycleaningPrimarySlider = [{ className: "drycleaning_title", id: 1, img: './assets/img/dry_cleaning/primary_1.webp'},
             { className: "drycleaning_title", id: 2, img: './assets/img/dry_cleaning/primary_2.webp'},
@@ -30,75 +95,91 @@ block variables
             { header: 'Что входит в понятие “комплексная химчистка салона”?', body: 'При комплексной химчистке очищаются: обивка, потолок, коврики, багажник, производится чистка пластиковых деталей'},
             { header: 'Нужны ли особые условия для химчистки салона автомобиля?', body: 'Проводить химчистку нужно в помещениях с хорошей вентиляцией и особым температурным режимом. Правильные условия для химчистки созданы в наших рабочих боксах'},
             { header: 'Можно ли самостоятельно сделать химчистку салона?', body: 'Необходимо иметь большое количество проверенных средств, дополнительное оборудование, создать условия для работы. Если вы этого никогда не делали — рекомендуем обратиться в детейлинг центр'}]
+    -
+        const drycleaningCarFAQ = [{ header: 'Профессиональная химчистка салона', body: 'Салон автомобиля — место где важно обеспечить чистоту и комфорт. Профессиональная химчистка салона авто помогает удалить загрязнения, освежить ткани и вернуть им первоначальный вид. Рассмотрим основные преимущества:<br><br>Восстановление свежести. Повседневная эксплуатация автомобиля приводит к накоплению пыли, грязи и других загрязнений в салоне. Химчистка специальными средствами и инструментами помогает эффективно убрать все виды загрязнений, включая пятна и запахи, и вернуть салону свежий и приятный аромат.<br>Восстановление внешнего вида. Кожаные сиденья, двери, панели и другие элементы салона со временем теряют свой блеск и становятся тусклыми. Профессиональная химчистка кожи позволяет удалить пыль, жир и другие загрязнения, восстановить ее естественный блеск и продлить срок службы материала.'},
+            {header: 'Особенности процесса', body: 'Профессиональная химчистка салона автомобиля выполняется опытными специалистами с использованием специальных средств и оборудования. Рассмотрим подробнее этапы процесса:<br><br>1. Оценка состояния. Мастера осматривают салон автомобиля и анализируют состояние различных элементов, таких как сидения, двери, панели, пол и потолок. Они обращают внимание на пятна, загрязнения, потертости, дефекты и другие проблемы.<br> 2. Подготовка поверхности. Перед химчисткой специалисты проводят предварительную уборку, удаляя крупный мусор и пыль. Это позволяет достичь максимальной эффективности на следующих этапах.<br> 3. Химчистка. Мастера проводят химчистку всех элементов салона с использованием специальных моющих средств и оборудования. После наносятся защитные составы.<br> 4. Завершающий этап. После проведения химчистки мастера осматривают салон и убеждаются в его чистоте и безупречном внешнем виде. Особое внимание уделяют деталям, чтобы обеспечить максимальное удобство и комфорт эксплуатации для владельца автомобиля.<br><br>Доверьте химчистку салона профессионалам АЦ “Полимер” и наслаждайтесь чистотой и свежестью салона. На сайте можно узнать больше информации о том, как мы работаем, наших дополнительных услугах, ознакомиться с отзывами и записаться на удобное время.'}]
 
-block main
-    section.main
-        h1 Химчистка автомобиля
-        +slipper(drycleaningPrimarySlider)
+    include blocks/_libs
+    body
+        section.main
+            h1 Химчистка автомобиля
+            +slipper(drycleaningPrimarySlider)
 
-        div.main_content
-            h2 Комплексная химчистка автомобиля от
-                span.accent  12 000 ₽
+            div.main_content
+                h2 Комплексная химчистка автомобиля от
+                    span.accent  12 000 ₽
 
-            p Вернем салону первозданный вид без вреда для обивки. Очистим сложные загрязнения, въевшиеся пятна и неприятный запах.
+                p Вернем салону первозданный вид без вреда для обивки. Очистим сложные загрязнения, въевшиеся пятна и неприятный запах.
 
-            +modalBtn('Оставить заявку','full')
-    section
-        h2 почему нужно выбрать химчистку в
-            span.accent  автоцентре полимер?
+                +modalBtn('Оставить заявку','full')
+        section
+            h2 почему нужно выбрать химчистку в
+                span.accent  автоцентре полимер?
 
-        div.info_box
-            div(class='info white')
-                h3 Самостоятельная химчистка
-                ul.info_list
-                    li Удаление только поверхностного слоя грязи
+            div.info_box
+                div(class='info white')
+                    h3 Самостоятельная химчистка
+                    ul.info_list
+                        li Удаление только поверхностного слоя грязи
 
-            div.info
-                h3 Профессиональная химчистка
-                ul.info_list
-                    li Глубокое очищение от бактерий и клещей
-                    li Удаление сложных загрязнений
-                    li Профессиональная химия
-                    li Безопасные химические составы, которые разлагаются в течение 30 минут после химчистки
-                    li Озонирование: процедура для дезинфекции салона и устранения неприятных запахов
+                div.info
+                    h3 Профессиональная химчистка
+                    ul.info_list
+                        li Глубокое очищение от бактерий и клещей
+                        li Удаление сложных загрязнений
+                        li Профессиональная химия
+                        li Безопасные химические составы, которые разлагаются в течение 30 минут после химчистки
+                        li Озонирование: процедура для дезинфекции салона и устранения неприятных запахов
 
-    include ./components/protect
+        include ./components/protect
 
-    section
-        h2
-            span.accent Загрязнения
-            span , которые удаляет химчистка
+        section
+            h2
+                span.accent Загрязнения
+                span , которые удаляет химчистка
 
-        +cards(drycleaningCards)
+            +cards(drycleaningCards)
 
-        +modalBtn('Записаться на химчистку', 'consultation')
+            +modalBtn('Записаться на химчистку', 'consultation')
 
-    section
-        h2 Результаты
-        div.examples_item
-            +slipper(drycleaningExSlider)
-            iframe(id="dry-cleaning_video" type="text/html" width="100%" height="100%"
-                src="https://www.youtube.com/embed/38e4AXi-UF4")
+        section
+            h2 Результаты
+            div.examples_item
+                +slipper(drycleaningExSlider)
+                iframe(id="dry-cleaning_video" type="text/html" width="100%" height="100%"
+                    src="https://www.youtube.com/embed/38e4AXi-UF4")
 
-    section
-        h2 Цены
-        +prices(drycleaningPrices)
+        section
+            h2 Цены
+            +prices(drycleaningPrices)
 
-        +modalBtn('Оставить заявку', 'full')
+            +modalBtn('Оставить заявку', 'full')
 
-    section
-        h2 При химчистке мы используем
-        div.usage
-            img(src='./assets/img/dry_cleaning/brand_1.webp', alt="")
-            img(src='./assets/img/dry_cleaning/brand_2.webp', alt="")
-            img(src='./assets/img/dry_cleaning/brand_3.webp', alt="")
-            img(src='./assets/img/dry_cleaning/brand_4.webp', alt="")
+        section
+            h2 При химчистке мы используем
+            div.usage
+                img(src='./assets/img/dry_cleaning/brand_1.webp', alt="")
+                img(src='./assets/img/dry_cleaning/brand_2.webp', alt="")
+                img(src='./assets/img/dry_cleaning/brand_3.webp', alt="")
+                img(src='./assets/img/dry_cleaning/brand_4.webp', alt="")
 
-    section
-        a.btn(href='prices_dry_cleaning.html' style='color: #fff') Таблица с ценами
+        section
+            a.btn(href='prices_dry_cleaning.html' style='color: #fff') Таблица с ценами
 
-    include ./components/advantages
+        include ./components/advantages
 
-    section
-        h2 Популярные вопросы
-        +spoiler(drycleaningFAQ)
+        section
+            h2 Популярные вопросы
+            +spoiler(drycleaningFAQ)
+
+        section
+            h2 Химчистка салона автомобиля
+            +spoiler(drycleaningCarFAQ)
+
+        include components/footer
+
+        include components/modal
+
+        include components/checklist
+            
+        script(async src='./js/app.min.js')
