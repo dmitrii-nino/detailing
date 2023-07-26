@@ -6,9 +6,9 @@ mixin slider(slides)
                 div(data-value=id class=`slider_item frame ${className}` style=`background-image: url("${img}")`)
 
         div(class=`slider_arrow left ${slides[0].className}`)
-            img(src='./assets/icons/arrow-left.svg', alt="")
+            img(src='./assets/icons/arrow-left.svg', alt="arrow-left")
         div(class=`slider_arrow right ${slides[0].className}`)
-            img(src='./assets/icons/arrow-right.svg', alt="")
+            img(src='./assets/icons/arrow-right.svg', alt="arrow-right")
 
         .slider_controls
             each slide in slides

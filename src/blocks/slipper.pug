@@ -3,12 +3,12 @@ mixin slipper(items)
         each item in items
             - const {className, img} = item
                 div(class=`slipper_item frame ${className}`)
-                    img(src=`${img}`, alt="")
+                    img(src=`${img}`, alt="", loading="lazy")
 
         div(class=`slipper_arrow left ${items[0].className}`)
-            img(src='./assets/icons/arrow-left.svg', alt="")
+            img(src='./assets/icons/arrow-left.svg', alt="arrow-left")
         div(class=`slipper_arrow right ${items[0].className}`)
-            img(src='./assets/icons/arrow-right.svg', alt="")
+            img(src='./assets/icons/arrow-right.svg', alt="arrow-right")
 
         .slipper_controls
             each item in items
