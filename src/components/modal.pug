@@ -101,7 +101,7 @@ block modal
 
     div(class='modal full hidden')
         div.modal_close(data-value='full')
-            img(src='./assets/icons/cross.svg')
+            img(src='./assets/icons/cross.svg', alt='cross')
 
         each block,i in modalBlocks
             +form(block, 'full')
@@ -112,7 +112,7 @@ block modal
 
     div(class='modal consultation hidden')
         div.modal_close(data-value='consultation')
-            img(src='./assets/icons/cross.svg')
+            img(src='./assets/icons/cross.svg', alt='cross')
 
         +form('consultation_phone_number', 'consultation')
 
