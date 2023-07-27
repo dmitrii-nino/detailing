@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /? 
+Disallow: /?s=* 
+Disallow: /*?*
+Disallow: /?*
+Disallow: *?*
+Allow: */css/
+Allow: */js/
