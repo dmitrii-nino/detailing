@@ -2,6 +2,6 @@ mixin cards(items)
     div.cards
         each item in items
             div(class='cards_item frame')
-                h4=item.header ? item.header : '&nbsp;'
+                h4=item.header ? item.header : |&nbsp;
                 img(class='cards_icon' src=item.icon alt="#")
                 p!=item.text
