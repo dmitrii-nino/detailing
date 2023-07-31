@@ -15,6 +15,8 @@ html(lang="ru-RU")
 		link(rel="icon" href="./assets/icons/favicon.ico") 
 
 		script.
+			(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
 			const modalOpen = (type, gift) => {
 					var _tmr = window._tmr || (window._tmr = []);
 					_tmr.push({ type: 'reachGoal', id: 3350159, goal: 'form'});
@@ -28,6 +30,59 @@ html(lang="ru-RU")
 					opened.children[1].classList.remove('hidden')
 					if (gift) opened.classList.add('gift')
 			}
+		script.
+				(function (m, e, t, r, i, k, a) {
+						m[i] = m[i] || function () {
+								(m[i].a = m[i].a || []).push(arguments)
+						};
+						m[i].l = 1 * new Date();
+						for (var j = 0; j <document.scripts.length; j++) {
+								if (document.scripts[j].src === r) {
+										return;
+								}
+						}
+						k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+				})
+				(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+				ym(91958676, "init", {
+						clickmap: true,
+						trackLinks: true,
+						accurateTrackBounce: true,
+						webvisor: true,
+						ecommerce: "dataLayer"
+				});
+
+				var _emv = _emv || [];
+				_emv['campaign'] = 'e758533feded973ba4b0c779';
+
+				(function () {
+						var em = document.createElement('script');
+						em.type = 'text/javascript';
+						em.async = true;
+						em.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'leadback.ru/js/leadback.js';
+						var s = document.getElementsByTagName('script')[0];
+						s.parentNode.insertBefore(em, s);
+				})();
+
+				var _tmr = window._tmr || (window._tmr = []);
+				_tmr.push({id: "3350159", type: "pageView", start: (new Date()).getTime()});
+				(function (d, w, id) {
+						if (d.getElementById(id)) return;
+						var ts = d.createElement("script");
+						ts.type = "text/javascript";
+						ts.async = true;
+						ts.id = id;
+						ts.src = "https://top-fwz1.mail.ru/js/code.js";
+						var f = function () {
+								var s = d.getElementsByTagName("script")[0];
+								s.parentNode.insertBefore(ts, s);
+						};
+						if (w.opera == "[object Opera]") {
+								d.addEventListener("DOMContentLoaded", f, false);
+						} else {
+								f();
+						}
+				})(document, window, "tmr-code");
 
 	-
 		const services = [{"className":"services_item","id":1, link: '/ceramic.html', "text":"Керамическое покрытие","img":"./assets/img/index/services_1.webp"},
