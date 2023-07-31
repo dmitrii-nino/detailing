@@ -12,7 +12,20 @@ html(lang="ru-RU")
         link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap")
         link(rel="stylesheet" type='text/css' href="./css/style.min.css")
         link(rel="icon" href="./assets/icons/favicon.ico")
+        script.
+            const modalOpen = (type, gift) => {
+                var _tmr = window._tmr || (window._tmr = []);
+                _tmr.push({ type: 'reachGoal', id: 3350159, goal: 'form'});
 
+                ym(91958676, 'reachGoal', 'form')
+
+                document.querySelector(`.modal.blur`).classList.remove("hidden")
+
+                const opened = document.querySelector(`.modal.${type}`);
+                opened.classList.remove("hidden");
+                opened.children[1].classList.remove('hidden')
+                if (gift) opened.classList.add('gift')
+            }
         script.
             (function (m, e, t, r, i, k, a) {
                 m[i] = m[i] || function () {

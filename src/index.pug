@@ -13,18 +13,22 @@ html(lang="ru-RU")
 		link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap")
 		link(rel="stylesheet" type='text/css' href="./css/style.min.css")
 		link(rel="icon" href="./assets/icons/favicon.ico") 
+
 		script.
 			const modalOpen = (type, gift) => {
-				var _tmr = window._tmr || (window._tmr = []);
-				_tmr.push({ type: 'reachGoal', id: 3350159, goal: 'form'});
+					var _tmr = window._tmr || (window._tmr = []);
+					_tmr.push({ type: 'reachGoal', id: 3350159, goal: 'form'});
 
-				document.querySelector(`.modal.blur`).classList.remove("hidden")
+					ym(91958676, 'reachGoal', 'form')
 
-				const opened = document.querySelector(`.modal.${type}`);
-				opened.classList.remove("hidden");
-				opened.children[1].classList.remove('hidden')
-				if (gift) opened.classList.add('gift')
+					document.querySelector(`.modal.blur`).classList.remove("hidden")
+
+					const opened = document.querySelector(`.modal.${type}`);
+					opened.classList.remove("hidden");
+					opened.children[1].classList.remove('hidden')
+					if (gift) opened.classList.add('gift')
 			}
+
 	-
 		const services = [{"className":"services_item","id":1, link: '/ceramic.html', "text":"Керамическое покрытие","img":"./assets/img/index/services_1.webp"},
 			{"className":"services_item","id":2,link: '/film.html', "text":"Оклейка защитной пленкой","img":"./assets/img/index/services_2.webp"},
