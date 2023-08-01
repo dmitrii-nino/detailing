@@ -1,84 +1,163 @@
-extends components/layout
+doctype html
+html(lang="ru-RU")
+    head
+        meta(charset="utf-8")
+        meta(http-equiv='X-UA-Compatible', content="IE=edge")
+        meta(name="viewport" content="width=device-width,initial-scale=1")
+        meta(name="keywords" content="")
+        meta(name="description" content="Бронепленка на авто в Санкт-Петербурге от автомобильного центра “Полимер”. Современное оборудование, оклейка антигравийной пленкой и бронирование любой сложности, гарантия на все виды услуг для автомобиля, доступные цены и скидки")
+        title Бронепленка на авто в СПб — цена бронирования пленкой автомобиля и оклейки антигравийной бронепленкой 
+        link(rel="preconnect" href="https://fonts.googleapis.com")
+        link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+        link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap")
+        link(rel="stylesheet" type='text/css' href="./css/style.min.css")
+        link(rel="icon" href="./assets/icons/favicon.ico")
+        script.
+            const modalOpen = (type, gift) => {
+                var _tmr = window._tmr || (window._tmr = []);
+                _tmr.push({ type: 'reachGoal', id: 3350159, goal: 'form'});
 
-block variables
-    - const columns = {name: ' ', mini: 'Малый класс', first: 'Первый класс или гольф класс', second: 'Второй средний класс', business: 'Бизнес-класс', grand: 'Представительский класс'};
-    -
-        const data = {
-            suncontrol: {
-                group: 'пленка SUN CONTROL',
-                data: [
-                    {name: 'Евро', mini: 3500, first: 4000, second: 4500, business: 5500, grand: 7000},
-                    {name: '1 боковое стекло', mini: 1000, first: 1000, second: 1250, business: 1500, grand: 1750},
-                    {name: '1 форточка', mini: 500, first: 500, second: 600, business: 700, grand: 700},
-                    {name: 'Лобовое стекло', mini: 2500, first: 2500, second: 3000, business: 3500, grand: 4000},
-                    {name: 'Заднее стекло', mini: 2000, first: 2000, second: 2500, business: 3000, grand: 3500},
-                ]
-            },
-            johnson: {
-                group: 'пленка JOHNSON, LLUMAR',
-                data: [
-                    {name: 'Евро', mini: 5000, first: 55000, second: 6500, business: 8000, grand: 10000},
-                    {name: '1 боковое стекло', mini: 1000, first: 1250, second: 1500, business: 1750, grand: 1750},
-                    {name: '1 форточка', mini: 600, first: 600, second: 700, business: 800, grand: 800},
-                    {name: 'Лобовое стекло', mini: 3000, first: 3000, second: 3500, business: 4000, grand: 4500},
-                    {name: 'Заднее стекло', mini: 2500, first: 2500, second: 3000, business: 3500, grand: 4000},
-                ]
-            },
-            dimention: {
-                group: 'атермальная пленка DIMENTION',
-                data: [
-                    {name: '1 боковое стекло', mini: 400, first: 4500, second: 4500, business: 5000, grand: 5000},
-                    {name: '1 форточка', mini: 1250, first: 1250, second: 1500, business: 2000, grand: 2500},
-                    {name: 'Заднее стекло (вагон)', mini: 6000, first: 6000, second: 7000, business: 8000, grand: 10000},
-                ]
-            },
-            atermal: {
-                group: 'атермальная пленка',
-                data: [
-                    {name: '1 боковое стекло', mini: 1750, first: 1750, second: 2000, business: 2500, grand: 3000},
-                    {name: '1 форточка', mini: 800, first: 800, second: 1000, business: 1250, grand: 1500},
-                    {name: 'Лобовое стекло', mini: 4500, first: 5000, second: 5500, business: 6500, grand: 8000},
-                    {name: 'Заднее стекло (седан)', mini: 4500, first: 4500, second: 5500, business: 6500, grand: 8000},
-                    {name: 'Заднее стекло (вагон)', mini: 3500, first: 3500, second: 4000, business: 5000, grand: 6000}
-                ]
-            },
-            armor: {
-                group: 'бронирующая пленка 4 mil',
-                data: [
-                    {name: '1 боковое стекло', mini: 1000, first: 1200, second: 1500, business: 2000, grand: 2500},
-                    {name: '1 форточка', mini: 500, first: 600, second: 700, business: 800, grand: 1000},
-                    {name: 'Заднее стекло (вагон)', mini: 2000, first: 2000, second: 2500, business: 3000, grand: 4000}
-                ]
-            },
-            clear_plex: {
-                group: 'Защитная пленка CLEAR PLEX',
-                data: [
-                    {name: 'Лобовое стекло', mini: 20000, first: 20000, second: 20000, business: 20000, grand: 20000},
-                    {name: 'Заднее стекло (вагон)', mini: 10000, first: 10000, second: 10000, business: 10000, grand: 10000}
-                ]
-            },
-            removalclear_plex: {
-                group: 'Защитная пленка CLEAR PLEX',
-                data: [
-                    {name: '1 боковое стекло', mini: 500, first: 500, second: 600, business: 750, grand: 1000},
-                    {name: '1 форточка', mini: 250, first: 250, second: 300, business: 400, grand: 500},
-                    {name: 'Лобовое, заднее стекло', mini: 1200, first: 1200, second: 1400, business: 1800, grand: 2000}
-                ]
-            },
-        }
+                ym(91958676, 'reachGoal', 'form')
 
-block main
-    section.price_list
-        h2 Цены на тонировку
-        +table(columns, data)
+                document.querySelector(`.modal.blur`).classList.remove("hidden")
 
-        button(class='btn btn_back' onclick="window.history.back()") Назад
+                const opened = document.querySelector(`.modal.${type}`);
+                opened.classList.remove("hidden");
+                opened.children[1].classList.remove('hidden')
+                if (gift) opened.classList.add('gift')
+            }
+        script.
+            (function (m, e, t, r, i, k, a) {
+                m[i] = m[i] || function () {
+                    (m[i].a = m[i].a || []).push(arguments)
+                };
+                m[i].l = 1 * new Date();
+                for (var j = 0; j < document.scripts.length; j++) {
+                    if (document.scripts[j].src === r) {
+                        return;
+                    }
+                }
+                k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+            })
+            (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+            ym(91958676, "init", {
+                clickmap: true,
+                trackLinks: true,
+                accurateTrackBounce: true,
+                webvisor: true,
+                ecommerce: "dataLayer"
+            });
 
-    section
-        p Оставьте заявку на бесплатную консультацию, и получите купон на
-            b  2.000 ₽
-            span  на бронирование фар
+            var _emv = _emv || [];
+            _emv['campaign'] = 'e758533feded973ba4b0c779';
 
-        +modalBtn('Оставить заявку *', 'consultation')
+            (function () {
+                var em = document.createElement('script');
+                em.type = 'text/javascript';
+                em.async = true;
+                em.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'leadback.ru/js/leadback.js';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(em, s);
+            })();
 
-        p * Перезвоним в течение 10 минут. Если заявка пришла после 20:00 – перезвоним не позднее 11.00 на следующий день
+            var _tmr = window._tmr || (window._tmr = []);
+            _tmr.push({id: "3350159", type: "pageView", start: (new Date()).getTime()});
+            (function (d, w, id) {
+                if (d.getElementById(id)) return;
+                var ts = d.createElement("script");
+                ts.type = "text/javascript";
+                ts.async = true;
+                ts.id = id;
+                ts.src = "https://top-fwz1.mail.ru/js/code.js";
+                var f = function () {
+                    var s = d.getElementsByTagName("script")[0];
+                    s.parentNode.insertBefore(ts, s);
+                };
+                if (w.opera == "[object Opera]") {
+                    d.addEventListener("DOMContentLoaded", f, false);
+                } else {
+                    f();
+                }
+            })(document, window, "tmr-code");
+
+        - const columns = {name: ' ', mini: 'Малый класс', first: 'Первый класс или гольф класс', second: 'Второй средний класс', business: 'Бизнес-класс', grand: 'Представительский класс'};
+        -
+            const data = {
+                suncontrol: {
+                    group: 'пленка SUN CONTROL',
+                    data: [
+                        {name: 'Евро', mini: 3500, first: 4000, second: 4500, business: 5500, grand: 7000},
+                        {name: '1 боковое стекло', mini: 1000, first: 1000, second: 1250, business: 1500, grand: 1750},
+                        {name: '1 форточка', mini: 500, first: 500, second: 600, business: 700, grand: 700},
+                        {name: 'Лобовое стекло', mini: 2500, first: 2500, second: 3000, business: 3500, grand: 4000},
+                        {name: 'Заднее стекло', mini: 2000, first: 2000, second: 2500, business: 3000, grand: 3500},
+                    ]
+                },
+                johnson: {
+                    group: 'пленка JOHNSON, LLUMAR',
+                    data: [
+                        {name: 'Евро', mini: 5000, first: 55000, second: 6500, business: 8000, grand: 10000},
+                        {name: '1 боковое стекло', mini: 1000, first: 1250, second: 1500, business: 1750, grand: 1750},
+                        {name: '1 форточка', mini: 600, first: 600, second: 700, business: 800, grand: 800},
+                        {name: 'Лобовое стекло', mini: 3000, first: 3000, second: 3500, business: 4000, grand: 4500},
+                        {name: 'Заднее стекло', mini: 2500, first: 2500, second: 3000, business: 3500, grand: 4000},
+                    ]
+                },
+                dimention: {
+                    group: 'атермальная пленка DIMENTION',
+                    data: [
+                        {name: '1 боковое стекло', mini: 400, first: 4500, second: 4500, business: 5000, grand: 5000},
+                        {name: '1 форточка', mini: 1250, first: 1250, second: 1500, business: 2000, grand: 2500},
+                        {name: 'Заднее стекло (вагон)', mini: 6000, first: 6000, second: 7000, business: 8000, grand: 10000},
+                    ]
+                },
+                atermal: {
+                    group: 'атермальная пленка',
+                    data: [
+                        {name: '1 боковое стекло', mini: 1750, first: 1750, second: 2000, business: 2500, grand: 3000},
+                        {name: '1 форточка', mini: 800, first: 800, second: 1000, business: 1250, grand: 1500},
+                        {name: 'Лобовое стекло', mini: 4500, first: 5000, second: 5500, business: 6500, grand: 8000},
+                        {name: 'Заднее стекло (седан)', mini: 4500, first: 4500, second: 5500, business: 6500, grand: 8000},
+                        {name: 'Заднее стекло (вагон)', mini: 3500, first: 3500, second: 4000, business: 5000, grand: 6000}
+                    ]
+                },
+                armor: {
+                    group: 'бронирующая пленка 4 mil',
+                    data: [
+                        {name: '1 боковое стекло', mini: 1000, first: 1200, second: 1500, business: 2000, grand: 2500},
+                        {name: '1 форточка', mini: 500, first: 600, second: 700, business: 800, grand: 1000},
+                        {name: 'Заднее стекло (вагон)', mini: 2000, first: 2000, second: 2500, business: 3000, grand: 4000}
+                    ]
+                },
+                clear_plex: {
+                    group: 'Защитная пленка CLEAR PLEX',
+                    data: [
+                        {name: 'Лобовое стекло', mini: 20000, first: 20000, second: 20000, business: 20000, grand: 20000},
+                        {name: 'Заднее стекло (вагон)', mini: 10000, first: 10000, second: 10000, business: 10000, grand: 10000}
+                    ]
+                },
+                removalclear_plex: {
+                    group: 'Защитная пленка CLEAR PLEX',
+                    data: [
+                        {name: '1 боковое стекло', mini: 500, first: 500, second: 600, business: 750, grand: 1000},
+                        {name: '1 форточка', mini: 250, first: 250, second: 300, business: 400, grand: 500},
+                        {name: 'Лобовое, заднее стекло', mini: 1200, first: 1200, second: 1400, business: 1800, grand: 2000}
+                    ]
+                },
+            }
+        include blocks/_libs
+        body
+            section.price_list
+                h2 Цены на тонировку
+                +table(columns, data)
+
+                button(class='btn btn_back' onclick="window.history.back()") Назад
+
+            section
+                p Оставьте заявку на бесплатную консультацию, и получите купон на
+                    b  2.000 ₽
+                    span  на бронирование фар
+
+                +modalBtn('Оставить заявку *', 'consultation')
+
+                p * Перезвоним в течение 10 минут. Если заявка пришла после 20:00 – перезвоним не позднее 11.00 на следующий день
