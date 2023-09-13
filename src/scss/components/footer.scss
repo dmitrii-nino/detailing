@@ -1,18 +1,54 @@
 .footer {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   gap: 28px;
   padding: 24px 24px 48px 24px;
-  background: linear-gradient(129.53deg, #F9556B 4.33%, #717070 72.61%);
+  background: #1F1C1C;
   border-radius: 10px 10px 0 0;
   position: relative;
+
+  * {
+    color: #FFFFFF;
+  }
+
+  p {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  &_menu {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+
+    &_block {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      h4 {
+        width: 100%;
+      }
+    }
+  }
+
+  &_divider {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.20);
+
+    * {
+      color: rgb(76, 73, 73);
+    }
+  }
 
   &_contacts {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
     gap: 16px;
   }
 
@@ -24,19 +60,51 @@
     margin: 0 auto;
     padding-top: 20px;
   }
+}
 
-  * {
-    color: #FFFFFF;
+@media (min-width: 480px) {
+  .footer {
+
+    &_menu {
+
+      &_block {
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        a {
+          width: 46%;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .footer {
+
+    &_menu {
+      display: flex;
+      flex-direction: row;
+      gap: 60px;
+
+      &_block {
+        flex-direction: column;
+
+        a {
+          width: auto;
+        }
+      }
+    }
   }
 }
 
 @media (min-width: 1024px) {
   .footer {
-
     display: grid;
     align-items: flex-start;
-    grid-template-columns: 64px 1fr 1fr;
+    grid-template-columns: 64px 2fr 1fr;
     padding: 40px 80px;
+    gap: 40px;
 
     &_contacts {
       align-items: flex-start;
@@ -46,6 +114,14 @@
       width: 100%;
       justify-content: flex-end;
       gap: 48px;
+    }
+
+    &_divider {
+      flex-direction: row;
+      flex-wrap: wrap;
+      width: calc(100vw - 160px);
+      justify-content: space-between;
+      gap: 10px 35px;
     }
   }
 }
