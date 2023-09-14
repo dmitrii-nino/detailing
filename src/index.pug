@@ -94,38 +94,9 @@ html(lang="ru-RU")
 			{"className": "services_item","id": 6,link: '/exterior.html', "text": "Оклейка экстерьера", "img": "./assets/img/index/services_5.webp"},
 			{"className": "services_item", "id": 7, link: '/polishing.html', "text": "Полировка автомобиля", "img": "./assets/img/index/services_6.webp"}]
 	-
-		const ceramicExSlider = [{ className:"ceramica_ex_item", id: 1, img: './assets/img/index/ceramica_1.webp'},
-			{ className: "ceramica_ex_item", id: 2, img: './assets/img/index/ceramica_2.webp'}]
-	-
-		const filmExSlider = [{className: "film_ex_item", id: 1, img: './assets/img/index/film_1.webp'},
-			{className: "film_ex_item", id: 2, img: './assets/img/index/film_2.webp'},
-			{className: "film_ex_item", id: 3, img: './assets/img/index/film_3.webp'}]
-	-
-		const filmVideoSlider = [{ className: "film_video_item", id: 1, src: 'https://www.youtube.com/embed/QUHaj6jPBos'},
-			{ className: "film_video_item", id: 2, src: 'https://www.youtube.com/embed/VzKPZIpGQvk'},
-			{ className: "film_video_item", id: 3, src: 'https://www.youtube.com/embed/NnbNGmGt89U'},
-			{ className: "film_video_item", id: 4, src: 'https://www.youtube.com/embed/eFW-CivShqs'},
-			{ className: "film_video_item", id: 5, src: 'https://www.youtube.com/embed/IC7LhgvKpSE'},
-			{ className: "film_video_item", id: 6, src: 'https://www.youtube.com/embed/4zM405lkW5o'}]
-	-
-		const drycleaningExSlider = [{className: "drycleaning_ex_item", id: 1, img: './assets/img/index/drycleaning_1.webp'},
-			{className: "drycleaning_ex_item", id: 2, img: './assets/img/index/drycleaning_2.webp'},
-			{className: "drycleaning_ex_item", id: 3, img: './assets/img/index/drycleaning_3.webp'},]
-	-
-		const toningExSlider = [{className: "toning_ex_item", id: 1, img: './assets/img/index/toning_1.webp'},
-			{className: "toning_ex_item", id: 2, img: './assets/img/index/toning_2.webp'},
-			{className: "toning_ex_item", id: 3, img: './assets/img/index/toning_3.webp'},]
-	-
-		const exteriorExSlider = [{className: "exterior_ex_item", id: 1, img: './assets/img/index/exterior_1.webp'},
-			{className: "exterior_ex_item", id: 2, img: './assets/img/index/exterior_2.webp'}]
-	-
-		const polishingExSlider = [{className: "polishing_ex_item", id: 1, img: './assets/img/index/polishing_1.webp'},
-			{className: "polishing_ex_item", id: 2, img: './assets/img/index/polishing_2.webp'},
-			{className: "polishing_ex_item", id: 3, img: './assets/img/index/polishing_3.webp'},
-			{className: "polishing_ex_item", id: 4, img: './assets/img/index/polishing_4.webp'}]
-	-
 		const detailingFAQ = [{header:'Детейлинг авто ', body:'<p>Автомобильный детейлинг-центр “Полимер” работает в Санкт-Петербурге с 2013 года. Благодаря накопленному опыту и штату специалистов студия детейлинга предлагает профессиональный уход за вашим авто и комплексные услуги: полировка, химчистка салона, а также керамическое покрытие и бронирование пленкой, благодаря которой автомобиль получает защиту от мелких сколов и вмятин кузова, коррозии, выцветания и грязи.</p><p>Детейлинг (detailing)  — процесс глубокой очистки и улучшения внешнего вида автомобиля. Он включает в себя целый комплекс мероприятий: детейлинг-мойка, удаление царапин и загрязнений, а также нанесение керамического покрытия или оклейка бронепленкой для защиты кузова от внешних воздействий.</p>'},
 			{header: 'Преимущества детейлинга', body: '<p>Детейлинг имеет множество преимуществ:</p> <ul><li>Улучшенный внешний вид. Керамическое покрытие придает кузову блеск за счет отсутствия мелких дефектов, царапин и сколов, благодаря чему автомобиль выглядит как новый.</li><li>Долговременная защита. Керамическое покрытие и бронепленка обеспечивают долговременную защиту кузова, предотвращают выцветание под лучами ультрафиолета, окисление, механические повреждения и воздействие химических веществ.</li><li>Легкость ухода. После детейлинга автомобиль становится легче поддерживать в чистоте. Керамическое или пленочное покрытие образует гладкую поверхность, которая отталкивает грязь и пыль. Это упрощает процесс чистки и мойки.</li></ul><p>Детейлинг от АЦ “Полимер” улучшает внешний вид автомобиля, обеспечивает защиту и упрощает уход за ним. Благодаря услуге авто в течение длительного периода выглядит ухоженным, свежим и блестящим.</p>'}]
+
 	include blocks/_libs
 	body
 		include components/header
@@ -151,41 +122,7 @@ html(lang="ru-RU")
 
 		include ./components/protect
 
-		section.examples
-			a.anchor(id='examples')
-			h2 Наши работы
-			div.examples_item
-				h4 Керамическое покрытие
-				+slipper(ceramicExSlider)
-				iframe(id="ceramic_video"
-					src="https://www.youtube.com/embed/pjxQ_dzkVR8")
-
-			div.examples_item
-				h4 Оклейка защитной пленкой
-				p Пример того, как пленка защитила корпус автомобиля после ДТП
-				p
-				+slipper(filmExSlider)
-				+videoSlipper(filmVideoSlider)
-
-			div.examples_item
-				h4 Химчистка автомобиля
-				+slipper(drycleaningExSlider)
-				iframe(id="dry-cleaning_video"
-					src="https://www.youtube.com/embed/38e4AXi-UF4")
-
-			div.examples_item
-				h4 Тонировка
-				+slipper(toningExSlider)
-
-			div.examples_item
-				h4 Оклейка экстерьера
-				+slipper(exteriorExSlider)
-
-			div.examples_item
-				h4 Полировка автомобиля
-				+slipper(polishingExSlider)
-
-
+		include ./components/examples
 
 		include ./components/advantages
 

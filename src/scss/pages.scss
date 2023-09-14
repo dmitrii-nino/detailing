@@ -144,6 +144,21 @@
   }
 }
 
+.contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  .cards_item {
+      gap: 12px;
+      align-items: flex-start;
+
+    h4 {
+      color: #8D8D8D;
+    }
+  }
+}
+
 @media (min-width: 768px) {
   .main {
 
@@ -185,6 +200,22 @@
   .promotion {
     padding: 20px 104px;
   }
+
+
+  .contacts {
+    flex-direction: row;
+
+    .cards_item {
+      align-items: flex-start;
+      min-width: auto;
+
+      p {
+        font-size: 14px;
+        margin-top: -16px;
+        text-align: left;
+      }
+    }
+  }
 }
 
 @media (min-width: 1024px) {
@@ -206,11 +237,6 @@
 
   .examples {
     gap: 60px;
-
-    //&_item {
-    //  width: 38vw;
-    //  max-width: 800px;
-    //}
   }
 
   section.index {
@@ -278,35 +304,36 @@
     gap: 36px;
     align-items: center;
 
-      h1 {
-        grid-area: header;
+    h1 {
+      grid-area: header;
+      text-align: left;
+    }
+
+    .slider, .slipper, .alone {
+      grid-area: slider;
+      max-width: 40vw;
+    }
+
+    &_content {
+      grid-area: content;
+      background: linear-gradient(222.31deg, #F9556B 3.76%, #DA3831 82.36%);
+      color: #FFFFFF;
+      padding: 30px 24px;
+      border-radius: 10px;
+
+      h2 {
         text-align: left;
-      }
 
-     .slider, .slipper, .alone {
-       grid-area: slider;
-       max-width: 40vw;
-      }
-
-      &_content {
-        grid-area: content;
-        background: linear-gradient(222.31deg, #F9556B 3.76%, #DA3831 82.36%);
-        color: #FFFFFF;
-        padding: 30px 24px;
-        border-radius: 10px;
-
-        h2 {
-          text-align: left;
-          * {
-            color: #FFFFFF;
-          }
-        }
-
-        .btn {
-          background: #FFFFFF;
-          color: #DA3831;
+        * {
+          color: #FFFFFF;
         }
       }
+
+      .btn {
+        background: #FFFFFF;
+        color: #DA3831;
+      }
+    }
   }
 
   .list {
