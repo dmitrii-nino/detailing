@@ -1,161 +1,79 @@
-doctype html
-html(lang="ru-RU")
-    head
-        meta(charset="utf-8")
-        meta(http-equiv='X-UA-Compatible', content="IE=edge")
-        meta(name="viewport" content="width=device-width,initial-scale=1")
-        meta(name="keywords" content="")
-        meta(name="description" content="Ремонт стекол автомобиля в Санкт-Петербурге от автомобильного центра “Полимер”. Современное оборудование для детейлинга, выполнение задач любой сложности, гарантия на все виды услуг для авто, доступные цены и скидки")
-        title Ремонт автомобильных стекол в СПб — цена ремонта автомобильных стекол
-        link(rel="preconnect" href="https://fonts.googleapis.com")
-        link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
-        link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap")
-        link(rel="stylesheet" type='text/css' href="./css/style.min.css")
-        link(rel="icon" href="./assets/icons/favicon.ico")
-        script.
-            const modalOpen = (type, gift) => {
-                var _tmr = window._tmr || (window._tmr = []);
-                _tmr.push({ type: 'reachGoal', id: 3350159, goal: 'form'});
+extends components/layout
 
-                ym(91958676, 'reachGoal', 'form')
+block variables
+    -
+        const glassSteps = [{ className: 'glass_step', id: 1, text: 'Подготавливаем  участок', desc: 'Проверяем наличие скрытых повреждений', img: './assets/img/glass/step_1.webp'},
+            { className: 'glass_step', id: 2, text: 'Ремонт скола, трещины', desc: 'Заполняем повреждение полимером и сушим стекло под UV лампами', img: './assets/img/glass/step_2.webp'},
+            { className: 'glass_step', id: 3, text: 'Финальная проверка', desc: 'Удаляем излишки полимера', img: './assets/img/glass/step_3.webp'},
+            { className: 'glass_step', id: 4, text: 'Выдача автомобиля клиенту', desc: '', img: './assets/img/glass/step_4.webp'}]
+    -
+        const glassPrices = [{ price: 'от 1 200 ₽', header: 'Скол-глаз', img: './assets/img/glass/type_1.webp' },
+            { price: 'от 1 500 ₽', header: 'Скол-звезда', img: './assets/img/glass/type_2.webp' },
+            { price: 'от 2 000 ₽', header: 'Двойной скол', img: './assets/img/glass/type_3.webp' },
+            { price: 'от 2 000 ₽', header: 'Скол радиальный', img: './assets/img/glass/type_4.webp' },
+            { price: 'от 1 500 ₽', header: 'Трещина до 20 см', img: './assets/img/glass/type_5.webp' },
+            { price: 'от 2 000 ₽', header: 'Трещина 20-40 см', img: './assets/img/glass/type_6.webp' },
+            { price: 'от 2 500 ₽', header: 'Трещина более 40 см', img: './assets/img/glass/type_7.webp' },
+            { price: 'от 2 000 ₽', header: 'Трещина со сколом', img: './assets/img/glass/type_8.webp' },];
+    -
+        const glassFAQ = [{
+                header: 'Сколько по времени длится ремонт стекла?',
+                body: 'Время ремонта зависит от вида трещины и скола. На мелкие повреждения уходит около 20-30 минут. Более серьезные ремонтируем за 40-60 минут.'
+            },
+            {
+                header: 'Какие гарантии?',
+                body: 'Любой ремонт стекла — это отсрочка его замены, поэтому на данный вид работы гарантия не выдается.'
+            },
+            {
+                header: 'Что делать после появления трещины на лобовом стекле?',
+                body: 'Сперва надо заклеить её скотчем, чтобы туда не попали грязь и песок с дороги. И уже потом ехать в автоцентр. Чем чище трещина — тем лучше будет ремонт.'
+            },
+            {
+                header: 'Ремонт стекла делается изнутри или снаружи машины?',
+                body: 'Лобовое стекло в машине состоит из двух частей. При трещинах и сколах повреждается верхний слой. Поэтому стекло ремонтируются снаружи авто.'
+            },
+            {
+                header: 'Повредится ли при ремонте обогрев стекла? ',
+                body: 'Нет, он не повреждается.'
+            }]
 
-                document.querySelector(`.modal.blur`).classList.remove("hidden")
+block main
+    script.
+        document.title = "Ремонт автомобильных стекол в СПб — цена ремонта автомобильных стекол";
+        document.getElementsByTagName('meta')["description"].content ="Ремонт стекол автомобиля в Санкт-Петербурге от автомобильного центра “Полимер”. Современное оборудование для детейлинга, выполнение задач любой сложности, гарантия на все виды услуг для авто, доступные цены и скидки"
 
-                const opened = document.querySelector(`.modal.${type}`);
-                opened.classList.remove("hidden");
-                opened.children[1].classList.remove('hidden')
-                if (gift) opened.classList.add('gift')
-            }
-        script.
-            (function (m, e, t, r, i, k, a) {
-                m[i] = m[i] || function () {
-                    (m[i].a = m[i].a || []).push(arguments)
-                };
-                m[i].l = 1 * new Date();
-                for (var j = 0; j < document.scripts.length; j++) {
-                    if (document.scripts[j].src === r) {
-                        return;
-                    }
-                }
-                k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
-            })
-            (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-            ym(91958676, "init", {
-                clickmap: true,
-                trackLinks: true,
-                accurateTrackBounce: true,
-                webvisor: true,
-                ecommerce: "dataLayer"
-            });
+    section.main
+        h1 Ремонт автомобильных стеко
+        div.alone
+            img.frame(src='./assets/img/glass/primary.webp')
 
-            var _emv = _emv || [];
-            _emv['campaign'] = 'e758533feded973ba4b0c779';
+        div.main_content
+            p Отремонтируйте
+                b  трещину или любой вид сколов
+                span  на стекле в срочном порядке
+                b  от 500₽
 
-            (function () {
-                var em = document.createElement('script');
-                em.type = 'text/javascript';
-                em.async = true;
-                em.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'leadback.ru/js/leadback.js';
-                var s = document.getElementsByTagName('script')[0];
-                s.parentNode.insertBefore(em, s);
-            })();
+            +modalBtn('Оставить заявку', 'full')
 
-            var _tmr = window._tmr || (window._tmr = []);
-            _tmr.push({id: "3350159", type: "pageView", start: (new Date()).getTime()});
-            (function (d, w, id) {
-                if (d.getElementById(id)) return;
-                var ts = d.createElement("script");
-                ts.type = "text/javascript";
-                ts.async = true;
-                ts.id = id;
-                ts.src = "https://top-fwz1.mail.ru/js/code.js";
-                var f = function () {
-                    var s = d.getElementsByTagName("script")[0];
-                    s.parentNode.insertBefore(ts, s);
-                };
-                if (w.opera == "[object Opera]") {
-                    d.addEventListener("DOMContentLoaded", f, false);
-                } else {
-                    f();
-                }
-            })(document, window, "tmr-code");
-        -
-            const glassSteps = [{ className: 'glass_step', id: 1, text: 'Подготавливаем  участок', desc: 'Проверяем наличие скрытых повреждений', img: './assets/img/glass/step_1.webp'},
-                { className: 'glass_step', id: 2, text: 'Ремонт скола, трещины', desc: 'Заполняем повреждение полимером и сушим стекло под UV лампами', img: './assets/img/glass/step_2.webp'},
-                { className: 'glass_step', id: 3, text: 'Финальная проверка', desc: 'Удаляем излишки полимера', img: './assets/img/glass/step_3.webp'},
-                { className: 'glass_step', id: 4, text: 'Выдача автомобиля клиенту', desc: '', img: './assets/img/glass/step_4.webp'}]
-        -
-            const glassPrices = [{ price: 'от 1 200 ₽', header: 'Скол-глаз', img: './assets/img/glass/type_1.webp' },
-                { price: 'от 1 500 ₽', header: 'Скол-звезда', img: './assets/img/glass/type_2.webp' },
-                { price: 'от 2 000 ₽', header: 'Двойной скол', img: './assets/img/glass/type_3.webp' },
-                { price: 'от 2 000 ₽', header: 'Скол радиальный', img: './assets/img/glass/type_4.webp' },
-                { price: 'от 1 500 ₽', header: 'Трещина до 20 см', img: './assets/img/glass/type_5.webp' },
-                { price: 'от 2 000 ₽', header: 'Трещина 20-40 см', img: './assets/img/glass/type_6.webp' },
-                { price: 'от 2 500 ₽', header: 'Трещина более 40 см', img: './assets/img/glass/type_7.webp' },
-                { price: 'от 2 000 ₽', header: 'Трещина со сколом', img: './assets/img/glass/type_8.webp' },];
-        -
-            const glassFAQ = [{
-                    header: 'Сколько по времени длится ремонт стекла?',
-                    body: 'Время ремонта зависит от вида трещины и скола. На мелкие повреждения уходит около 20-30 минут. Более серьезные ремонтируем за 40-60 минут.'
-                },
-                {
-                    header: 'Какие гарантии?',
-                    body: 'Любой ремонт стекла — это отсрочка его замены, поэтому на данный вид работы гарантия не выдается.'
-                },
-                {
-                    header: 'Что делать после появления трещины на лобовом стекле?',
-                    body: 'Сперва надо заклеить её скотчем, чтобы туда не попали грязь и песок с дороги. И уже потом ехать в автоцентр. Чем чище трещина — тем лучше будет ремонт.'
-                },
-                {
-                    header: 'Ремонт стекла делается изнутри или снаружи машины?',
-                    body: 'Лобовое стекло в машине состоит из двух частей. При трещинах и сколах повреждается верхний слой. Поэтому стекло ремонтируются снаружи авто.'
-                },
-                {
-                    header: 'Повредится ли при ремонте обогрев стекла? ',
-                    body: 'Нет, он не повреждается.'
-                }]
-        include blocks/_libs
-        body
-            include components/header
-            section.main
-                h1 Ремонт автомобильных стеко
-                div.alone
-                    img.frame(src='./assets/img/glass/primary.webp')
+    section
+        h2 Результаты
+        div.alone
+            img.frame(src='./assets/img/glass/result.webp')
 
-                div.main_content
-                    p Отремонтируйте
-                        b  трещину или любой вид сколов
-                        span  на стекле в срочном порядке
-                        b  от 500₽
+    section
+        h2 Как мы работаем
+        +carousel(glassSteps)
 
-                    +modalBtn('Оставить заявку', 'full')
+    section
+        h2 Цены
+        +prices(glassPrices)
 
-            section
-                h2 Результаты
-                div.alone
-                    img.frame(src='./assets/img/glass/result.webp')
+        h4 Дополнительный скол — скидка на ремонт 50%
 
-            section
-                h2 Как мы работаем
-                +carousel(glassSteps)
+        +modalBtn('Оставить заявку', 'full')
 
-            section
-                h2 Цены
-                +prices(glassPrices)
+    include ./components/advantages
 
-                h4 Дополнительный скол — скидка на ремонт 50%
-
-                +modalBtn('Оставить заявку', 'full')
-
-            include ./components/advantages
-
-            section
-                h2 Популярные вопросы
-                +spoiler(glassFAQ)
-            include components/footer
-
-            include components/modal
-
-            include components/checklist
-            
-            script(async src='./js/app.min.js')
+    section
+        h2 Популярные вопросы
+        +spoiler(glassFAQ)

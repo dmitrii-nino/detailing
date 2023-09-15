@@ -1,90 +1,6 @@
+extends components/layout
 
-doctype html
-html(lang="ru-RU")
-	head
-		meta(charset="utf-8")
-		meta(http-equiv='X-UA-Compatible', content="IE=edge")
-		meta(name="viewport" content="width=device-width,initial-scale=1")
-		meta(name="keywords" content="")
-		meta(name="yandex-verification" content="9b63ad40fe1000ae")
-		meta(name="description" content="Детейлинг кузова автомобиля в Санкт-Петербурге от автомобильного центра “Полимер”. Современное оборудование для детейлинга машин, выполнение задач любой сложности в СПб, гарантия на все виды услуг для авто, доступные цены и скидки")
-		title Детейлинг кузова автомобиля в СПб — цена детейлинга кузова недорого
-		link(rel="preconnect" href="https://fonts.googleapis.com")
-		link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
-		link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap")
-		link(rel="stylesheet" type='text/css' href="./css/style.min.css")
-		link(rel="icon" href="./assets/icons/favicon.ico") 
-
-		script.
-			(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-			const modalOpen = (type, gift) => {
-					var _tmr = window._tmr || (window._tmr = []);
-					_tmr.push({ type: 'reachGoal', id: 3350159, goal: 'form'});
-
-					ym(91958676, 'reachGoal', 'form')
-
-					document.querySelector(`.modal.blur`).classList.remove("hidden")
-
-					const opened = document.querySelector(`.modal.${type}`);
-					opened.classList.remove("hidden");
-					opened.children[1].classList.remove('hidden')
-					if (gift) opened.classList.add('gift')
-			}
-		script.
-				(function (m, e, t, r, i, k, a) {
-						m[i] = m[i] || function () {
-								(m[i].a = m[i].a || []).push(arguments)
-						};
-						m[i].l = 1 * new Date();
-						for (var j = 0; j <document.scripts.length; j++) {
-								if (document.scripts[j].src === r) {
-										return;
-								}
-						}
-						k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
-				})
-				(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-				ym(91958676, "init", {
-						clickmap: true,
-						trackLinks: true,
-						accurateTrackBounce: true,
-						webvisor: true,
-						ecommerce: "dataLayer"
-				});
-
-				var _emv = _emv || [];
-				_emv['campaign'] = 'e758533feded973ba4b0c779';
-
-				(function () {
-						var em = document.createElement('script');
-						em.type = 'text/javascript';
-						em.async = true;
-						em.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'leadback.ru/js/leadback.js';
-						var s = document.getElementsByTagName('script')[0];
-						s.parentNode.insertBefore(em, s);
-				})();
-
-				var _tmr = window._tmr || (window._tmr = []);
-				_tmr.push({id: "3350159", type: "pageView", start: (new Date()).getTime()});
-				(function (d, w, id) {
-						if (d.getElementById(id)) return;
-						var ts = d.createElement("script");
-						ts.type = "text/javascript";
-						ts.async = true;
-						ts.id = id;
-						ts.src = "https://top-fwz1.mail.ru/js/code.js";
-						var f = function () {
-								var s = d.getElementsByTagName("script")[0];
-								s.parentNode.insertBefore(ts, s);
-						};
-						if (w.opera == "[object Opera]") {
-								d.addEventListener("DOMContentLoaded", f, false);
-						} else {
-								f();
-						}
-				})(document, window, "tmr-code");
-
+block variables
 	-
 		const services = [{"className":"services_item","id":1, link: '/ceramic.html', "text":"Керамическое покрытие автомобиля","img":"./assets/img/index/services_1.webp"},
 			{"className":"services_item","id":2,link: '/film.html', "text":"Оклейка защитной пленкой","img":"./assets/img/index/services_2.webp"},
@@ -125,77 +41,72 @@ html(lang="ru-RU")
 			{className: "polishing_ex_item", id: 4, img: './assets/img/index/polishing_4.webp'}]
 	-
 		const detailingFAQ = [{header:'Преимущества и особенности детейлинга', body:'<p>Детейлинг кузова — тщательное очищение, восстановление и защита всех внешних деталей автомобиля. Включает в себя все, от мойки и полировки до применения защитных покрытий. Детейлинг важен, поскольку помогает сохранить внешний вид и ценность транспортного средства. Кроме того, с его помощью повышается общая безопасность за счет улучшения видимости и предотвращения коррозии.</p><p>Этапы детейлинга:</p><ul><li>Мойка автомобиля. Для начала процесса детейлинга автомобиль должен быть тщательно вымыт. Использование правильного шампуня и техники мойки важно для предотвращения царапин и повреждений краски на кузове.</li><li>Обработка колес и шин. Колеса и шины также должны быть тщательно очищены от грязи и пыли. Для этой задачи используются специальные очистители, которые делают эту работу более эффективной.</li><li>Полировка кузова. После мойки следует полировка. В процессе удаляются поверхностные царапины, пятна и окислы, возвращая автомобилю его первоначальный блеск.</li></ul>'},{header: 'Техника и материалы для полировки', body: '<p>Для полировки используются специальные полировальные средства и машины. Используя правильную технику, можно добиться блестящего и гладкого покрытия без царапин. После полировки на кузов наносится специальная защита. Существуют различные виды защитных покрытий для нанесения на кузов, включая воск, пленку, покрытия на основе керамики и полимеры.</p><p>Защитные покрытия предотвращают повреждения от ультрафиолетовых лучей, коррозии, птичьих экскрементов и древесной смолы. Они также делают автомобиль более легким для очистки.</p>'},{header: 'Сохранение и уход за защитным покрытием', body: '<p>После нанесения защитного покрытия важно правильно за ним ухаживать. Это включает регулярную мойку и использование специальных продуктов для ухода. Профессиональные услуги от детейлинг-центра “Полимер” в Санкт-Петербурге обеспечивают высокое качество и долгосрочную защиту кузова. Среди наиболее популярных услуг автоцентра стоит выделить следующие: химчистка салона авто, оклейка пленкой элементов кузова, тонировка стекол и другие. Специалисты центра обладают необходимыми навыками и оборудованием для достижения наилучших результатов.</p>'}]
-	include blocks/_libs
-	body
-		include components/header
-		section.index
-			div(class='frame primary_title')
-				h1 ДЕТЕЙЛИНГ КУЗОВА В САНКТ-ПЕТЕРБУРГЕ
-				h4 с вниманием к мелочам
 
-				div.primary_title_block
-					p Вернем автомобилю безупречный внешний вид за 2 дня с оплатой после работы и гарантией 1 год по договору
-					+modalBtn('Оставить заявку *', 'full')
-					p * Узнайте точную стоимость и получите подарок на выбор
+block main
+	script.
+		document.title = "Детейлинг кузова автомобиля в СПб — цена детейлинга кузова недорого";
+		document.getElementsByTagName('meta')["description"].content = "Детейлинг кузова автомобиля в Санкт-Петербурге от автомобильного центра “Полимер”. Современное оборудование для детейлинга машин, выполнение задач любой сложности в СПб, гарантия на все виды услуг для авто, доступные цены и скидки"
 
-			p Вернем автомобилю безупречный внешний вид за 2 дня с оплатой после работы и гарантией 1 год по договору
+	section.index
+		div(class='frame primary_title')
+			h1 ДЕТЕЙЛИНГ КУЗОВА В САНКТ-ПЕТЕРБУРГЕ
+			h4 с вниманием к мелочам
 
-		section
-			a.anchor(id='services')
-			h2 Наши услуги
-			+carousel(services)
-			+modalBtn('Оставить заявку *', 'full')
+			div.primary_title_block
+				p Вернем автомобилю безупречный внешний вид за 2 дня с оплатой после работы и гарантией 1 год по договору
+				+modalBtn('Оставить заявку *', 'full')
+				p * Узнайте точную стоимость и получите подарок на выбор
 
-			p * Узнайте точную стоимость и получите подарок на выбор
+		p Вернем автомобилю безупречный внешний вид за 2 дня с оплатой после работы и гарантией 1 год по договору
 
-		include ./components/protect
+	section
+		a.anchor(id='services')
+		h2 Наши услуги
+		+carousel(services)
+		+modalBtn('Оставить заявку *', 'full')
 
-		section.examples
-			a.anchor(id='examples')
-			h2 Наши работы
-			div.examples_item
-				h4 Керамическое покрытие
-				+slipper(ceramicExSlider)
-				iframe(id="ceramic_video"
-					src="https://www.youtube.com/embed/pjxQ_dzkVR8")
+		p * Узнайте точную стоимость и получите подарок на выбор
 
-			div.examples_item
-				h4 Оклейка защитной пленкой
-				p Пример того, как пленка защитила корпус автомобиля после ДТП
-				p
-				+slipper(filmExSlider)
-				+videoSlipper(filmVideoSlider)
+	include ./components/protect
 
-			div.examples_item
-				h4 Химчистка автомобиля
-				+slipper(drycleaningExSlider)
-				iframe(id="dry-cleaning_video"
-					src="https://www.youtube.com/embed/38e4AXi-UF4")
+	section.examples
+		a.anchor(id='examples')
+		h2 Наши работы
+		div.examples_item
+			h4 Керамическое покрытие
+			+slipper(ceramicExSlider)
+			iframe(id="ceramic_video"
+				src="https://www.youtube.com/embed/pjxQ_dzkVR8")
 
-			div.examples_item
-				h4 Тонировка
-				+slipper(toningExSlider)
+		div.examples_item
+			h4 Оклейка защитной пленкой
+			p Пример того, как пленка защитила корпус автомобиля после ДТП
+			p
+			+slipper(filmExSlider)
+			+videoSlipper(filmVideoSlider)
 
-			div.examples_item
-				h4 Оклейка экстерьера
-				+slipper(exteriorExSlider)
+		div.examples_item
+			h4 Химчистка автомобиля
+			+slipper(drycleaningExSlider)
+			iframe(id="dry-cleaning_video"
+				src="https://www.youtube.com/embed/38e4AXi-UF4")
 
-			div.examples_item
-				h4 Полировка автомобиля
-				+slipper(polishingExSlider)
+		div.examples_item
+			h4 Тонировка
+			+slipper(toningExSlider)
+
+		div.examples_item
+			h4 Оклейка экстерьера
+			+slipper(exteriorExSlider)
+
+		div.examples_item
+			h4 Полировка автомобиля
+			+slipper(polishingExSlider)
 
 
 
-		include ./components/advantages
+	include ./components/advantages
 
-		section
-			h2 ДЕТЕЙЛИНГ КУЗОВА В САНКТ-ПЕТЕРБУРГЕ
-			+spoiler(detailingFAQ)
-
-		include components/footer
-
-		include components/modal
-
-		include components/checklist
-					
-		script(async src='./js/app.min.js')
+	section
+		h2 ДЕТЕЙЛИНГ КУЗОВА В САНКТ-ПЕТЕРБУРГЕ
+		+spoiler(detailingFAQ)

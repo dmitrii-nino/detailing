@@ -1,171 +1,89 @@
-doctype html
-html(lang="ru-RU")
-    head
-        meta(charset="utf-8")
-        meta(http-equiv='X-UA-Compatible', content="IE=edge")
-        meta(name="viewport" content="width=device-width,initial-scale=1")
-        meta(name="keywords" content="")
-        meta(name="description" content="Оклейка экстерьера автомобиля в Санкт-Петербурге от автомобильного центра “Полимер”. Современное оборудование для детейлинга, выполнение задач любой сложности, гарантия на все виды услуг для авто, доступные цены и скидки")
-        title Оклейка экстерьера автомобиля в СПб — цена оклейки экстерьера автомобиля 
-        link(rel="preconnect" href="https://fonts.googleapis.com")
-        link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
-        link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap")
-        link(rel="stylesheet" type='text/css' href="./css/style.min.css")
-        link(rel="icon" href="./assets/icons/favicon.ico")
-        script.
-            const modalOpen = (type, gift) => {
-                var _tmr = window._tmr || (window._tmr = []);
-                _tmr.push({ type: 'reachGoal', id: 3350159, goal: 'form'});
+extends components/layout
 
-                ym(91958676, 'reachGoal', 'form')
+block variables
+    -
+        const exteriorSteps = [{ className: 'exterior_step', id: 1, text: 'Начало работы', desc: 'Проверяем наличие вашей машины и комплектации по нашей базе лекал, чтобы пленка идеально подходила под размеры деталей салона', img: './assets/img/exterior/step_1.webp'},
+            { className: 'exterior_step', id: 2, text: 'Подготовка материала', desc: 'Плоттер прорезает пленку по лекалам вашего салона', img: './assets/img/exterior/step_2.webp'},
+            { className: 'exterior_step', id: 3, text: 'Оклейка', desc: 'После подготовки материалов, наши мастера оклеивают салон', img: './assets/img/exterior/step_3.webp'},
+            { className: 'exterior_step', id: 4, text: 'Выдача автомобиля клиенту', desc: '', img: './assets/img/exterior/step_4.webp'}]
+    -
+        const exteriorExSlider = [{className: "exterior_ex_item", id: 1, img: './assets/img/index/exterior_1.webp'},
+            {className: "exterior_ex_item", id: 2, img: './assets/img/index/exterior_2.webp'}]
+    -
+        const exteriorPrices = [{ price: 'от 1 200 ₽', header: 'Скол-глаз', img: './assets/img/exterior/type_1.webp' },
+            { price: 'от 1 500 ₽', header: 'Скол-звезда', img: './assets/img/exterior/type_2.webp' },
+            { price: 'от 2 000 ₽', header: 'Двойной скол', img: './assets/img/exterior/type_3.webp' },
+            { price: 'от 2 000 ₽', header: 'Скол радиальный', img: './assets/img/exterior/type_4.webp' },
+            { price: 'от 1 500 ₽', header: 'Трещина до 20 см', img: './assets/img/exterior/type_5.webp' },
+            { price: 'от 2 000 ₽', header: 'Трещина 20-40 см', img: './assets/img/exterior/type_6.webp' },
+            { price: 'от 2 500 ₽', header: 'Трещина более 40 см', img: './assets/img/exterior/type_7.webp' },
+            { price: 'от 2 000 ₽', header: 'Трещина со сколом', img: './assets/img/exterior/type_8.webp' },];
+    -
+        const exteriorPoints = [{
+                id: 1,
+                text: '<b>Защита экранов</b> — пленка предотвращает появление царапин на мониторах и сенсорных панелей, защищает лакированные поверхности.'
+            },
+            {
+                id: 2,
+                text: '<b>Пленка незаметна на поверхности.</b> Внешний вид салона останется прежним.'
+            },
+            {
+                id: 3,
+                text: '<b>Большой срок эксплуатации</b> — срок службы защитной пленки не менее 5 лет.'
+            }]
+    -
+        const exteriorFAQ = [{
+                header: 'Любой салон можно оклеить защитной пленкой?',
+                body: 'Перед началом работы мы проверяем наличие вашей модели и комплектации по нашей базе лекал. После этого мы рассчитываем точную стоимость оклейки конкретно для вашего салона.'
+            },
+            {
+                header: 'Можно ли оклеить не новый салон?',
+                body: 'Да, конечно. Защитить пленкой можно любой салон. Если детали салона уже поцарапаны, сначала они полируются, а после уже оклеиваются.'
+            },
+            {
+                header: 'Какие части салона можно защитить пленкой?',
+                body: '- Мониторы, дисплеи <br/>- Приборные панели <br/>- Элементы управления, декоративные вставки'
+            },
+            {
+                header: 'Мешает ли пленка работе сенсорных панелей?',
+                body: 'Защитная пленка не влияет на работу сенсорных приборов.'
+            }]
 
-                document.querySelector(`.modal.blur`).classList.remove("hidden")
+block main
+    script.
+        document.title = "Оклейка экстерьера автомобиля в СПб — цена оклейки экстерьера автомобиля";
+        document.getElementsByTagName('meta')["description"].content = "Оклейка экстерьера автомобиля в Санкт-Петербурге от автомобильного центра “Полимер”. Современное оборудование для детейлинга, выполнение задач любой сложности, гарантия на все виды услуг для авто, доступные цены и скидки"
 
-                const opened = document.querySelector(`.modal.${type}`);
-                opened.classList.remove("hidden");
-                opened.children[1].classList.remove('hidden')
-                if (gift) opened.classList.add('gift')
-            }
-        script.
-            (function (m, e, t, r, i, k, a) {
-                m[i] = m[i] || function () {
-                    (m[i].a = m[i].a || []).push(arguments)
-                };
-                m[i].l = 1 * new Date();
-                for (var j = 0; j < document.scripts.length; j++) {
-                    if (document.scripts[j].src === r) {
-                        return;
-                    }
-                }
-                k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
-            })
-            (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-            ym(91958676, "init", {
-                clickmap: true,
-                trackLinks: true,
-                accurateTrackBounce: true,
-                webvisor: true,
-                ecommerce: "dataLayer"
-            });
+    section.main
+        h1 Оклейка экстерьера автомобиля
+        div.alone
+            img.frame(src='./assets/img/exterior/primary.webp')
 
-            var _emv = _emv || [];
-            _emv['campaign'] = 'e758533feded973ba4b0c779';
+        div.main_content
+            p Оклейте интерьер салона защитной пленкой
+                b  от 3000 рублей
 
-            (function () {
-                var em = document.createElement('script');
-                em.type = 'text/javascript';
-                em.async = true;
-                em.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'leadback.ru/js/leadback.js';
-                var s = document.getElementsByTagName('script')[0];
-                s.parentNode.insertBefore(em, s);
-            })();
+            +modalBtn('Оставить заявку', 'full')
 
-            var _tmr = window._tmr || (window._tmr = []);
-            _tmr.push({id: "3350159", type: "pageView", start: (new Date()).getTime()});
-            (function (d, w, id) {
-                if (d.getElementById(id)) return;
-                var ts = d.createElement("script");
-                ts.type = "text/javascript";
-                ts.async = true;
-                ts.id = id;
-                ts.src = "https://top-fwz1.mail.ru/js/code.js";
-                var f = function () {
-                    var s = d.getElementsByTagName("script")[0];
-                    s.parentNode.insertBefore(ts, s);
-                };
-                if (w.opera == "[object Opera]") {
-                    d.addEventListener("DOMContentLoaded", f, false);
-                } else {
-                    f();
-                }
-            })(document, window, "tmr-code");
-        -
-            const exteriorSteps = [{ className: 'exterior_step', id: 1, text: 'Начало работы', desc: 'Проверяем наличие вашей машины и комплектации по нашей базе лекал, чтобы пленка идеально подходила под размеры деталей салона', img: './assets/img/exterior/step_1.webp'},
-                { className: 'exterior_step', id: 2, text: 'Подготовка материала', desc: 'Плоттер прорезает пленку по лекалам вашего салона', img: './assets/img/exterior/step_2.webp'},
-                { className: 'exterior_step', id: 3, text: 'Оклейка', desc: 'После подготовки материалов, наши мастера оклеивают салон', img: './assets/img/exterior/step_3.webp'},
-                { className: 'exterior_step', id: 4, text: 'Выдача автомобиля клиенту', desc: '', img: './assets/img/exterior/step_4.webp'}]
-        -
-            const exteriorExSlider = [{className: "exterior_ex_item", id: 1, img: './assets/img/index/exterior_1.webp'},
-                {className: "exterior_ex_item", id: 2, img: './assets/img/index/exterior_2.webp'}]
-        -
-            const exteriorPrices = [{ price: 'от 1 200 ₽', header: 'Скол-глаз', img: './assets/img/exterior/type_1.webp' },
-                { price: 'от 1 500 ₽', header: 'Скол-звезда', img: './assets/img/exterior/type_2.webp' },
-                { price: 'от 2 000 ₽', header: 'Двойной скол', img: './assets/img/exterior/type_3.webp' },
-                { price: 'от 2 000 ₽', header: 'Скол радиальный', img: './assets/img/exterior/type_4.webp' },
-                { price: 'от 1 500 ₽', header: 'Трещина до 20 см', img: './assets/img/exterior/type_5.webp' },
-                { price: 'от 2 000 ₽', header: 'Трещина 20-40 см', img: './assets/img/exterior/type_6.webp' },
-                { price: 'от 2 500 ₽', header: 'Трещина более 40 см', img: './assets/img/exterior/type_7.webp' },
-                { price: 'от 2 000 ₽', header: 'Трещина со сколом', img: './assets/img/exterior/type_8.webp' },];
-        -
-            const exteriorPoints = [{
-                    id: 1,
-                    text: '<b>Защита экранов</b> — пленка предотвращает появление царапин на мониторах и сенсорных панелей, защищает лакированные поверхности.'
-                },
-                {
-                    id: 2,
-                    text: '<b>Пленка незаметна на поверхности.</b> Внешний вид салона останется прежним.'
-                },
-                {
-                    id: 3,
-                    text: '<b>Большой срок эксплуатации</b> — срок службы защитной пленки не менее 5 лет.'
-                }]
-        -
-            const exteriorFAQ = [{
-                    header: 'Любой салон можно оклеить защитной пленкой?',
-                    body: 'Перед началом работы мы проверяем наличие вашей модели и комплектации по нашей базе лекал. После этого мы рассчитываем точную стоимость оклейки конкретно для вашего салона.'
-                },
-                {
-                    header: 'Можно ли оклеить не новый салон?',
-                    body: 'Да, конечно. Защитить пленкой можно любой салон. Если детали салона уже поцарапаны, сначала они полируются, а после уже оклеиваются.'
-                },
-                {
-                    header: 'Какие части салона можно защитить пленкой?',
-                    body: '- Мониторы, дисплеи <br/>- Приборные панели <br/>- Элементы управления, декоративные вставки'
-                },
-                {
-                    header: 'Мешает ли пленка работе сенсорных панелей?',
-                    body: 'Защитная пленка не влияет на работу сенсорных приборов.'
-                }]
-        include blocks/_libs
-        body
-            include components/header
-            section.main
-                h1 Оклейка экстерьера автомобиля
-                div.alone
-                    img.frame(src='./assets/img/exterior/primary.webp')
+    include ./components/protect
 
-                div.main_content
-                    p Оклейте интерьер салона защитной пленкой
-                        b  от 3000 рублей
+    section
+        h2 Результаты
+        +slipper(exteriorExSlider)
 
-                    +modalBtn('Оставить заявку', 'full')
+    section
+        h2 Как мы работаем
+        +carousel(exteriorSteps)
 
-            include ./components/protect
+    section
+        h2 3 причины оклеить интерьер салона защитной пленкой
+        +points(exteriorPoints)
 
-            section
-                h2 Результаты
-                +slipper(exteriorExSlider)
+    section
+        +modalBtn('Рассчитать стоимость', 'full')
 
-            section
-                h2 Как мы работаем
-                +carousel(exteriorSteps)
+    include ./components/advantages
 
-            section
-                h2 3 причины оклеить интерьер салона защитной пленкой
-                +points(exteriorPoints)
-
-            section
-                +modalBtn('Рассчитать стоимость', 'full')
-
-            include ./components/advantages
-
-            section
-                h2 Популярные вопросы
-                +spoiler(exteriorFAQ)
-            include components/footer
-
-            include components/modal
-
-            include components/checklist
-            
-            script(async src='./js/app.min.js')
+    section
+        h2 Популярные вопросы
+        +spoiler(exteriorFAQ)

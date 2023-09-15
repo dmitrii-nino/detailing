@@ -1,135 +1,60 @@
-doctype html
-html(lang="ru-RU")
-    head
-        meta(charset="utf-8")
-        meta(http-equiv='X-UA-Compatible', content="IE=edge")
-        meta(name="viewport" content="width=device-width,initial-scale=1")
-        meta(name="keywords" content="")
-        meta(name="description" content="Прайс-лист на химчистку салона автомобиля в Санкт-Петербурге от автомобильного центра “Полимер”. Современное оборудование для детейлинга, выполнение задач любой сложности, гарантия на все виды услуг для авто, доступные цены и скидки")
-        title Прайс-лист на химчистку салона автомобиля в СПб — цены в прайс-листе на химчистку салона авто  
-        link(rel="preconnect" href="https://fonts.googleapis.com")
-        link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
-        link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap")
-        link(rel="stylesheet" type='text/css' href="./css/style.min.css")
-        link(rel="icon" href="./assets/icons/favicon.ico")
-        script.
-            const modalOpen = (type, gift) => {
-                var _tmr = window._tmr || (window._tmr = []);
-                _tmr.push({ type: 'reachGoal', id: 3350159, goal: 'form'});
+extends components/layout
 
-                ym(91958676, 'reachGoal', 'form')
+block variables
+    - const columns = {name: ' ', mini: 'Малый класс', first: 'Первый класс или гольф класс', second: 'Второй средний класс', business: 'Бизнес-класс', grand: 'Представительский класс'};
+    -
+        const data = [
+            { name: 'Комплексная химчистка', mini: 12000, first: 14000, second: 16000, business: 18000, grand: 20000 },
+            { name: 'Химчистка потолка + стойки', mini: 1600, first: 2200, second: 2800, business: 3400, grand: 4000 },
+            { name: 'Химчистка одной стойки (пластик)', mini: 200, first: 200, second: 200, business: 200, grand: 200 },
+            { name: 'Химчистка одной стойки', mini: 400, first: 400, second: 400, business: 400, grand: 400 },
+            { name: 'Химчистка пола салона', mini: 2200, first: 2800, second: 3400, business: 4000, grand: 4600 },
+            { name: 'Химчистка пола водителя', mini: 1400, first: 1600, second: 1800, business: 2000, grand: 2000 },
+            { name: 'Химчистка пола (за 1 место, кроме водительского)', mini: 900, first: 1100, second: 1300, business: 1500, grand: 1500 },
+            { name: 'Химчистка пола багажника', mini: 1000, first: 1200, second: 1400, business: 1600, grand: 1600 },
+            { name: 'Химчистка 1 ковра (тряпка)', mini: 750, first: 750, second: 750, business: 750, grand: 750 },
+            { name: 'Химчистка багажного коврика (тряпка)', mini: 1000, first: 1000, second: 1000, business: 1000, grand: 1000 },
+            { name: 'Химчистка торпеды', mini: 1000, first: 1200, second: 1400, business: 1600, grand: 2000 },
+            { name: 'Химчистка консоли', mini: 600, first: 800, second: 1000, business: 1200, grand: 1200 },
+            { name: 'Химчистка дверной карты', mini: 800, first: 1000, second: 1200, business: 1400, grand: 1600 },
+            { name: 'Химчистка крышки багажника', mini: 1400, first: 1800, second: 2200, business: 2600, grand: 3000 },
+            { name: 'Химчистка багажника', mini: 800, first: 1000, second: 1000, business: 1400, grand: 1600 },
+            { name: 'Химчистка 1 сидения', mini: 1000, first: 1400, second: 1600, business: 1800, grand: 1800 },
+            { name: 'Химчистка заднего дивана', mini: 1600, first: 1800, second: 2000, business: 2400, grand: 2400 },
+            { name: 'Химчистка заднего разделительного сидения', mini: 2200, first: 2400, second: 2600, business: 2800, grand: 3000 },
+            { name: 'Химчистка ремня безопасности', mini: 500, first: 500, second: 500, business: 500, grand: 500 },
+            { name: 'Химчистка подлокотника', mini: 300, first: 300, second: 300, business: 300, grand: 300 },
+            { name: 'Химчистка рулевого колеса', mini: 700, first: 700, second: 700, business: 700, grand: 700 },
+            { name: 'Химчистка козырька', mini: 400, first: 400, second: 400, business: 400, grand: 400 },
+            { name: 'Химчистка задней полки', mini: 500, first: 500, second: 500, business: 500, grand: 500 },
+            { name: 'Химчистка задней (раскладной) полки', mini: 1000, first: 1200, second: 1400, business: 1600, grand: 1600 },
+            { name: 'Химчистка ручки АКП', mini: 300, first: 300, second: 300, business: 300, grand: 300 },
+            { name: 'Химчистка детского кресла', mini: 2000, first: 2000, second: 2000, business: 2000, grand: 2000 },
+            { name: 'Пропитка напольного покрытия защитным средством', mini: 2400, first: 2600, second: 2800, business: 3400, grand: 3800 },
+            { name: 'Пропитка ткани салона защитным средством', mini: 2600, first: 3000, second: 3200, business: 3600, grand: 4000 },
+            { name: 'Пропитка тканевого сидения защитным средством', mini: 800, first: 800, second: 800, business: 800, grand: 800 },
+            { name: 'Пропитка тканевого элемента салона защ. средством', mini: 300, first: 300, second: 300, business: 300, grand: 300 },
+            { name: 'Пропитка пола водителя защитным средством', mini: 500, first: 500, second: 500, business: 500, grand: 500 },
+            { name: 'Кондиционер кожи салона', mini: 2600, first: 2800, second: 3000, business: 3400, grand: 3900 },
+            { name: 'Кондиционер одного сидения', mini: 700, first: 700, second: 700, business: 900, grand: 900 }
+        ]
 
-                document.querySelector(`.modal.blur`).classList.remove("hidden")
+block main
+    script.
+        document.title = "Прайс-лист на химчистку салона автомобиля в СПб — цены в прайс-листе на химчистку салона авто";
+        document.getElementsByTagName('meta')["description"].content ="Прайс-лист на химчистку салона автомобиля в Санкт-Петербурге от автомобильного центра “Полимер”. Современное оборудование для детейлинга машин, выполнение задач любой сложности в СПб, гарантия на все виды услуг для авто, доступные цены и скидки"
 
-                const opened = document.querySelector(`.modal.${type}`);
-                opened.classList.remove("hidden");
-                opened.children[1].classList.remove('hidden')
-                if (gift) opened.classList.add('gift')
-            }
-        script.
-            (function (m, e, t, r, i, k, a) {
-                m[i] = m[i] || function () {
-                    (m[i].a = m[i].a || []).push(arguments)
-                };
-                m[i].l = 1 * new Date();
-                for (var j = 0; j < document.scripts.length; j++) {
-                    if (document.scripts[j].src === r) {
-                        return;
-                    }
-                }
-                k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
-            })
-            (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-            ym(91958676, "init", {
-                clickmap: true,
-                trackLinks: true,
-                accurateTrackBounce: true,
-                webvisor: true,
-                ecommerce: "dataLayer"
-            });
+    section.price_list
+        h2 Прайс-лист на химчистку салона автомобиля
+        +table(columns, data)
 
-            var _emv = _emv || [];
-            _emv['campaign'] = 'e758533feded973ba4b0c779';
+        button(class='btn btn_back' onclick="window.history.back()") Назад
 
-            (function () {
-                var em = document.createElement('script');
-                em.type = 'text/javascript';
-                em.async = true;
-                em.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'leadback.ru/js/leadback.js';
-                var s = document.getElementsByTagName('script')[0];
-                s.parentNode.insertBefore(em, s);
-            })();
+    section
+        p Оставьте заявку на бесплатную консультацию, и получите купон на
+            b  2.000 ₽
+            span  на бронирование фар
 
-            var _tmr = window._tmr || (window._tmr = []);
-            _tmr.push({id: "3350159", type: "pageView", start: (new Date()).getTime()});
-            (function (d, w, id) {
-                if (d.getElementById(id)) return;
-                var ts = d.createElement("script");
-                ts.type = "text/javascript";
-                ts.async = true;
-                ts.id = id;
-                ts.src = "https://top-fwz1.mail.ru/js/code.js";
-                var f = function () {
-                    var s = d.getElementsByTagName("script")[0];
-                    s.parentNode.insertBefore(ts, s);
-                };
-                if (w.opera == "[object Opera]") {
-                    d.addEventListener("DOMContentLoaded", f, false);
-                } else {
-                    f();
-                }
-            })(document, window, "tmr-code");
+        +modalBtn('Оставить заявку *', 'consultation')
 
-        - const columns = {name: ' ', mini: 'Малый класс', first: 'Первый класс или гольф класс', second: 'Второй средний класс', business: 'Бизнес-класс', grand: 'Представительский класс'};
-        -
-            const data = [
-                { name: 'Комплексная химчистка', mini: 12000, first: 14000, second: 16000, business: 18000, grand: 20000 },
-                { name: 'Химчистка потолка + стойки', mini: 1600, first: 2200, second: 2800, business: 3400, grand: 4000 },
-                { name: 'Химчистка одной стойки (пластик)', mini: 200, first: 200, second: 200, business: 200, grand: 200 },
-                { name: 'Химчистка одной стойки', mini: 400, first: 400, second: 400, business: 400, grand: 400 },
-                { name: 'Химчистка пола салона', mini: 2200, first: 2800, second: 3400, business: 4000, grand: 4600 },
-                { name: 'Химчистка пола водителя', mini: 1400, first: 1600, second: 1800, business: 2000, grand: 2000 },
-                { name: 'Химчистка пола (за 1 место, кроме водительского)', mini: 900, first: 1100, second: 1300, business: 1500, grand: 1500 },
-                { name: 'Химчистка пола багажника', mini: 1000, first: 1200, second: 1400, business: 1600, grand: 1600 },
-                { name: 'Химчистка 1 ковра (тряпка)', mini: 750, first: 750, second: 750, business: 750, grand: 750 },
-                { name: 'Химчистка багажного коврика (тряпка)', mini: 1000, first: 1000, second: 1000, business: 1000, grand: 1000 },
-                { name: 'Химчистка торпеды', mini: 1000, first: 1200, second: 1400, business: 1600, grand: 2000 },
-                { name: 'Химчистка консоли', mini: 600, first: 800, second: 1000, business: 1200, grand: 1200 },
-                { name: 'Химчистка дверной карты', mini: 800, first: 1000, second: 1200, business: 1400, grand: 1600 },
-                { name: 'Химчистка крышки багажника', mini: 1400, first: 1800, second: 2200, business: 2600, grand: 3000 },
-                { name: 'Химчистка багажника', mini: 800, first: 1000, second: 1000, business: 1400, grand: 1600 },
-                { name: 'Химчистка 1 сидения', mini: 1000, first: 1400, second: 1600, business: 1800, grand: 1800 },
-                { name: 'Химчистка заднего дивана', mini: 1600, first: 1800, second: 2000, business: 2400, grand: 2400 },
-                { name: 'Химчистка заднего разделительного сидения', mini: 2200, first: 2400, second: 2600, business: 2800, grand: 3000 },
-                { name: 'Химчистка ремня безопасности', mini: 500, first: 500, second: 500, business: 500, grand: 500 },
-                { name: 'Химчистка подлокотника', mini: 300, first: 300, second: 300, business: 300, grand: 300 },
-                { name: 'Химчистка рулевого колеса', mini: 700, first: 700, second: 700, business: 700, grand: 700 },
-                { name: 'Химчистка козырька', mini: 400, first: 400, second: 400, business: 400, grand: 400 },
-                { name: 'Химчистка задней полки', mini: 500, first: 500, second: 500, business: 500, grand: 500 },
-                { name: 'Химчистка задней (раскладной) полки', mini: 1000, first: 1200, second: 1400, business: 1600, grand: 1600 },
-                { name: 'Химчистка ручки АКП', mini: 300, first: 300, second: 300, business: 300, grand: 300 },
-                { name: 'Химчистка детского кресла', mini: 2000, first: 2000, second: 2000, business: 2000, grand: 2000 },
-                { name: 'Пропитка напольного покрытия защитным средством', mini: 2400, first: 2600, second: 2800, business: 3400, grand: 3800 },
-                { name: 'Пропитка ткани салона защитным средством', mini: 2600, first: 3000, second: 3200, business: 3600, grand: 4000 },
-                { name: 'Пропитка тканевого сидения защитным средством', mini: 800, first: 800, second: 800, business: 800, grand: 800 },
-                { name: 'Пропитка тканевого элемента салона защ. средством', mini: 300, first: 300, second: 300, business: 300, grand: 300 },
-                { name: 'Пропитка пола водителя защитным средством', mini: 500, first: 500, second: 500, business: 500, grand: 500 },
-                { name: 'Кондиционер кожи салона', mini: 2600, first: 2800, second: 3000, business: 3400, grand: 3900 },
-                { name: 'Кондиционер одного сидения', mini: 700, first: 700, second: 700, business: 900, grand: 900 }
-            ]
-        include blocks/_libs
-        body
-            section.price_list
-                h2 Прайс-лист на химчистку салона автомобиля
-                +table(columns, data)
-
-                button(class='btn btn_back' onclick="window.history.back()") Назад
-
-            section
-                p Оставьте заявку на бесплатную консультацию, и получите купон на
-                    b  2.000 ₽
-                    span  на бронирование фар
-
-                +modalBtn('Оставить заявку *', 'consultation')
-
-                p * Перезвоним в течение 20 минут. Если заявка пришла после 20:00 – перезвоним не позднее 11.00 на следующий день
+        p * Перезвоним в течение 20 минут. Если заявка пришла после 20:00 – перезвоним не позднее 11.00 на следующий день

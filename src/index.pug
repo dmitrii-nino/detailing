@@ -1,139 +1,101 @@
+extends ./components/layout
 
-doctype html
-html(lang="ru-RU")
-	head
-		meta(charset="utf-8")
-		meta(http-equiv='X-UA-Compatible', content="IE=edge")
-		meta(name="viewport" content="width=device-width,initial-scale=1")
-		meta(name="keywords" content="")
-		meta(name="yandex-verification" content="9b63ad40fe1000ae")
-		meta(name="description" content="Детейлинг автомобиля в Санкт-Петербурге от автомобильного центра “Полимер”. Современное оборудование в СПб, выполнение задач любой сложности, гарантия на все виды услуг для авто, доступные цены и скидки")
-		title Детейлинг автомобиля в Санкт-Петербурге — цена профессиональных услуг полного детейлинга авто в СПб
-		link(rel="preconnect" href="https://fonts.googleapis.com")
-		link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
-		link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap")
-		link(rel="stylesheet" type='text/css' href="./css/style.min.css")
-		link(rel="icon" href="./assets/icons/favicon.ico") 
+block variables
+    -
+        const services = [{
+            "className": "services_item",
+            "id": 1,
+            link: '/ceramic.html',
+            "text": "Керамическое покрытие",
+            "img": "./assets/img/index/services_1.webp"
+        },
+            {
+                "className": "services_item",
+                "id": 2,
+                link: '/film.html',
+                "text": "Оклейка защитной пленкой",
+                "img": "./assets/img/index/services_2.webp"
+            },
+            {
+                "className": "services_item",
+                "id": 3,
+                link: '/glass_repair.html',
+                "text": "Ремонт стекла",
+                "img": "./assets/img/glass/step_2.webp"
+            },
+            {
+                "className": "services_item",
+                "id": 4,
+                link: '/dry_cleaning.html',
+                "text": "Химчистка автомобиля",
+                "img": "./assets/img/index/services_3.webp"
+            },
+            {
+                "className": "services_item",
+                "id": 5,
+                link: '/toning.html',
+                "text": "Тонировка",
+                "img": "./assets/img/index/services_4.webp"
+            },
+            {
+                "className": "services_item",
+                "id": 6,
+                link: '/exterior.html',
+                "text": "Оклейка экстерьера",
+                "img": "./assets/img/index/services_5.webp"
+            },
+            {
+                "className": "services_item",
+                "id": 7,
+                link: '/polishing.html',
+                "text": "Полировка автомобиля",
+                "img": "./assets/img/index/services_6.webp"
+            }]
+    -
+        const detailingFAQ = [{
+                header: 'Детейлинг авто ',
+                body: '<p>Автомобильный детейлинг-центр “Полимер” работает в Санкт-Петербурге с 2013 года.' +
+                        ' Благодаря накопленному опыту и штату специалистов студия детейлинга предлагает профессиональный уход за вашим авто и комплексные услуги:' +
+                        ' полировка, химчистка салона, а также керамическое покрытие и бронирование пленкой, благодаря которой автомобиль получает защиту от мелких сколов и вмятин кузова, коррозии, выцветания и грязи.</p>' +
+                        '<p>Детейлинг (detailing) — процесс глубокой очистки и улучшения внешнего вида автомобиля. Он включает в себя целый комплекс мероприятий:' +
+                        ' детейлинг-мойка, удаление царапин и загрязнений, а также нанесение керамического покрытия или оклейка бронепленкой для защиты кузова от внешних воздействий.</p>'
+            },
+            {
+                header: 'Преимущества детейлинга',
+                body: '<p>Детейлинг имеет множество преимуществ:</p>' +
+                        ' <ul><li>Улучшенный внешний вид. Керамическое покрытие придает кузову блеск за счет отсутствия мелких дефектов, царапин и сколов, благодаря чему автомобиль выглядит как новый.</li>' +
+                        '<li>Долговременная защита. Керамическое покрытие и бронепленка обеспечивают долговременную защиту кузова, предотвращают выцветание под лучами ультрафиолета, окисление, механические повреждения и воздействие химических веществ.</li>' +
+                        '<li>Легкость ухода. После детейлинга автомобиль становится легче поддерживать в чистоте. Керамическое или пленочное покрытие образует гладкую поверхность, которая отталкивает грязь и пыль. Это упрощает процесс чистки и мойки.</li></ul>' +
+                        '<p>Детейлинг от АЦ “Полимер” улучшает внешний вид автомобиля, обеспечивает защиту и упрощает уход за ним. Благодаря услуге авто в течение длительного периода выглядит ухоженным, свежим и блестящим.</p>'
+            }]
 
-		script.
-			(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+block main
+    section.index
+        div(class='frame primary_title')
+            h1 Детейлинг автомобилей в Санкт-Петербурге
+            h4 с вниманием к мелочам
 
-			const modalOpen = (type, gift) => {
-					var _tmr = window._tmr || (window._tmr = []);
-					_tmr.push({ type: 'reachGoal', id: 3350159, goal: 'form'});
+            div.primary_title_block
+                p Вернем автомобилю безупречный внешний вид за 2 дня с оплатой после работы и гарантией 1 год по договору
+                +modalBtn('Оставить заявку *', 'full')
+                p * Узнайте точную стоимость и получите подарок на выбор
 
-					ym(91958676, 'reachGoal', 'form')
+        p Вернем автомобилю безупречный внешний вид за 2 дня с оплатой после работы и гарантией 1 год по договору
 
-					document.querySelector(`.modal.blur`).classList.remove("hidden")
+    section
+        a.anchor(id='services')
+        h2 Наши услуги
+        +carousel(services)
+        +modalBtn('Оставить заявку *', 'full')
 
-					const opened = document.querySelector(`.modal.${type}`);
-					opened.classList.remove("hidden");
-					opened.children[1].classList.remove('hidden')
-					if (gift) opened.classList.add('gift')
-			}
-		script.
-				(function (m, e, t, r, i, k, a) {
-						m[i] = m[i] || function () {
-								(m[i].a = m[i].a || []).push(arguments)
-						};
-						m[i].l = 1 * new Date();
-						for (var j = 0; j <document.scripts.length; j++) {
-								if (document.scripts[j].src === r) {
-										return;
-								}
-						}
-						k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
-				})
-				(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-				ym(91958676, "init", {
-						clickmap: true,
-						trackLinks: true,
-						accurateTrackBounce: true,
-						webvisor: true,
-						ecommerce: "dataLayer"
-				});
+        p * Узнайте точную стоимость и получите подарок на выбор
 
-				var _emv = _emv || [];
-				_emv['campaign'] = 'e758533feded973ba4b0c779';
+    include ./components/protect
 
-				(function () {
-						var em = document.createElement('script');
-						em.type = 'text/javascript';
-						em.async = true;
-						em.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'leadback.ru/js/leadback.js';
-						var s = document.getElementsByTagName('script')[0];
-						s.parentNode.insertBefore(em, s);
-				})();
+    include ./components/examples
 
-				var _tmr = window._tmr || (window._tmr = []);
-				_tmr.push({id: "3350159", type: "pageView", start: (new Date()).getTime()});
-				(function (d, w, id) {
-						if (d.getElementById(id)) return;
-						var ts = d.createElement("script");
-						ts.type = "text/javascript";
-						ts.async = true;
-						ts.id = id;
-						ts.src = "https://top-fwz1.mail.ru/js/code.js";
-						var f = function () {
-								var s = d.getElementsByTagName("script")[0];
-								s.parentNode.insertBefore(ts, s);
-						};
-						if (w.opera == "[object Opera]") {
-								d.addEventListener("DOMContentLoaded", f, false);
-						} else {
-								f();
-						}
-				})(document, window, "tmr-code");
+    include ./components/advantages
 
-	-
-		const services = [{"className":"services_item","id":1, link: '/ceramic.html', "text":"Керамическое покрытие","img":"./assets/img/index/services_1.webp"},
-			{"className":"services_item","id":2,link: '/film.html', "text":"Оклейка защитной пленкой","img":"./assets/img/index/services_2.webp"},
-			{"className":"services_item","id":3,link: '/glass_repair.html', "text":"Ремонт стекла","img":"./assets/img/glass/step_2.webp"},
-			{"className":"services_item","id":4,link: '/dry_cleaning.html', "text":"Химчистка автомобиля","img":"./assets/img/index/services_3.webp"},
-			{"className":"services_item","id":5,link: '/toning.html', "text":"Тонировка","img":"./assets/img/index/services_4.webp"},
-			{"className": "services_item","id": 6,link: '/exterior.html', "text": "Оклейка экстерьера", "img": "./assets/img/index/services_5.webp"},
-			{"className": "services_item", "id": 7, link: '/polishing.html', "text": "Полировка автомобиля", "img": "./assets/img/index/services_6.webp"}]
-	-
-		const detailingFAQ = [{header:'Детейлинг авто ', body:'<p>Автомобильный детейлинг-центр “Полимер” работает в Санкт-Петербурге с 2013 года. Благодаря накопленному опыту и штату специалистов студия детейлинга предлагает профессиональный уход за вашим авто и комплексные услуги: полировка, химчистка салона, а также керамическое покрытие и бронирование пленкой, благодаря которой автомобиль получает защиту от мелких сколов и вмятин кузова, коррозии, выцветания и грязи.</p><p>Детейлинг (detailing)  — процесс глубокой очистки и улучшения внешнего вида автомобиля. Он включает в себя целый комплекс мероприятий: детейлинг-мойка, удаление царапин и загрязнений, а также нанесение керамического покрытия или оклейка бронепленкой для защиты кузова от внешних воздействий.</p>'},
-			{header: 'Преимущества детейлинга', body: '<p>Детейлинг имеет множество преимуществ:</p> <ul><li>Улучшенный внешний вид. Керамическое покрытие придает кузову блеск за счет отсутствия мелких дефектов, царапин и сколов, благодаря чему автомобиль выглядит как новый.</li><li>Долговременная защита. Керамическое покрытие и бронепленка обеспечивают долговременную защиту кузова, предотвращают выцветание под лучами ультрафиолета, окисление, механические повреждения и воздействие химических веществ.</li><li>Легкость ухода. После детейлинга автомобиль становится легче поддерживать в чистоте. Керамическое или пленочное покрытие образует гладкую поверхность, которая отталкивает грязь и пыль. Это упрощает процесс чистки и мойки.</li></ul><p>Детейлинг от АЦ “Полимер” улучшает внешний вид автомобиля, обеспечивает защиту и упрощает уход за ним. Благодаря услуге авто в течение длительного периода выглядит ухоженным, свежим и блестящим.</p>'}]
-
-	include blocks/_libs
-	body
-		include components/header
-		section.index
-			div(class='frame primary_title')
-				h1 Детейлинг автомобилей в Санкт-Петербурге
-				h4 с вниманием к мелочам
-
-				div.primary_title_block
-					p Вернем автомобилю безупречный внешний вид за 2 дня с оплатой после работы и гарантией 1 год по договору
-					+modalBtn('Оставить заявку *', 'full')
-					p * Узнайте точную стоимость и получите подарок на выбор
-
-			p Вернем автомобилю безупречный внешний вид за 2 дня с оплатой после работы и гарантией 1 год по договору
-
-		section
-			a.anchor(id='services')
-			h2 Наши услуги
-			+carousel(services)
-			+modalBtn('Оставить заявку *', 'full')
-
-			p * Узнайте точную стоимость и получите подарок на выбор
-
-		include ./components/protect
-
-		include ./components/examples
-
-		include ./components/advantages
-
-		section
-			h2 Детейлинг автомобилей в Санкт-Петербурге
-			+spoiler(detailingFAQ)
-
-		include components/footer
-
-		include components/modal
-
-		include components/checklist
-					
-		script(async src='./js/app.min.js')
+    section
+        h2 Детейлинг автомобилей в Санкт-Петербурге
+        +spoiler(detailingFAQ)

@@ -1,85 +1,6 @@
+extends components/layout
 
-doctype html
-html(lang="ru-RU")
-    head
-        meta(charset="utf-8")
-        meta(http-equiv='X-UA-Compatible', content="IE=edge")
-        meta(name="viewport" content="width=device-width,initial-scale=1")
-        meta(name="keywords" content="")
-        meta(name="description" content="Полировка автомобиля от царапин в Санкт-Петербурге от автомобильного центра “Полимер”. Современное оборудование для детейлинга, выполнение задач любой сложности, гарантия на все виды услуг для авто, доступные цены и скидки")
-        title Полировка авто в СПб — цена детейлинга и полировки автомобиля от царапин 
-        link(rel="preconnect" href="https://fonts.googleapis.com")
-        link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
-        link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap")
-        link(rel="stylesheet" type='text/css' href="./css/style.min.css")
-        link(rel="icon" href="./assets/icons/favicon.ico")
-        script.
-            const modalOpen = (type, gift) => {
-                var _tmr = window._tmr || (window._tmr = []);
-                _tmr.push({ type: 'reachGoal', id: 3350159, goal: 'form'});
-
-                ym(91958676, 'reachGoal', 'form')
-
-                document.querySelector(`.modal.blur`).classList.remove("hidden")
-
-                const opened = document.querySelector(`.modal.${type}`);
-                opened.classList.remove("hidden");
-                opened.children[1].classList.remove('hidden')
-                if (gift) opened.classList.add('gift')
-            }
-        script.
-            (function (m, e, t, r, i, k, a) {
-                m[i] = m[i] || function () {
-                    (m[i].a = m[i].a || []).push(arguments)
-                };
-                m[i].l = 1 * new Date();
-                for (var j = 0; j < document.scripts.length; j++) {
-                    if (document.scripts[j].src === r) {
-                        return;
-                    }
-                }
-                k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
-            })
-            (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-            ym(91958676, "init", {
-                clickmap: true,
-                trackLinks: true,
-                accurateTrackBounce: true,
-                webvisor: true,
-                ecommerce: "dataLayer"
-            });
-
-            var _emv = _emv || [];
-            _emv['campaign'] = 'e758533feded973ba4b0c779';
-
-            (function () {
-                var em = document.createElement('script');
-                em.type = 'text/javascript';
-                em.async = true;
-                em.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'leadback.ru/js/leadback.js';
-                var s = document.getElementsByTagName('script')[0];
-                s.parentNode.insertBefore(em, s);
-            })();
-
-            var _tmr = window._tmr || (window._tmr = []);
-            _tmr.push({id: "3350159", type: "pageView", start: (new Date()).getTime()});
-            (function (d, w, id) {
-                if (d.getElementById(id)) return;
-                var ts = d.createElement("script");
-                ts.type = "text/javascript";
-                ts.async = true;
-                ts.id = id;
-                ts.src = "https://top-fwz1.mail.ru/js/code.js";
-                var f = function () {
-                    var s = d.getElementsByTagName("script")[0];
-                    s.parentNode.insertBefore(ts, s);
-                };
-                if (w.opera == "[object Opera]") {
-                    d.addEventListener("DOMContentLoaded", f, false);
-                } else {
-                    f();
-                }
-            })(document, window, "tmr-code");
+block variables
     -
         const polishingPrimarySlider = [{ className: "polishing_title", id: 1, img: './assets/img/polishing/primary_1.webp'},
             { className: "polishing_title", id: 2, img: './assets/img/polishing/primary_2.webp'},
@@ -115,89 +36,84 @@ html(lang="ru-RU")
     -
         const polishingCarFAQ = [{header:'Профессиональная полировка авто для идеального внешнего вида', body: '<p>Каждый автовладелец стремится сохранить привлекательный внешний вид своего автомобиля. И в этом поможет профессиональная полировка по доступной цене, которая позволяет восстановить блеск лакокрасочных покрытий и защитить его от негативных воздействий окружающей среды. Основным преимуществом полировки автомобиля является восстановление глубоких царапин. Глубокие повреждения на ЛКП могут значительно портить внешний вид автомобиля. С помощью профессиональной глубокой восстановительной полировки, используя качественные инструменты и специальные абразивные пасты, мастера детейлинг-центра “Полимер” максимально эффективно помогут устранить повреждения и вернуть кузову первоначальный блеск.</p>'},
             {header:'Процесс полировки автомобиля', body:'<p>Профессиональная полировка автомобиля выполняется опытными мастерами АЦ “Полимер” с использованием специальных инструментов и материалов. Этапы процесса:</p><ol><li>Оценка состояния. Мастера осматривают автомобиль и анализируют состояние покрытия. Они обращают внимание на царапины, сколы, повреждения и другие дефекты.</li><li>Подготовка поверхности. Перед полировкой необходимо тщательно очистить автомобиль от загрязнений и налета. Двери, бампер, капот и другие элементы кузова обрабатываются специальными средствами, чтобы гарантировать максимальное качество восстановительных работ и полировки.</li><li> обработка. Для удаления сильных повреждений используется паста. С помощью инструментов и специальных техник специалисты тщательно обрабатывают поверхность, устраняя дефекты и восстанавливая блеск.</li><li>Завершающие штрихи. Мастера проводят финальную проверку и устраняют возможные недостатки.</li></ol><p>Доверьте полировку автомобиля профессионалам, чтобы получить идеальный и долговечный результат. Помимо детейлинга кузова автоцентр предлагает следующие услуги: полировка фар, химчистка салона автомобиля, покрытие керамикой и бронирование пленкой. На сайте можно узнать больше информации о ценах и услугах.</p>'}]
-    include blocks/_libs
-    body
-        include components/header
-        section.main
-            h1 Полировка автомобиля 
-            +slipper(polishingPrimarySlider)
 
-            div.main_content
-                p Защитите покрытие автомобиля от коррозии и восстановите первоначальный блеск с помощью полировки
-                    b  от 14 000 рублей
+block main
+    script.
+        document.title = "Полировка авто в СПб — цена детейлинга и полировки автомобиля от царапин";
+        document.getElementsByTagName('meta')["description"].content ="Полировка автомобиля от царапин в Санкт-Петербурге от автомобильного центра “Полимер”. Современное оборудование для детейлинга машин, выполнение задач любой сложности в СПб, гарантия на все виды услуг для авто, доступные цены и скидки"
 
-                +modalBtn('Оставить заявку', 'full')
+    section.main
+        h1 Полировка автомобиля
+        +slipper(polishingPrimarySlider)
 
-        section
-            div(class='info info_box')
-                img.info_icon(src='./assets/icons/info.svg', alt="")
-                p Полировка кузова автомобиля
-                    b  защитит покрытие от коррозии
-                    span , которая образуется из-за сколов, и вернет авто
-                    b  первозданный блеск
-
-        section
-            h2 Зачем нужна полировка авто
-            +points(polishingPoints)
-
-        include ./components/protect
-
-        section
-            h2 Как мы работаем
-            +carousel(polishingSteps)
-
-        section
-            h2 Результаты
-            div.examples_item
-                +slipper(polishingExSlider)
-
-        section
-            h2 Цены
-            +prices(polishingPrices)
+        div.main_content
+            p Защитите покрытие автомобиля от коррозии и восстановите первоначальный блеск с помощью полировки
+                b  от 14 000 рублей
 
             +modalBtn('Оставить заявку', 'full')
 
-        section
-            div.list
-                h2 С
-                    span.accent  полировкой автомобиля в автоцентре “полимер”
-                    div  вы получите
+    section
+        div(class='info info_box')
+            img.info_icon(src='./assets/icons/info.svg', alt="")
+            p Полировка кузова автомобиля
+                b  защитит покрытие от коррозии
+                span , которая образуется из-за сколов, и вернет авто
+                b  первозданный блеск
 
-                ul
-                    li
-                        b 1 год гарантии
-                        span  на несмываемость покрытия и на работу
-                    li
-                        b Бесплатную контрольную мойку
-                        span  через 7-10 дней для проверки качества работы
-                    li
-                        b Чистые и отапливаемые боксы
-                        span  со всем необходимым оборудованием
-                    li
-                        b Лучшую
-                        span  в своей ценовой категории
-                        b  автохимию
-                        span , прошедшую проверку временем в климате Санкт-Петербурга
-                    li
-                        b Экономию до 300.000 рублей.
-                        span  Ухоженный автомобиль при продаже будет стоить дороже, и легко уйдет по максимуму рынка
+    section
+        h2 Зачем нужна полировка авто
+        +points(polishingPoints)
 
-                +modalBtn('Оставить заявку на бесплатную консультацию', 'consultation')
+    include ./components/protect
 
-        include ./components/advantages
+    section
+        h2 Как мы работаем
+        +carousel(polishingSteps)
 
-        section
-            h2 Популярные вопросы
-            +spoiler(polishingFAQ)
+    section
+        h2 Результаты
+        div.examples_item
+            +slipper(polishingExSlider)
 
-        section
-            h2 Полировка авто
-            +spoiler(polishingCarFAQ)
+    section
+        h2 Цены
+        +prices(polishingPrices)
 
-        include components/footer
+        +modalBtn('Оставить заявку', 'full')
 
-        include components/modal
+    section
+        div.list
+            h2 С
+                span.accent  полировкой автомобиля в автоцентре “полимер”
+                div  вы получите
 
-        include components/checklist
-            
-        script(async src='./js/app.min.js')
+            ul
+                li
+                    b 1 год гарантии
+                    span  на несмываемость покрытия и на работу
+                li
+                    b Бесплатную контрольную мойку
+                    span  через 7-10 дней для проверки качества работы
+                li
+                    b Чистые и отапливаемые боксы
+                    span  со всем необходимым оборудованием
+                li
+                    b Лучшую
+                    span  в своей ценовой категории
+                    b  автохимию
+                    span , прошедшую проверку временем в климате Санкт-Петербурга
+                li
+                    b Экономию до 300.000 рублей.
+                    span  Ухоженный автомобиль при продаже будет стоить дороже, и легко уйдет по максимуму рынка
+
+            +modalBtn('Оставить заявку на бесплатную консультацию', 'consultation')
+
+    include ./components/advantages
+
+    section
+        h2 Популярные вопросы
+        +spoiler(polishingFAQ)
+
+    section
+        h2 Полировка авто
+        +spoiler(polishingCarFAQ)

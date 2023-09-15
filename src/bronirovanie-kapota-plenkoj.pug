@@ -1,84 +1,6 @@
-doctype html
-html(lang="ru-RU")
-    head
-        meta(charset="utf-8")
-        meta(http-equiv='X-UA-Compatible', content="IE=edge")
-        meta(name="viewport" content="width=device-width,initial-scale=1")
-        meta(name="keywords" content="")
-        meta(name="description" content="Бронирование капота автомобиля пленкой в Санкт-Петербурге от автомобильного центра “Полимер”. Современное оборудование для детейлинга машин, выполнение задач любой сложности в СПб, гарантия на все виды услуг для авто, доступные цены и скидки")
-        title Бронирование капота пленкой в СПб — цена бронирования капота автомобиля пленкой
-        link(rel="preconnect" href="https://fonts.googleapis.com")
-        link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
-        link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap")
-        link(rel="stylesheet" type='text/css' href="./css/style.min.css")
-        link(rel="icon" href="./assets/icons/favicon.ico")
-        script.
-            const modalOpen = (type, gift) => {
-                var _tmr = window._tmr || (window._tmr = []);
-                _tmr.push({ type: 'reachGoal', id: 3350159, goal: 'form'});
+extends components/layout
 
-                ym(91958676, 'reachGoal', 'form')
-
-                document.querySelector(`.modal.blur`).classList.remove("hidden")
-
-                const opened = document.querySelector(`.modal.${type}`);
-                opened.classList.remove("hidden");
-                opened.children[1].classList.remove('hidden')
-                if (gift) opened.classList.add('gift')
-            }
-        script.
-            (function (m, e, t, r, i, k, a) {
-                m[i] = m[i] || function () {
-                    (m[i].a = m[i].a || []).push(arguments)
-                };
-                m[i].l = 1 * new Date();
-                for (var j = 0; j < document.scripts.length; j++) {
-                    if (document.scripts[j].src === r) {
-                        return;
-                    }
-                }
-                k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
-            })
-            (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-            ym(91958676, "init", {
-                clickmap: true,
-                trackLinks: true,
-                accurateTrackBounce: true,
-                webvisor: true,
-                ecommerce: "dataLayer"
-            });
-
-            var _emv = _emv || [];
-            _emv['campaign'] = 'e758533feded973ba4b0c779';
-
-            (function () {
-                var em = document.createElement('script');
-                em.type = 'text/javascript';
-                em.async = true;
-                em.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'leadback.ru/js/leadback.js';
-                var s = document.getElementsByTagName('script')[0];
-                s.parentNode.insertBefore(em, s);
-            })();
-
-            var _tmr = window._tmr || (window._tmr = []);
-            _tmr.push({id: "3350159", type: "pageView", start: (new Date()).getTime()});
-            (function (d, w, id) {
-                if (d.getElementById(id)) return;
-                var ts = d.createElement("script");
-                ts.type = "text/javascript";
-                ts.async = true;
-                ts.id = id;
-                ts.src = "https://top-fwz1.mail.ru/js/code.js";
-                var f = function () {
-                    var s = d.getElementsByTagName("script")[0];
-                    s.parentNode.insertBefore(ts, s);
-                };
-                if (w.opera == "[object Opera]") {
-                    d.addEventListener("DOMContentLoaded", f, false);
-                } else {
-                    f();
-                }
-            })(document, window, "tmr-code");
+block variables
     -
         const filmPrimarySlider = [{ className: "film_title", id: 1, img: './assets/img/film/primary_1.webp'},
             { className: "film_title", id: 2, img: './assets/img/film/primary_2.webp'},
@@ -128,102 +50,98 @@ html(lang="ru-RU")
                         '<li>Разнообразие вариантов. Бронепленки от разных производителей отличаются по характеристикам и цене, могут быть матовыми и прозрачными.</li>' +
                         '<li>Удобное решение. Бронирование таким способом производится быстро и удобно. Записывайтесь к мастерам детейлинга на сайте компании и получайте профессиональное выполнение работ.</li></ul>' +
                         '<p>Бронепленка на авто — надежное решение для защиты автотранспортного средства от повреждений и сохранения его в прекрасном состоянии на протяжении длительного времени. АЦ “Полимер” предлагает большой выбор услуг, среди которых особого внимания заслуживает не только установка защитных полиуретановых пленок в качестве брони от мелких повреждений, но и атермальная тонировка, химчистка салона высшего класса и нанесение керамического покрытия.</p>'}]
-    include blocks/_libs
-    body
-        include components/header
-        section.main
-            h1 Бронирование капота пленкой
-            +slipper(filmPrimarySlider)
 
-            div.main_content
-                p Оклеим капот антигравийной пленкой с гарантией на отсутствие дефектов до 10 лет по договору.
+block main
+    script.
+        document.title = 'Бронирование капота пленкой в СПб — цена бронирования капота автомобиля пленкой'
+        document.getElementsByTagName('meta')["description"].content = "Бронирование капота автомобиля пленкой в Санкт-Петербурге от автомобильного центра “Полимер”. Современное оборудование для детейлинга машин, выполнение задач любой сложности в СПб, гарантия на все виды услуг для авто, доступные цены и скидки"
 
-                +modalBtn('Оставить заявку', 'full')
+    section.main
+        h1 Бронирование капота пленкой
+        +slipper(filmPrimarySlider)
 
-        section
-            div(class='info info_box')
-                img.info_icon(src='./assets/icons/info.svg', alt="")
-                p
-                    b Оклейка капота
-                    span  — это защита для кузова автомобиля, поэтому услугу часто называют
-                    b  бронирование.
-                    span  Она представляет собой абсолютно прозрачную, визуально невидимую пленку,защищающую ЛКП автомобиля от сколов, царапин, мелких ДТП и коррозии
-                img.info_img(src='./assets/img/film/info.webp', alt="")
-
-        section
-            h2 5 причин нанести защитную пленку
-            +points(filmPoints)
-
-        include ./components/protect
-
-        section
-            h2 ЭТАПЫ БРОНИРОВАНИЯ КАПОТА ПЛЕНКОЙ
-            +carousel(filmSteps)
-
-        section
-            h2 Результаты
-            p Пример того, как пленка защитила корпус автомобиля после ДТП
-            p
-            div.examples_item
-                +slipper(filmExSlider)
-                +videoSlipper(filmVideoSlider)
-
-        section
-            h2 Пленки, которые мы используем
-            div.usage
-                img(src='./assets/img/film/brand_1.webp', alt="")
-                img(src='./assets/img/film/brand_2.webp', alt="")
-                img(src='./assets/img/film/brand_3.webp', alt="")
-                img(src='./assets/img/film/brand_4.webp', alt="")
-                img(src='./assets/img/film/brand_5.webp', alt="")
-                img(src='./assets/img/film/brand_6.webp', alt="")
-
-        section
-            h2 Цены
-            +prices(filmPrices)
+        div.main_content
+            p Оклеим капот антигравийной пленкой с гарантией на отсутствие дефектов до 10 лет по договору.
 
             +modalBtn('Оставить заявку', 'full')
 
-        section
-            div.list
-                h2
-                    span С нанесением
-                    span.accent  антигравийной пленки в автоцентре “полимер”
-                    span  вы получите
+    section
+        div(class='info info_box')
+            img.info_icon(src='./assets/icons/info.svg', alt="")
+            p
+                b Оклейка капота
+                span  — это защита для кузова автомобиля, поэтому услугу часто называют
+                b  бронирование.
+                span  Она представляет собой абсолютно прозрачную, визуально невидимую пленку,защищающую ЛКП автомобиля от сколов, царапин, мелких ДТП и коррозии
+            img.info_img(src='./assets/img/film/info.webp', alt="")
 
-                ul
-                    li
-                        b 1 год гарантии
-                        span  по договору
-                    li
-                        b Гарантию производителя от 5 лет
-                        span  на все пленки
-                    li
-                        b Бесплатную контрольную мойку
-                        span  через 7-10 дней для проверки качества работы
-                    li
-                        b Работа в чистых и отапливаемых боксах
-                        span  со всем необходимым оборудованием для наилучшего качества работ
-                    li
-                        b Лучшую
-                        span  в своей ценовой категории
-                        b  антигравийную пленку
-                        span , прошедшую проверку временем в климате Санкт-Петербурга
-                    li
-                        b Экономию до 300.000 рублей.
-                        span  Ухоженный автомобиль при продаже будет стоить дороже
+    section
+        h2 5 причин нанести защитную пленку
+        +points(filmPoints)
 
-                +modalBtn('Оставить заявку на бесплатную консультацию', 'consultation')
+    include ./components/protect
 
-        include ./components/advantages
+    section
+        h2 ЭТАПЫ БРОНИРОВАНИЯ КАПОТА ПЛЕНКОЙ
+        +carousel(filmSteps)
 
-        section
-            h2 Оклейка капота антигравийной пленкой
-            +spoiler(armoredWrap)
-        include components/footer
+    section
+        h2 Результаты
+        p Пример того, как пленка защитила корпус автомобиля после ДТП
+        p
+        div.examples_item
+            +slipper(filmExSlider)
+            +videoSlipper(filmVideoSlider)
 
-        include components/modal
+    section
+        h2 Пленки, которые мы используем
+        div.usage
+            img(src='./assets/img/film/brand_1.webp', alt="")
+            img(src='./assets/img/film/brand_2.webp', alt="")
+            img(src='./assets/img/film/brand_3.webp', alt="")
+            img(src='./assets/img/film/brand_4.webp', alt="")
+            img(src='./assets/img/film/brand_5.webp', alt="")
+            img(src='./assets/img/film/brand_6.webp', alt="")
 
-        include components/checklist
-            
-        script(async src='./js/app.min.js')
+    section
+        h2 Цены
+        +prices(filmPrices)
+
+        +modalBtn('Оставить заявку', 'full')
+
+    section
+        div.list
+            h2
+                span С нанесением
+                span.accent  антигравийной пленки в автоцентре “полимер”
+                span  вы получите
+
+            ul
+                li
+                    b 1 год гарантии
+                    span  по договору
+                li
+                    b Гарантию производителя от 5 лет
+                    span  на все пленки
+                li
+                    b Бесплатную контрольную мойку
+                    span  через 7-10 дней для проверки качества работы
+                li
+                    b Работа в чистых и отапливаемых боксах
+                    span  со всем необходимым оборудованием для наилучшего качества работ
+                li
+                    b Лучшую
+                    span  в своей ценовой категории
+                    b  антигравийную пленку
+                    span , прошедшую проверку временем в климате Санкт-Петербурга
+                li
+                    b Экономию до 300.000 рублей.
+                    span  Ухоженный автомобиль при продаже будет стоить дороже
+
+            +modalBtn('Оставить заявку на бесплатную консультацию', 'consultation')
+
+    include ./components/advantages
+
+    section
+        h2 Оклейка капота антигравийной пленкой
+        +spoiler(armoredWrap)

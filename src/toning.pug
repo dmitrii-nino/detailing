@@ -1,84 +1,6 @@
-doctype html
-html(lang="ru-RU")
-    head
-        meta(charset="utf-8")
-        meta(http-equiv='X-UA-Compatible', content="IE=edge")
-        meta(name="viewport" content="width=device-width,initial-scale=1")
-        meta(name="keywords" content="")
-        meta(name="description" content="Тонировка стекол автомобиля в Санкт-Петербурге от автомобильного центра “Полимер”. Современное оборудование для детейлинга машин, выполнение задач любой сложности в СПб, гарантия на все виды услуг для авто, доступные цены и скидки")
-        title Тонировка стекол автомобиля в СПб — цена | Заказать тонировку стекол авто недорого
-        link(rel="preconnect" href="https://fonts.googleapis.com")
-        link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
-        link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap")
-        link(rel="stylesheet" type='text/css' href="./css/style.min.css")
-        link(rel="icon" href="./assets/icons/favicon.ico")
-        script.
-            const modalOpen = (type, gift) => {
-                var _tmr = window._tmr || (window._tmr = []);
-                _tmr.push({ type: 'reachGoal', id: 3350159, goal: 'form'});
+extends components/layout
 
-                ym(91958676, 'reachGoal', 'form')
-
-                document.querySelector(`.modal.blur`).classList.remove("hidden")
-
-                const opened = document.querySelector(`.modal.${type}`);
-                opened.classList.remove("hidden");
-                opened.children[1].classList.remove('hidden')
-                if (gift) opened.classList.add('gift')
-            }
-        script.
-            (function (m, e, t, r, i, k, a) {
-                m[i] = m[i] || function () {
-                    (m[i].a = m[i].a || []).push(arguments)
-                };
-                m[i].l = 1 * new Date();
-                for (var j = 0; j < document.scripts.length; j++) {
-                    if (document.scripts[j].src === r) {
-                        return;
-                    }
-                }
-                k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
-            })
-            (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-            ym(91958676, "init", {
-                clickmap: true,
-                trackLinks: true,
-                accurateTrackBounce: true,
-                webvisor: true,
-                ecommerce: "dataLayer"
-            });
-
-            var _emv = _emv || [];
-            _emv['campaign'] = 'e758533feded973ba4b0c779';
-
-            (function () {
-                var em = document.createElement('script');
-                em.type = 'text/javascript';
-                em.async = true;
-                em.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'leadback.ru/js/leadback.js';
-                var s = document.getElementsByTagName('script')[0];
-                s.parentNode.insertBefore(em, s);
-            })();
-
-            var _tmr = window._tmr || (window._tmr = []);
-            _tmr.push({id: "3350159", type: "pageView", start: (new Date()).getTime()});
-            (function (d, w, id) {
-                if (d.getElementById(id)) return;
-                var ts = d.createElement("script");
-                ts.type = "text/javascript";
-                ts.async = true;
-                ts.id = id;
-                ts.src = "https://top-fwz1.mail.ru/js/code.js";
-                var f = function () {
-                    var s = d.getElementsByTagName("script")[0];
-                    s.parentNode.insertBefore(ts, s);
-                };
-                if (w.opera == "[object Opera]") {
-                    d.addEventListener("DOMContentLoaded", f, false);
-                } else {
-                    f();
-                }
-            })(document, window, "tmr-code");
+block variables
     -
         const toningPrimarySlider = [{ className: "toning_title", id: 1, img: './assets/img/toning/primary_1.webp'},
             { className: "toning_title", id: 2, img: './assets/img/toning/primary_2.webp'},
@@ -114,91 +36,86 @@ html(lang="ru-RU")
     -
         const toningCarFAQ = [{header:'Преимущества тонировки', body:'<p>Защитная или атермальная тонировка стекол автомобиля становится все более популярной среди владельцев джипов, кроссоверов и любых других моделей. Перечислим несколько преимуществ тонирования стекол:</p><ul><li>Защита от солнца. Тонировка способна существенно снизить проникновение солнечных лучей в салон машины, что позволяет сохранять прохладу в жаркую погоду. Это особенно важно при длительных поездках и в городах с жарким климатом.</li><li>Комфорт вождения. Благодаря тонировке стекол автомобиля, водитель и пассажиры получают дополнительную приватность и уменьшение ослепительных бликов от солнца. Это способствует повышению комфорта во время поездок и улучшению видимости на дороге.</li></ul>'},
             {header: 'Услуги тонировки стекол автомобиля', body: '<p>АЦ “Полимер” предлагает профессиональные услуги тонировки стекол автомобиля, учитывая все требования и пожелания заказчика. Мы работаем для вашего комфорта и гарантируем следующие преимущества:</p><ul><li>Разнообразие выбора. Предлагаем широкий выбор тонировочных пленок различной степени пропускания света и оттенков, чтобы удовлетворить спрос. Можно выбрать тонировку для передних стекол, задней полусферы и форточек.</li><li>Профессиональное выполнение тонирования. Мастера детейлинг центра обладают богатым опытом в сфере тонировки автомобильных стекол. Затонируем машину качественно, быстро и удобно, обеспечивая чистоту и аккуратность во время работы.</li><li>Доступные цены и акции. Понимаем важность экономии, поэтому предлагаем услуги тонировки стекол по недорогим ценам. Кроме того, регулярно проводим акции и предлагаем скидки на тонировку машин, чтобы сделать услуги еще более доступными по цене.</li></ul><p>Затонировать машину с помощью АЦ “Полимер” — правильный выбор! Обратитесь к специалистам и насладитесь комфортом и стильным внешним видом автомобиля. Подробнее о наших ценах, услугах и акциях можно узнать на сайте или позвонить по телефону, указанному в контактах, для связи с менеджером.<p>'}]
-    include blocks/_libs
-    body
-        include components/header
-        section.main
-            h1 Тонировка стёкол
-            +slipper(toningPrimarySlider)
 
-            div.main_content
-                p Обеспечьте дополнительную
-                    b  безопасность автомобилю
-                    span  с помощью тонировки стекол
+block main
+    script.
+        document.title = "Тонировка стекол автомобиля в СПб — цена | Заказать тонировку стекол авто недорого";
+        document.getElementsByTagName('meta')["description"].content ="Тонировка стекол автомобиля в Санкт-Петербурге от автомобильного центра “Полимер”. Современное оборудование для детейлинга машин, выполнение задач любой сложности в СПб, гарантия на все виды услуг для авто, доступные цены и скидки"
 
-                +modalBtn('Оставить заявку', 'full')
+    section.main
+        h1 Тонировка стёкол
+        +slipper(toningPrimarySlider)
 
-        section
-            h2 Преимущества тонировки
-            +points(toningPoints)
-
-
-        section
-            div(class='info info_box')
-                img.info_icon(src='./assets/icons/info.svg', alt="")
-                div Мы используем
-                    b  сертифицированные материалы разрешенные ГОСТом
-                    span  и тонируем стекла автомобиля с учетом всех требований законодательства
-
-        section
-            h2 Виды тонировочных пленок
-
-            div.info_box
-                div(class='cards_item frame')
-                    h4 атермальная
-                    img.frame(src='./assets/img/toning/types_1.webp')
-                    p Прозрачная пленка для защиты салона от выгорания, разрешена ГОСТом
-                div(class='cards_item frame')
-                    h4 тонирующая
-                    img.frame(src='./assets/img/toning/types_2.webp')
-                    p Темная пленка для защиты салона от солнечных лучей и посторонних глаз
-                div(class='cards_item frame')
-                    h4 бронирующая
-                    img.frame(src='./assets/img/toning/types_3.webp')
-                    p Прозрачная пленка для защиты пассажиров от осколков стекла при аварии и для предотвращения проникновения. Бронированное стекло противостоит ударам кулаками, ногами, камнями и палками.
-
-        section
-            h2 Этапы оклейки
-            +carousel(toningSteps)
-
-        section
-            h2 Результаты
-            +slipper(toningExSlider)
-
-        section
-            h2 Стоимость евротонировки
-            +prices(toningPrices)
+        div.main_content
+            p Обеспечьте дополнительную
+                b  безопасность автомобилю
+                span  с помощью тонировки стекол
 
             +modalBtn('Оставить заявку', 'full')
 
-        section
-            h2 Бренды тонировочных пленок
-            div.usage
-                img(src='./assets/img/toning/brand_1.webp', alt="")
-                img(src='./assets/img/toning/brand_2.webp', alt="")
-                img(src='./assets/img/toning/brand_3.webp', alt="")
-                img(src='./assets/img/toning/brand_4.webp', alt="")
-                img(src='./assets/img/toning/brand_5.webp', alt="")
-                img(src='./assets/img/toning/brand_6.webp', alt="")
-                img(src='./assets/img/toning/brand_7.webp', alt="")
+    section
+        h2 Преимущества тонировки
+        +points(toningPoints)
 
-        section
-            a.btn(href='prices_toning.html' style='color: #fff') Таблица с ценами
 
-        include ./components/advantages
+    section
+        div(class='info info_box')
+            img.info_icon(src='./assets/icons/info.svg', alt="")
+            div Мы используем
+                b  сертифицированные материалы разрешенные ГОСТом
+                span  и тонируем стекла автомобиля с учетом всех требований законодательства
 
-        section
-            h2 Популярные вопросы
-            +spoiler(toningFAQ)
+    section
+        h2 Виды тонировочных пленок
 
-        section
-            h2 Тонировка стекол автомобиля
-            +spoiler(toningCarFAQ)
+        div.info_box
+            div(class='cards_item frame')
+                h4 атермальная
+                img.frame(src='./assets/img/toning/types_1.webp')
+                p Прозрачная пленка для защиты салона от выгорания, разрешена ГОСТом
+            div(class='cards_item frame')
+                h4 тонирующая
+                img.frame(src='./assets/img/toning/types_2.webp')
+                p Темная пленка для защиты салона от солнечных лучей и посторонних глаз
+            div(class='cards_item frame')
+                h4 бронирующая
+                img.frame(src='./assets/img/toning/types_3.webp')
+                p Прозрачная пленка для защиты пассажиров от осколков стекла при аварии и для предотвращения проникновения. Бронированное стекло противостоит ударам кулаками, ногами, камнями и палками.
 
-        include components/footer
+    section
+        h2 Этапы оклейки
+        +carousel(toningSteps)
 
-        include components/modal
+    section
+        h2 Результаты
+        +slipper(toningExSlider)
 
-        include components/checklist
-            
-        script(async src='./js/app.min.js')
+    section
+        h2 Стоимость евротонировки
+        +prices(toningPrices)
+
+        +modalBtn('Оставить заявку', 'full')
+
+    section
+        h2 Бренды тонировочных пленок
+        div.usage
+            img(src='./assets/img/toning/brand_1.webp', alt="")
+            img(src='./assets/img/toning/brand_2.webp', alt="")
+            img(src='./assets/img/toning/brand_3.webp', alt="")
+            img(src='./assets/img/toning/brand_4.webp', alt="")
+            img(src='./assets/img/toning/brand_5.webp', alt="")
+            img(src='./assets/img/toning/brand_6.webp', alt="")
+            img(src='./assets/img/toning/brand_7.webp', alt="")
+
+    section
+        a.btn(href='prices_toning.html' style='color: #fff') Таблица с ценами
+
+    include ./components/advantages
+
+    section
+        h2 Популярные вопросы
+        +spoiler(toningFAQ)
+
+    section
+        h2 Тонировка стекол автомобиля
+        +spoiler(toningCarFAQ)
