@@ -159,6 +159,36 @@
   }
 }
 
+.anchors {
+  overflow-y: scroll;
+  padding: 24px 16px;
+  margin: -24px -16px;
+
+  &_nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    width: max-content;
+    margin: 0 auto;
+  }
+
+  &_list {
+    position: relative;
+
+    > span {
+      position: absolute;
+    }
+  }
+}
+
+@media (min-width: 480px) {
+  .anchors {
+    padding: 24px 50px;
+    margin: -24px -50px;
+  }
+}
+
 @media (min-width: 768px) {
   .main {
 
@@ -356,6 +386,17 @@
     .btn {
       background: #FFFFFF;
       color: #DA3831;
+    }
+  }
+
+  .anchors {
+    padding: 24px 80px;
+    margin: -24px -80px;
+
+    &_list {
+      > span {
+        margin-top: -90px;
+      }
     }
   }
 }

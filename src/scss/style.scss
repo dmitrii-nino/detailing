@@ -9,10 +9,9 @@ html {
 
 body {
 	width: 100vw;
-	padding-top: 90px;
 
-	@media(max-width: 1024px) {
-		padding-top: 0;
+	@media(min-width: 1024px) {
+		padding-top: 90px;
 	}
 }
 
