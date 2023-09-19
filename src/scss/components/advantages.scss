@@ -2,9 +2,24 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
+  background: linear-gradient(222.31deg, #F9556B 3.76%, #DA3831 82.36%);
+  color: #FFFFFF;
+  padding: 32px;
+  border-radius: 10px;
 
   &_img {
     display: none;
+  }
+
+  .btn {
+    background: #FFFFFF;
+    color: #DA3831;
+  }
+
+  div {
+    text-transform: uppercase;
+    font-size: 24px;
+    line-height: 30px;
   }
 
   &>div, &>p, &>button {
@@ -14,13 +29,8 @@
 
 @media (min-width: 1024px) {
   .advantages {
-    background: linear-gradient(222.31deg, #F9556B 3.76%, #DA3831 82.36%);
     background-size: cover;
-    color: #FFFFFF;
-    padding: 32px;
-    border-radius: 10px;
     overflow: hidden;
-
     display: grid;
     gap: 28px;
     align-items: center;
@@ -39,14 +49,10 @@
 
     div {
       grid-area: info;
-      font-size: 24px;
-      line-height: 30px;
     }
 
     .btn {
       grid-area: btn;
-      background: #FFFFFF;
-      color: #DA3831;
     }
 
     p {

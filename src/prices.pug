@@ -1,0 +1,283 @@
+extends components/layout
+
+block variables
+    - const columns = {name: ' ', mini: 'Малый класс', first: 'Первый класс или гольф класс', second: 'Второй средний класс', business: 'Бизнес-класс', grand: 'Представительский класс'};
+    - const dataCeramic = [{ name: 'Детейлинг автомобиля', mini: 'от 22 400 ₽', first: 'от 25 200 ₽', second: 'от 29 400 ₽', business: 'от 35 800 ₽', grand: 'от 42 800 ₽'}]
+    - const columnsFilm = {name: ' ', mini: 'Фары', first: 'Минимальный пакет', second: 'Средний пакет', business: 'Максимальный пакет', grand: 'Полная оклейка'};
+    - const dataFilm = [{ name: 'Бронирование защитной пленкой', mini: 'от 2 800 ₽', first: 'от 9 000 ₽', second: 'от 24 000 ₽', business: 'от 49 000 ₽', grand: 'от 99 000 ₽'}]
+    - const dataPolishing = [{ name: 'Полировка', mini: 'от 14 000 ₽', first: 'от 16 000 ₽', second: 'от 18 000 ₽', business: 'от 20 000 ₽', grand: 'от 24 000 ₽'}]
+    - const dataDetailing = [{ name: 'Детейлинг автомобиля', mini: 'от 21 000 ₽', first: 'от 23 800 ₽', second: 'от 26 600 ₽', business: 'от 29 400 ₽', grand: 'от 33 600 ₽'}]
+    -
+        const dataCleaning = [
+            {name: 'Комплексная химчистка', mini: 12000, first: 14000, second: 16000, business: 18000, grand: 20000},
+            {name: 'Химчистка потолка + стойки', mini: 1600, first: 2200, second: 2800, business: 3400, grand: 4000},
+            {name: 'Химчистка одной стойки (пластик)', mini: 200, first: 200, second: 200, business: 200, grand: 200},
+            {name: 'Химчистка одной стойки', mini: 400, first: 400, second: 400, business: 400, grand: 400},
+            {name: 'Химчистка пола салона', mini: 2200, first: 2800, second: 3400, business: 4000, grand: 4600},
+            {name: 'Химчистка пола водителя', mini: 1400, first: 1600, second: 1800, business: 2000, grand: 2000},
+            {
+                name: 'Химчистка пола (за 1 место, кроме водительского)',
+                mini: 900,
+                first: 1100,
+                second: 1300,
+                business: 1500,
+                grand: 1500
+            },
+            {name: 'Химчистка пола багажника', mini: 1000, first: 1200, second: 1400, business: 1600, grand: 1600},
+            {name: 'Химчистка 1 ковра (тряпка)', mini: 750, first: 750, second: 750, business: 750, grand: 750},
+            {
+                name: 'Химчистка багажного коврика (тряпка)',
+                mini: 1000,
+                first: 1000,
+                second: 1000,
+                business: 1000,
+                grand: 1000
+            },
+            {name: 'Химчистка торпеды', mini: 1000, first: 1200, second: 1400, business: 1600, grand: 2000},
+            {name: 'Химчистка консоли', mini: 600, first: 800, second: 1000, business: 1200, grand: 1200},
+            {name: 'Химчистка дверной карты', mini: 800, first: 1000, second: 1200, business: 1400, grand: 1600},
+            {name: 'Химчистка крышки багажника', mini: 1400, first: 1800, second: 2200, business: 2600, grand: 3000},
+            {name: 'Химчистка багажника', mini: 800, first: 1000, second: 1000, business: 1400, grand: 1600},
+            {name: 'Химчистка 1 сидения', mini: 1000, first: 1400, second: 1600, business: 1800, grand: 1800},
+            {name: 'Химчистка заднего дивана', mini: 1600, first: 1800, second: 2000, business: 2400, grand: 2400},
+            {
+                name: 'Химчистка заднего разделительного сидения',
+                mini: 2200,
+                first: 2400,
+                second: 2600,
+                business: 2800,
+                grand: 3000
+            },
+            {name: 'Химчистка ремня безопасности', mini: 500, first: 500, second: 500, business: 500, grand: 500},
+            {name: 'Химчистка подлокотника', mini: 300, first: 300, second: 300, business: 300, grand: 300},
+            {name: 'Химчистка рулевого колеса', mini: 700, first: 700, second: 700, business: 700, grand: 700},
+            {name: 'Химчистка козырька', mini: 400, first: 400, second: 400, business: 400, grand: 400},
+            {name: 'Химчистка задней полки', mini: 500, first: 500, second: 500, business: 500, grand: 500},
+            {
+                name: 'Химчистка задней (раскладной) полки',
+                mini: 1000,
+                first: 1200,
+                second: 1400,
+                business: 1600,
+                grand: 1600
+            },
+            {name: 'Химчистка ручки АКП', mini: 300, first: 300, second: 300, business: 300, grand: 300},
+            {name: 'Химчистка детского кресла', mini: 2000, first: 2000, second: 2000, business: 2000, grand: 2000},
+            {
+                name: 'Пропитка напольного покрытия защитным средством',
+                mini: 2400,
+                first: 2600,
+                second: 2800,
+                business: 3400,
+                grand: 3800
+            },
+            {
+                name: 'Пропитка ткани салона защитным средством',
+                mini: 2600,
+                first: 3000,
+                second: 3200,
+                business: 3600,
+                grand: 4000
+            },
+            {
+                name: 'Пропитка тканевого сидения защитным средством',
+                mini: 800,
+                first: 800,
+                second: 800,
+                business: 800,
+                grand: 800
+            },
+            {
+                name: 'Пропитка тканевого элемента салона защ. средством',
+                mini: 300,
+                first: 300,
+                second: 300,
+                business: 300,
+                grand: 300
+            },
+            {
+                name: 'Пропитка пола водителя защитным средством',
+                mini: 500,
+                first: 500,
+                second: 500,
+                business: 500,
+                grand: 500
+            },
+            {name: 'Кондиционер кожи салона', mini: 2600, first: 2800, second: 3000, business: 3400, grand: 3900},
+            {name: 'Кондиционер одного сидения', mini: 700, first: 700, second: 700, business: 900, grand: 900}
+        ]
+    -
+        const dataToning = {
+        suncontrol: {
+            group: 'пленка SUN CONTROL',
+            data: [
+                {name: 'Евро', mini: 3500, first: 4000, second: 4500, business: 5500, grand: 7000},
+                {name: '1 боковое стекло', mini: 1000, first: 1000, second: 1250, business: 1500, grand: 1750},
+                {name: '1 форточка', mini: 500, first: 500, second: 600, business: 700, grand: 700},
+                {name: 'Лобовое стекло', mini: 2500, first: 2500, second: 3000, business: 3500, grand: 4000},
+                {name: 'Заднее стекло', mini: 2000, first: 2000, second: 2500, business: 3000, grand: 3500},
+            ]
+        },
+        johnson: {
+            group: 'пленка JOHNSON, LLUMAR',
+            data: [
+                {name: 'Евро', mini: 5000, first: 55000, second: 6500, business: 8000, grand: 10000},
+                {name: '1 боковое стекло', mini: 1000, first: 1250, second: 1500, business: 1750, grand: 1750},
+                {name: '1 форточка', mini: 600, first: 600, second: 700, business: 800, grand: 800},
+                {name: 'Лобовое стекло', mini: 3000, first: 3000, second: 3500, business: 4000, grand: 4500},
+                {name: 'Заднее стекло', mini: 2500, first: 2500, second: 3000, business: 3500, grand: 4000},
+            ]
+        },
+        dimention: {
+            group: 'атермальная пленка DIMENTION',
+            data: [
+                {name: '1 боковое стекло', mini: 400, first: 4500, second: 4500, business: 5000, grand: 5000},
+                {name: '1 форточка', mini: 1250, first: 1250, second: 1500, business: 2000, grand: 2500},
+                {
+                    name: 'Заднее стекло (вагон)',
+                    mini: 6000,
+                    first: 6000,
+                    second: 7000,
+                    business: 8000,
+                    grand: 10000
+                },
+            ]
+        },
+        atermal: {
+            group: 'атермальная пленка',
+            data: [
+                {name: '1 боковое стекло', mini: 1750, first: 1750, second: 2000, business: 2500, grand: 3000},
+                {name: '1 форточка', mini: 800, first: 800, second: 1000, business: 1250, grand: 1500},
+                {name: 'Лобовое стекло', mini: 4500, first: 5000, second: 5500, business: 6500, grand: 8000},
+                {name: 'Заднее стекло (седан)', mini: 4500, first: 4500, second: 5500, business: 6500, grand: 8000},
+                {name: 'Заднее стекло (вагон)', mini: 3500, first: 3500, second: 4000, business: 5000, grand: 6000}
+            ]
+        },
+        armor: {
+            group: 'бронирующая пленка 4 mil',
+            data: [
+                {name: '1 боковое стекло', mini: 1000, first: 1200, second: 1500, business: 2000, grand: 2500},
+                {name: '1 форточка', mini: 500, first: 600, second: 700, business: 800, grand: 1000},
+                {name: 'Заднее стекло (вагон)', mini: 2000, first: 2000, second: 2500, business: 3000, grand: 4000}
+            ]
+        },
+        clear_plex: {
+            group: 'Защитная пленка CLEAR PLEX',
+            data: [
+                {name: 'Лобовое стекло', mini: 20000, first: 20000, second: 20000, business: 20000, grand: 20000},
+                {
+                    name: 'Заднее стекло (вагон)',
+                    mini: 10000,
+                    first: 10000,
+                    second: 10000,
+                    business: 10000,
+                    grand: 10000
+                }
+            ]
+        },
+        removalclear_plex: {
+            group: 'Защитная пленка CLEAR PLEX',
+            data: [
+                {name: '1 боковое стекло', mini: 500, first: 500, second: 600, business: 750, grand: 1000},
+                {name: '1 форточка', mini: 250, first: 250, second: 300, business: 400, grand: 500},
+                {name: 'Лобовое, заднее стекло', mini: 1200, first: 1200, second: 1400, business: 1800, grand: 2000}
+                ]
+            }
+        };
+
+block main
+    section
+        h1 Прайс-лист на услуги
+
+        div.anchors
+            div.anchors_nav
+                a(href='#ceramic')
+                    +modalBtn('Керамика')
+                a(href='#film')
+                    +modalBtn('Защитная пленка')
+                a(href='#polishing')
+                    +modalBtn('Полировка')
+                a(href='#detailing')
+                    +modalBtn('Детейлинг')
+                a(href='#dry_cleaning')
+                    +modalBtn('Химчистка')
+                a(href='#toning')
+                    +modalBtn('Тонировка')
+
+    section.anchors_list
+        span(id='ceramic')
+        h2 Покрытие кузова авто керамикой
+        p Относительно новая технология, которая является надежным средством защиты от мелких царапин, пескоструя и некачественной мойки. Для нанесения керамического слоя на поверхность кузова используются материалы высокого качества от надежных производителей. Нанесение покрытия — необходимый этап детейлинга, от которого зависит сохранность внешнего вида и поверхности машины на протяжении длительного срока эксплуатации.
+
+        a.link(href='/ceramic.html')
+            b Подробнее об услуге
+            img(src='./assets/icons/chevron-right-double.svg' alt='')
+
+        +table(columns, dataCeramic)
+
+    section.anchors_list
+        span(id='film')
+        h2 Бронирование защитной пленкой
+        p Услуга направлена на обеспечение защиты поверхностей авто от механических повреждений, царапин, сколов и других неблагоприятных внешних воздействий. Хороший и доступный по цене способ придать поверхностям блеск и при этом сохранить целостность ЛКП. Безупречный внешний вид авто обеспечивается за счет нанесения пленки на нужные элементы авто: капот, бампер, крыша, стойки лобового стекла, полка заднего бампера, передние крылья, пороги, зоны дверных ручек, наружные зеркала и передняя оптика с фарами.
+
+        a.link(href='/film.html')
+            b Подробнее об услуге
+            img(src='./assets/icons/chevron-right-double.svg' alt='')
+
+        +table(columnsFilm, dataFilm)
+
+    section.anchors_list
+        span(id='polishing')
+        h2 Полировка автомобиля
+        p Эффективная помощь для восстановления и придания блеска поверхностям. В процессе удаляются поверхностные дефекты, царапины и следы окисления, восстанавливается внешний вид автомобиля. Результатом полировки является блеск, насыщенный цвет и качественная защита поверхностей авто.
+
+        a.link(href='/exterior.html')
+            b Подробнее об услуге
+            img(src='./assets/icons/chevron-right-double.svg' alt='')
+
+        +table(columns, dataPolishing)
+
+    section.anchors_list
+        span(id='detailing')
+        h2 Детейлинг автомобилей
+        p Профессиональная процедура, в ходе которой специалисты проводят комплексную работу по восстановлению внешнего вида и состояния автомобиля. В процессе детейлинга используются специальные материалы и технологии для достижения качественного результата. Мастера предлагают полную очистку, полировку поверхностей и удаление отдельных повреждений.
+
+        a.link(href='/exterior.html')
+            b Подробнее об услуге
+            img(src='./assets/icons/chevron-right-double.svg' alt='')
+
+        +table(columns, dataDetailing)
+
+    section.anchors_list
+        span(id='dry_cleaning')
+        h2 Химчистка
+        p Для очистки от загрязнений и восстановления салона используют современные химические средства, которые обеспечивают быстрый эффект. Специалисты проводят комплексную работу по удалению пыли, грязи, застарелых пятен и запахов.
+
+        a.link(href='/dry_cleaning.html')
+            b Подробнее об услуге
+            img(src='./assets/icons/chevron-right-double.svg' alt='')
+
+        +table(columns, dataCleaning)
+
+    section.anchors_list
+        span(id='toning')
+        h2 Тонировка
+        p Процедура позволяет изменить уровень проницаемости света через стекла автомобиля. По желанию клиента обеспечивается необходимая степень затемнения. Тонировка — не только внешний декоративный элемент, но и средство обеспечения комфорта и конфиденциальности владельца во время эксплуатации автомобиля.
+
+        a.link(href='/toning.html')
+            b Подробнее об услуге
+            img(src='./assets/icons/chevron-right-double.svg' alt='')
+
+        +table(columns, dataToning)
+
+    section
+        div.advantages
+            div Оставьте заявку на
+                b  бесплатную консультацию,
+                span  и мы перезвоним Вам в течение
+                b  20 минут
+
+            +modalBtn('Оставить заявку *', 'consultation')
+
+            p * Если заявка пришла после 20:00 – перезвоним не позднее 11.00 на следующий день
+            img.advantages_img(src='./assets/img/index/phone.webp', alt='phone')
