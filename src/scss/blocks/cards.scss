@@ -24,6 +24,14 @@
   }
 }
 
+.left {
+  > .cards_item {
+    align-items: flex-start;
+    text-align: left;
+    justify-content: end;
+  }
+}
+
 @media (min-width: 768px) {
   .cards {
     max-width: 60vw;

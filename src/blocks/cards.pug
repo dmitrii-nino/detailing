@@ -1,5 +1,5 @@
-mixin cards(items)
-    div.cards
+mixin cards(items, position)
+    div(class=`cards ${position}`)
         each item in items
             div(class='cards_item frame')
                 h4=item.header ? item.header : ' '
