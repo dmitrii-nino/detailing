@@ -20,6 +20,49 @@
   }
 }
 
+.underlined_header {
+  border-bottom: 2px solid #D9D9D9;
+  padding-bottom: 16px;
+
+  span {
+    border-bottom: 2px solid #DA3831;
+    padding-bottom: 15px;
+  }
+}
+
+ol {
+  list-style: none;
+  counter-reset: num;
+
+  li { position: relative }
+
+  li::before {
+    margin-right: 8px;
+  }
+
+  > li {
+    counter-increment: num;
+
+    &::before {
+      content: counter(num) '.';
+      font-weight: bold;
+    }
+  }
+
+  ol {
+    counter-reset: num2;
+    > li {
+      counter-increment: num2;
+      margin-bottom: 10px;
+
+      &::before {
+        content: counter(num) '.' counter(num2);
+        font-weight: normal;
+      }
+    }
+  }
+}
+
 .main {
 
   &_content {

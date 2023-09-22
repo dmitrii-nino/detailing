@@ -2,35 +2,10 @@ extends components/layout
 
 block main
     script(src="https://api-maps.yandex.ru/v3/?apikey=103e97b7-460b-4a26-b8a2-f4c70c6dff19&lang=ru_RU")
-    script.
-        window.map = null;
-
-        main();
-        async function main() {
-            await ymaps3.ready;
-            const {YMap, YMapControls, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer} = ymaps3;
-            const {YMapZoomControl} = await ymaps3.import('@yandex/ymaps3-controls@0.0.1');
-            const {YMapDefaultMarker} = await ymaps3.import('@yandex/ymaps3-markers@0.0.1');
-
-            map = new YMap(document.getElementById('YMaps'), {
-                location: {
-                    center: [30.344228, 59.940312],
-                    zoom: 16
-                }
-            });
-
-            map.addChild((scheme = new YMapDefaultSchemeLayer()));
-            map.addChild(new YMapControls({position: 'right'}).addChild(new YMapZoomControl({})));
-            map.addChild(new YMapDefaultFeaturesLayer({id: 'features'}));
-
-            const marker = new YMapDefaultMarker({
-                coordinates: [30.344228, 59.940312]
-            });
-            map.addChild(marker);
-        }
 
     section
-        h1 Контакты
+        h1.underlined_header
+            span Контакты
 
         div.contacts
             div(class='cards_item frame')
@@ -57,3 +32,28 @@ block main
     include ./components/examples
 
     include ./components/advantages
+
+    script.
+        async function main() {
+            await ymaps3.ready;
+            const {YMap, YMapControls, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer} = ymaps3;
+            const {YMapZoomControl} = await ymaps3.import('@yandex/ymaps3-controls@0.0.1');
+            const {YMapDefaultMarker} = await ymaps3.import('@yandex/ymaps3-markers@0.0.1');
+
+            let map = await new YMap(document.getElementById('YMaps'), {
+                location: {
+                    center: [30.344228, 59.940312],
+                    zoom: 16
+                }
+            });
+
+            map.addChild((scheme = new YMapDefaultSchemeLayer()));
+            map.addChild(new YMapControls({position: 'right'}).addChild(new YMapZoomControl({})));
+            map.addChild(new YMapDefaultFeaturesLayer({id: 'features'}));
+
+            const marker = new YMapDefaultMarker({
+                coordinates: [30.344228, 59.940312]
+            });
+            map.addChild(marker);
+        }
+        main();
