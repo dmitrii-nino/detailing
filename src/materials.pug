@@ -1,0 +1,52 @@
+extends ./components/layout
+
+block main
+    section.index
+        div(class='frame primary_title' style='background-image: url("./assets/img/materials/primary.webp")')
+            h1 Сделайте свой автомобиль
+                br
+                span привлекательным и ухоженным
+
+    section.main
+        div.warranty_protection_item(style='align-items: flex-start;')
+            h2 Керамическое покрытие
+            p
+                b.accent FUSION PLUS
+                span  — покрытие, которое обновляет внешний вид вашего автомобиля.
+            p Возвращает ему первозданный лоск и защищает авто от мелких царапин, сколов, выцветания краски, воздействия различных химических веществ и реагентов.
+        div
+            img(src='./assets/img/warranty/result_1.webp')
+
+    section.main
+        div
+            img(src='./assets/img/materials/facility.webp')
+        div.warranty_protection_item(style='align-items: flex-start;')
+            h2 Оборудование
+            p Большинство деталей для оклейки авто в антигравийную пленку вырезаются на
+                b.accent  плоттере «Graphtec»
+                span .
+            p Такой инструмент мало у кого встречается, хотя мы считаем, что это незаменимая вещь при оклейке.
+            p Мастера используют лекала из профессиональных американских и европейских баз оклейщиков и благодаря этому минимизируется риск повреждения ЛКП режущим инструментом
+            p Элементы клеятся по специальным шаблонам, что делает процесс оклейки равномерным и более безопасным для авто.
+
+    section.main
+        div.warranty_protection_item(style='align-items: flex-start;')
+            h2 Пленки
+            p
+                b.accent Пленка XPEL
+                span  — брендовая, качественная и проверенная временем пленка.
+            p Пленка, как и керамика, обладает гидрофобным свойством. Вода, снег и слякоть будут скатываться с поверхности автомобиля.
+            p
+                b Она охраняет авто:
+            ul.arrow_points
+                li от коррозии из-за противогололедных реагентов
+                li от царапин и потертостей
+                li от потертостей из-за наезда на замершие сугробы
+        div
+            img(src='./assets/img/materials/film.webp')
+
+    include ./components/protect
+
+    include ./components/examples
+
+    include ./components/advantages
