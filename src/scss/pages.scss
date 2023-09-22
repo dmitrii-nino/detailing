@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: center;
   gap: 20px;
-  min-height: 30vh;
+  min-height: 45vh;
   padding: 60px 20px;
   color: #FFFFFF;
   text-align: center;
@@ -263,6 +263,16 @@
       gap: 16px;
       max-width: 340px;
       padding: 24px;
+
+      &_title {
+        color: var(--red, #DA3831);
+        font-family: Montserrat;
+        font-size: 44px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        text-transform: uppercase;
+      }
     }
   }
 
@@ -317,6 +327,27 @@
       left: -32px;
       top: 0;
     }
+  }
+}
+
+.arrow_points {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding-bottom: 16px;
+  padding-left: 24px;
+
+  li {
+    list-style: none;
+    position: relative;
+    margin-left: 24px;
+  }
+
+  li:before {
+    content: url("../assets/icons/chevron-right-double.svg");
+    position: absolute;
+    left: -32px;
+    top: 0;
   }
 }
 

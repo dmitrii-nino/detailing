@@ -1,0 +1,101 @@
+extends ./components/layout
+
+block variables
+    -
+        const services = [
+            {
+                "className": "services_item",
+                "id": 1,
+                link: '/ceramic.html',
+                "text": "Керамическое покрытие",
+                "img": "./assets/img/index/services_1.webp"
+            },
+            {
+                "className": "services_item",
+                "id": 2,
+                link: '/film.html',
+                "text": "Оклейка защитной пленкой",
+                "img": "./assets/img/index/services_2.webp"
+            },
+            {
+                "className": "services_item",
+                "id": 3,
+                link: '/glass_repair.html',
+                "text": "Ремонт стекла",
+                "img": "./assets/img/glass/step_2.webp"
+            },
+            {
+                "className": "services_item",
+                "id": 4,
+                link: '/dry_cleaning.html',
+                "text": "Химчистка автомобиля",
+                "img": "./assets/img/index/services_3.webp"
+            },
+            {
+                "className": "services_item",
+                "id": 5,
+                link: '/toning.html',
+                "text": "Тонировка",
+                "img": "./assets/img/index/services_4.webp"
+            },
+            {
+                "className": "services_item",
+                "id": 6,
+                link: '/exterior.html',
+                "text": "Оклейка экстерьера",
+                "img": "./assets/img/index/services_5.webp"
+            },
+            {
+                "className": "services_item",
+                "id": 7,
+                link: '/polishing.html',
+                "text": "Полировка автомобиля",
+                "img": "./assets/img/index/services_6.webp"
+            }]
+
+block main
+    section.index
+        div(class='frame primary_title')
+            h1 Детейлинг студия в центре Санкт-Перербурга
+
+        p Вернем автомобилю безупречный внешний вид за 2 дня с оплатой после работы и гарантией 1 год по договору
+
+    section
+        h2 О компании
+        p(style='max-width: 500px; text-align: center; margin: 0 auto;') За 8 лет работы мы выросли из маленького бокса в промзоне в современную детейлинг студию в центре Санкт-Петербурга
+
+        div.warranty_factors
+            div(class='warranty_factors_item frame')
+                p.warranty_factors_item_title 20 000+
+                p
+                    b Столько довольных клиентов мы насчитали за 10 лет работы
+
+            div(class='warranty_factors_item frame')
+                p.warranty_factors_item_title 30+
+                p
+                    b Автомобилей в месяц мы оклеиваем антигравийной пленкой
+
+            div(class='warranty_factors_item frame')
+                p.warranty_factors_item_title 600+
+                p
+                    b Керамических покрытий мы делаем в год
+
+    section.main
+        ul.arrow_points
+            li Работаем с 2013 года
+            li Сохраним авто в первозданном виде
+            li Целиковая оклейка от 5 до 10 дней
+            li Гарантия на работы от 1 года
+            li Прямая связь с руководителем
+        div
+            img(src='./assets/img/about/proccess.webp')
+
+    section
+        h2 Наши основные услуги
+        +carousel(services)
+
+    include ./components/protect
+
+    include ./components/examples
+
+    include ./components/advantages
