@@ -36,11 +36,15 @@ block main
     script.
         async function main() {
             await ymaps3.ready;
+
+            const block = document.getElementById('YMaps');
+            if (!ymaps3.ready) block.style.display = 'none'
+
             const {YMap, YMapControls, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer} = ymaps3;
             const {YMapZoomControl} = await ymaps3.import('@yandex/ymaps3-controls@0.0.1');
             const {YMapDefaultMarker} = await ymaps3.import('@yandex/ymaps3-markers@0.0.1');
 
-            let map = await new YMap(document.getElementById('YMaps'), {
+            let map = await new YMap(block, {
                 location: {
                     center: [30.344228, 59.940312],
                     zoom: 16
