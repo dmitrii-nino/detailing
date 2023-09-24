@@ -1,7 +1,7 @@
 extends components/layout
 
 block main
-    script(src="https://api-maps.yandex.ru/v3/?apikey=103e97b7-460b-4a26-b8a2-f4c70c6dff19&lang=ru_RU")
+    script(async id="ymaps_script" src="https://api-maps.yandex.ru/v3/?apikey=103e97b7-460b-4a26-b8a2-f4c70c6dff19&lang=ru_RU" type="text/javascript")
 
     section
         h1.underlined_header
@@ -56,4 +56,5 @@ block main
             });
             map.addChild(marker);
         }
-        main();
+        const ympsSctipt = document.querySelector('#ymaps_script');
+        ympsSctipt.addEventListener('load', main);
