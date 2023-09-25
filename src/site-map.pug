@@ -1,0 +1,60 @@
+extends components/layout
+
+block main
+
+    section
+        h1.underlined_header
+            span Карта сайта
+
+    section.main
+        div.site_map
+            a(href='/')
+                h4 Главная
+            a(href='/#examples')
+                h4 Наши Работы
+            a(href='materials.html')
+                h4 Используемые средства
+            a(href='/faq.html')
+                h4 FAQ
+            a(href='/prices.html')
+                h4 Прайс-лист
+            a(href='/reviews.html')
+                h4 Отзывы
+            a(href='/about.html')
+                h4 О компании
+            a(href='/contacts.html')
+                h4 Контакты
+            a(href='/privacy_policy.html')
+                h4 Политика конфиденциальности
+
+        div.site_map
+            h4 Наши Услуги
+
+            a(href='/ceramic.html')
+                p Керамическое покрытие
+            a(href='/warranty.html')
+                p Гарантия и уход за керамическим покрытием
+            a(href='/film.html')
+                p Оклейка защитной пленкой
+            a(href='/glass_repair.html')
+                p Ремонт стекла
+            a(href='/dry_cleaning.html')
+                p Химчистка автомобиля
+            a(href='/toning.html')
+                p Тонировка
+            a(href='/exterior.html')
+                p Оклейка экстерьера
+            a(href='/polishing.html')
+                p Полировка автомобиля
+
+    section
+        div.advantages
+            div Оставьте заявку на
+                b  бесплатную консультацию,
+                span  и мы перезвоним Вам в течение
+                b  20 минут
+
+            +modalBtn('Оставить заявку *', 'consultation')
+
+            p * Если заявка пришла после 20:00 – перезвоним не позднее 11.00 на следующий день
+            img.advantages_img(src='./assets/img/index/phone.webp', alt='phone')

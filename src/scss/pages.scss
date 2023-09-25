@@ -30,6 +30,13 @@
   }
 }
 
+.site_map {
+  display: flex;
+  flex-direction: column;
+  align-self: baseline;
+  gap: 12px;
+}
+
 ol {
   list-style: none;
   counter-reset: num;

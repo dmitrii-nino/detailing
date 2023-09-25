@@ -8,24 +8,24 @@ block main
             span Контакты
 
         div.contacts
-            div(class='cards_item frame')
+            a(class='cards_item frame' href="tel:+79119239659")
                 img(class='cards_icon' src='./assets/img/contacts/phone.webp' alt="#")
                 h4 Телефон
                 p
                     b +7 (911) 923 96 59
-            div(class='cards_item frame')
+            a(class='cards_item frame' href="mailto:autocentrpolimer@mail.ru")
                 img(class='cards_icon' src='./assets/img/contacts/email.webp' alt="#")
                 h4 Email
                 p
                     b autocentrpolimer@mail.ru
-            div(class='cards_item frame')
+            a(class='cards_item frame' target="_blank"  href='https://yandex.com.ge/maps/-/CCUnEPT~gA')
                 img(class='cards_icon' src='./assets/img/contacts/address.webp' alt="#")
                 h4 Адрес
                 p
                     b СПб, ул. Моховая 37 «Б»
 
     section
-        div(id='YMaps' style='margin: 0 auto;  width: 100%; height: 480px;')
+        div(id='YMaps' style='margin: 0 auto;  width: 100%;')
 
     include ./components/protect
 
@@ -38,7 +38,6 @@ block main
             await ymaps3.ready;
 
             const block = document.getElementById('YMaps');
-            if (!ymaps3.ready) block.style.display = 'none'
 
             const {YMap, YMapControls, YMapDefaultSchemeLayer, YMapDefaultFeaturesLayer} = ymaps3;
             const {YMapZoomControl} = await ymaps3.import('@yandex/ymaps3-controls@0.0.1');
@@ -50,6 +49,7 @@ block main
                     zoom: 16
                 }
             });
+            block.style.height = '480px';
 
             map.addChild((scheme = new YMapDefaultSchemeLayer()));
             map.addChild(new YMapControls({position: 'right'}).addChild(new YMapZoomControl({})));

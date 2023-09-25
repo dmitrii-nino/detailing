@@ -75,17 +75,21 @@
       display: flex;
       align-items: center;
       gap: 4px;
+      cursor: pointer;
 
-      & img {
-        transition: ease-in-out .3s;
+      &:hover {
+        color: #DA3831;
+      }
+
+      & svg {
+        transition: transform ease-in-out .25s;
       }
 
       &_choose {
         color: #DA3831;
 
-        & img {
+        & svg {
           transform: rotate(-180deg);
-          fill: #DA3831;
         }
       }
 
