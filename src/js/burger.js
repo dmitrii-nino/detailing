@@ -5,6 +5,8 @@ const servicesBtn = document.querySelector('.header_menu_services');
 const servicesList = document.querySelector('.header_menu_services_list');
 const servicesItems = servicesList.querySelectorAll('.header_menu_services_item');
 const servicesSublists = servicesList.querySelectorAll('.header_menu_services_sublist');
+const servicesSubItems = servicesList.querySelectorAll('.header_menu_services_item_subitem');
+const servicesSubSublists = servicesList.querySelectorAll('.header_menu_services_sublist_subsublist');
 
 const preventScroll = (e) => {
     e.preventDefault();
@@ -24,7 +26,7 @@ if (burger) {
         menu.classList.toggle('header_menu_opened')
     });
 
-    menu.addEventListener('wheel', preventScroll, {passive: false});
+    menu.addEventListener('wheel', preventScroll, { passive: false });
 
     servicesBtn.addEventListener("click", () => {
         closeSublist();
