@@ -182,7 +182,11 @@ block main
             +modalBtn('Оставить заявку на бесплатную консультацию', 'consultation')
 
     include ./components/advantages
-
+    
     section
-        h2 Покрытие авто керамикой
+        h2 Популярные вопросы
+        +spoiler(ceramicFAQ)
+    
+    section
+        h2 Этапы нанесения керамического покрытия на пленку
         +spoiler(ceramicCoverageFAQ)
