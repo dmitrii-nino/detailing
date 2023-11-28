@@ -122,7 +122,7 @@ block variables
                 body: 'Нет, он не повреждается.'
             }]
     -
-        const exteriorFAQ = [
+        const interiorFAQ = [
             {
                 header: 'Любой салон можно оклеить защитной пленкой?',
                 body: 'Перед началом работы мы проверяем наличие вашей модели и комплектации по нашей базе лекал. После этого мы рассчитываем точную стоимость оклейки конкретно для вашего салона.'
@@ -210,8 +210,8 @@ block main
 
     section.anchors_list
         span(id='detailing')
-        h2 Оклейка экстерьера
-        +spoiler(exteriorFAQ)
+        h2 Оклейка интерьера
+        +spoiler(interiorFAQ)
 
     section.anchors_list
         span(id='polishing')
