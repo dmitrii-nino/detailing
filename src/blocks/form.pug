@@ -99,7 +99,7 @@ mixin form(step, type)
                         input.input_check(type='checkbox' id='agree_phone_number' value='agree' checked)
                         label(for='agree_phone_number')
                             div(style='display: grid') Заполняя форму, я принимаю
-                                a(target="_blank" href='/user_agreement.html' style='text-decoration: underline') условия передачи информации
+                                a(target="_blank" href='/privacy_policy.html' style='text-decoration: underline') условия передачи информации
 
                 div.row
                     button(class='btn prev' onclick=`toPrev('phone_number')`) Назад
@@ -131,6 +131,6 @@ mixin form(step, type)
 
                         label(for='agree_consultation_phone_number')
                             div(style='display: grid') Заполняя форму, я принимаю
-                                a(target="_blank" href='/user_agreement.html' style='text-decoration: underline') условия передачи информации
+                                a(target="_blank" href='/privacy_policy.html' style='text-decoration: underline') условия передачи информации
 
                 button(class=`btn disabled` disabled id='for_consultation_phone_number' onclick=`toNext('consultation_phone_number', '${type}')`) Отправить заявку
