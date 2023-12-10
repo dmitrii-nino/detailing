@@ -2,10 +2,7 @@ extends components/layout
 
 block variables
     -
-        const ceramicPrimarySlider = [{className: "ceramic_title", id: 1, img: './assets/img/ceramic/primary_1.webp'},
-            {className: "ceramic_title", id: 2, img: './assets/img/ceramic/primary_2.webp'},
-            {className: "ceramic_title", id: 3, img: './assets/img/ceramic/primary_3.webp'},
-            {className: "ceramic_title", id: 4, img: './assets/img/ceramic/primary_4.webp'}]
+        const ceramicPrimarySlider = [{className: "ceramic_title", id: 1, img: './assets/img/ceramic/primary_4.webp'}]
     -
         const ceramicPoints = [{id: 1, text: '<b>Защита</b> от  выцветания, абразивов, коррозии и насекомых'},
              { id: 2, text: '<b>Cамоочищение</b> — на ЛКП не скапливается вода, грязь, битум, дорожная сажа. Защита от дорожных реагентов, масел, ГСМУ '},
@@ -110,7 +107,7 @@ block main
 
     section.main
         h1 Покрытие авто керамикой
-        img(src='./assets/img/ceramic/primary_4.webp', alt='Керамика для авто')
+         +slipper(ceramicPrimarySlider)
 
         div.main_content
             p Защитите автомобиль от царапин, сколов, грязи и химических реагентов с помощью керамики с
