@@ -2,10 +2,8 @@ extends components/layout
 
 block variables
     -
-        const ceramicPrimarySlider = [{className: "ceramic_title", id: 1, img: './assets/img/ceramic/primary_1.webp'},
-            {className: "ceramic_title", id: 2, img: './assets/img/ceramic/primary_2.webp'},
-            {className: "ceramic_title", id: 3, img: './assets/img/ceramic/primary_3.webp'},
-            {className: "ceramic_title", id: 4, img: './assets/img/ceramic/primary_4.webp'}]
+        const ceramicPrimarySlider = [{className: "ceramic_title", id: 1, img: './assets/img/ceramic/primary_2.webp'},
+            {className: "ceramic_title", id: 2, img: './assets/img/ceramic/primary_4.webp'}]
     -
         const ceramicPoints = [{id: 1, text: '<b>Защита</b> от  выцветания, абразивов, коррозии и насекомых'},
              { id: 2, text: '<b>Cамоочищение</b> — на ЛКП не скапливается вода, грязь, битум, дорожная сажа. Защита от дорожных реагентов, масел, ГСМУ '},
@@ -138,10 +136,7 @@ block main
         h2 Этапы нанесения керамики
         +carousel(ceramicSteps)
 
-    section
-        h2 Результаты
-        div.examples_item
-            +slipper(ceramicExSlider)
+    include ./components/ceramic-examples
 
     section
         h2 Цены
