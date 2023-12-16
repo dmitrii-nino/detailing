@@ -44,13 +44,12 @@ const openList = ({ mobile }) => {
 
     const header = container.firstElementChild;
     setTimeout(() => {
-        if (!menu.classList.contains('header_menu_opened')) {
-            Array.from(container.children).forEach(child => {
-                if (child !== header) {
-                  child.classList.add('invisible');
-                }
-              });
-        }
+        if (!menu.classList.contains('header_menu_opened')) return
+        Array.from(container.children).forEach(child => {
+            if (child !== header) {
+                child.classList.add('invisible');
+            }
+        });
     }, 420)
   }
 };
