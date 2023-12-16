@@ -20,7 +20,11 @@ body {
 	max-width: 1960px;
 	margin: 0 auto;
 	position: relative;
+	.invisible {
+		display: none;
+	}	
 }
+
 
 section {
 	width: 100%;

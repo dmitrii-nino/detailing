@@ -52,8 +52,8 @@
         transition: ease-in-out .3s;
         &_opened {
             top: 60px;
-            overflow: hidden;
-            touch-action: none;
+            // overflow: hidden;
+            // touch-action: none;
         }
         &_block {
             display: flex;
@@ -62,6 +62,9 @@
             gap: 12px;
             text-align: center;
             margin: 0 auto;
+            a:hover {
+                color: #DA3831;
+            }
         }
         &_services {
             display: flex;
@@ -110,13 +113,40 @@
             &_sublist {
                 display: none;
                 flex-direction: column;
-                overflow: hidden;
+                // overflow: hidden;
                 gap: 12px;
                 &_opened {
                     display: flex;
                     border-bottom: 1px solid #D9D9D9;
                     padding: 8px 24px 24px;
                     margin-bottom: 18px;
+                }
+                p {
+                    cursor: pointer;
+                }
+                &_item {
+                    display: flex;
+                    gap: 8px;
+                    align-items: center;
+                    justify-content: center;
+                    margin-left: 32px;
+                    &_choose {
+                        color: #DA3831;
+                        & svg {
+                            transform: rotate(-180deg);
+                        }
+                    }
+                }
+                &_sublist {
+                    display: none;
+                    flex-direction: column;
+                    gap: 10px;
+                    &_opened {
+                        display: flex;
+                        border-bottom: 1px solid #D9D9D9;
+                        padding: 8px 24px 24px;
+                        margin-bottom: 16px;
+                    }
                 }
             }
         }
@@ -190,7 +220,7 @@
                     height: auto;
                     position: absolute;
                     background-color: #fff;
-                    top: -50vh;
+                    top: -150vh;
                     left: 96px;
                     z-index: 5;
                     padding: 24px 32px;
@@ -204,7 +234,7 @@
                     }
                 }
                 &_sublist {
-                    display: flex;
+                    display: none;
                     position: absolute;
                     align-items: baseline;
                     padding: 24px 32px;
@@ -212,7 +242,6 @@
                     top: 0;
                     right: 0;
                     left: 0;
-                    opacity: 0;
                     height: 100%;
                     z-index: -1;
                     transition: ease-in .3s;
@@ -221,8 +250,12 @@
                     border-bottom: none;
                     border-left: 1px solid #D9D9D9;
                     &_opened {
+                        display: flex;
                         right: -98%;
                         left: 98%;
+                        left: 98%;
+                        opacity: 1;
+                        left: 98%;                        
                         opacity: 1;
                         height: auto;
                         box-shadow: 10px 5px 10px rgba(0, 0, 0, 0.2);

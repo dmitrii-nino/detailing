@@ -5,9 +5,10 @@ header.header
               img(src='./assets/icons/logo.svg', alt="")
 
         div.header_menu
-            div.header_menu_block
-                a(href='/')
-                    h4 Главная
+            div.header_menu_block(itemscope, itemtype="http://schema.org/SiteNavigationElement")
+                meta(itemprop="name", content="Навигационное Меню")
+                a(href='/', itemprop="url")
+                    h4(itemprop="name") Главная
                 h4.header_menu_services Наши Услуги
                     svg(width="17" height="17" viewBox="0 0 17 17" fill="none" xmlns="http://www.w3.org/2000/svg")
                         g(id="Frame 103")
@@ -19,29 +20,29 @@ header.header
                             path(d="M7.5 9L12.5 14L17.5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
 
                     div.header_menu_services_sublist
-                        a(href='/detejling-kuzova.html')
-                            p Детейлинг кузова
-                        a(href='/detejling-himchistka.html')
-                            p Детейлинг химчистка
-                        a(href='/premium_detailing.html')
-                            p Премиум детейлинг
-                        a(href='/zhidkoe-steklo.html')
-                            p Детейлинг жидкое стекло
-                        a(href='/detejling-salona.html')
-                            p Детейлинг салона
+                        a(href='/detejling-kuzova.html', itemprop="url")
+                            p(itemprop="name") Детейлинг кузова
+                        a(href='/detejling-himchistka.html', itemprop="url")
+                            p(itemprop="name") Детейлинг химчистка
+                        a(href='/premium_detailing.html', itemprop="url")
+                            p(itemprop="name") Премиум детейлинг
+                        a(href='/zhidkoe-steklo.html', itemprop="url")
+                            p(itemprop="name") Детейлинг жидкое стекло
+                        a(href='/detejling-salona.html', itemprop="url")
+                            p(itemprop="name") Детейлинг салона
 
                     p.header_menu_services_item Керамическое покрытие
                         svg(xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none")
                             path(d="M7.5 9L12.5 14L17.5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
                     div.header_menu_services_sublist
-                        a(href='/ceramic.html')
-                            p Керамическое покрытие
-                        a(href='/warranty.html')
-                            p Гарантия и уход за керамическим покрытием
-                        a(href='/keramika-na-plenku.html')
-                            p Керамика на пленку
-                        a(href='/keramika-dlya-far.html')
-                            p Керамическое покрытие для фар
+                        a(href='/ceramic.html', itemprop="url")
+                            p(itemprop="name") Керамическое покрытие
+                        a(href='/warranty.html', itemprop="url")
+                            p(itemprop="name") Гарантия и уход за керамическим покрытием
+                        a(href='/keramika-na-plenku.html', itemprop="url")
+                            p(itemprop="name") Керамика на пленку
+                        a(href='/keramika-dlya-far.html', itemprop="url")
+                            p(itemprop="name") Керамическое покрытие для фар
                         //a(href='/ceramic-kuzova.html')
                         //    p Керамика кузова отзывы
 
@@ -51,133 +52,137 @@ header.header
                     div.header_menu_services_sublist
                         a(href='/film.html')
                             p Оклейка защитной пленкой
-                        a(href='/bronirovanie-stekol-plenkoj.html')
-                            p Бронирование лобового стекла
-                        a(href='/bronirovanie-kuzova-plenkoj.html')
-                            p Бронирование кузова
-                        a(href='/bronirovanie-kapota-plenkoj.html')
-                            p Бронирование капота пленкой
-                        a(href='/bronirovanie-far-poliuretanovoj-plenkoj.html')
-                            p Бронирование фар полиуретановой пленкой
-                        a(href='/bronirovanie-porogov-avto.html')
-                            p Бронирование порогов авто
-                        a(href='/broneplenka-na-kryshu-avto.html')
-                            p Бронепленка на крышу авто
-                        a(href='/antigravijnaya-zashita-avto-plenkoj.html')
-                            p Антигравийная защита авто пленкой
-                        a(href='/antigravijnaya-zashita-kuzova-avto.html')
-                            p Антигравийная защита кузова
-                        a(href='/zashita-avtomobilya-poliuretanovoj-plenkoj.html')
-                            p Защита авто полиуретановой пленкой
-                        a(href='/zashita-kapota-plenkoj.html')
-                            p Защита капота пленкой
-                        a(href='/zashita-kapota.html')
-                            p Защита капота
+                        a(href='/bronirovanie-stekol-plenkoj.html', itemprop="url")
+                            p(itemprop="name") Бронирование лобового стекла
+                        a(href='/bronirovanie-kuzova-plenkoj.html', itemprop="url")
+                            p(itemprop="name") Бронирование кузова
+                        a(href='/bronirovanie-kapota-plenkoj.html', itemprop="url")
+                            p(itemprop="name") Бронирование капота пленкой
+                        a(href='/bronirovanie-far-poliuretanovoj-plenkoj.html', itemprop="url")
+                            p(itemprop="name") Бронирование фар полиуретановой пленкой
+                        a(href='/bronirovanie-porogov-avto.html', itemprop="url")
+                            p(itemprop="name") Бронирование порогов авто
+                        a(href='/broneplenka-na-kryshu-avto.html', itemprop="url")
+                            p(itemprop="name") Бронепленка на крышу авто
+                        a(href='/antigravijnaya-zashita-avto-plenkoj.html', itemprop="url")
+                            p(itemprop="name") Антигравийная защита авто пленкой
+                        a(href='/antigravijnaya-zashita-kuzova-avto.html', itemprop="url")
+                            p(itemprop="name") Антигравийная защита кузова
+                        a(href='/zashita-avtomobilya-poliuretanovoj-plenkoj.html', itemprop="url")
+                            p(itemprop="name") Защита авто полиуретановой пленкой
+                        a(href='/zashita-kapota-plenkoj.html', itemprop="url")
+                            p(itemprop="name") Защита капота пленкой
+                        a(href='/zashita-kapota.html', itemprop="url")
+                            p(itemprop="name") Защита капота
 
                     p.header_menu_services_item Ремонт стекла
                         svg(xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none")
                             path(d="M7.5 9L12.5 14L17.5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
                     div.header_menu_services_sublist
-                        a(href='/glass_repair.html')
-                            p Ремонт стекла
-                        a(href='/remont-skolov-na-lobovom-stekle.html')
-                            p Ремонт сколов и трещин на лобовом стекле
+                        a(href='/glass_repair.html', itemprop="url")
+                            p(itemprop="name") Ремонт стекла
+                        a(href='/remont-skolov-na-lobovom-stekle.html', itemprop="url")
+                            p(itemprop="name") Ремонт сколов и трещин на лобовом стекле
 
                     p.header_menu_services_item Химчистка автомобиля
                         svg(xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none")
                             path(d="M7.5 9L12.5 14L17.5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
                     div.header_menu_services_sublist
-                        a(href='/dry_cleaning.html')
-                            p Химчистка автомобиля
-                        a(href='/prices_dry_cleaning.html')
-                            p Цены химчистка авто
-                        a(href='/himchistka-kozhanogo-salona.html')
-                            p Химчистка кожаного салона
-                        a(href='/himchistka-potolka-salona.html')
-                            p Химчистка потолка салона
-                        a(href='/himchistka-sidenij-avtomobilya.html')
-                            p Химчистка сидений автомобиля
-                        a(href='/himchistka-voditelskogo-sideniya.html')
-                            p Химчистка водительского сидения
-                        a(href='/himchistka-salona-so-snyatiem-sidenij.html')
-                            p Химчистка салона со снятием сидений
-                        a(href='/himchistka-tkanevyh-sidenij-avtomobilya.html')
-                            p Химчистка тканевых сидений автомобиля
-                        a(href='/himchistka-kozhanyh-sidenij-avtomobilya.html')
-                            p Химчистка кожаных сидений автомобиля
-                        a(href='/himchistka-bagazhnika.html')
-                            p Химчистка багажника
-                        a(href='/himchistka-pola-avto.html')
-                            p Химчистка пола авто
-                        a(href='/himchistka-rulya.html')
-                            p Химчистка руля
+                        a(href='/dry_cleaning.html', itemprop="url")
+                            p(itemprop="name") Химчистка автомобиля
+                        a(href='/prices_dry_cleaning.html', itemprop="url")
+                            p(itemprop="name") Цены химчистка авто
+                        a(href='/himchistka-kozhanogo-salona.html', itemprop="url")
+                            p(itemprop="name") Химчистка кожаного салона
+                        a(href='/himchistka-potolka-salona.html', itemprop="url")
+                            p(itemprop="name") Химчистка потолка салона
+                        a(href='/himchistka-sidenij-avtomobilya.html', itemprop="url")
+                            p(itemprop="name") Химчистка сидений автомобиля
+                        a(href='/himchistka-voditelskogo-sideniya.html', itemprop="url")
+                            p(itemprop="name") Химчистка водительского сидения
+                        a(href='/himchistka-salona-so-snyatiem-sidenij.html', itemprop="url")
+                            p(itemprop="name") Химчистка салона со снятием сидений
+                        a(href='/himchistka-tkanevyh-sidenij-avtomobilya.html', itemprop="url")
+                            p(itemprop="name") Химчистка тканевых сидений автомобиля
+                        a(href='/himchistka-kozhanyh-sidenij-avtomobilya.html', itemprop="url")
+                            p(itemprop="name") Химчистка кожаных сидений автомобиля
+                        a(href='/himchistka-bagazhnika.html', itemprop="url")
+                            p(itemprop="name") Химчистка багажника
+                        a(href='/himchistka-pola-avto.html', itemprop="url")
+                            p(itemprop="name") Химчистка пола авто
+                        a(href='/himchistka-rulya.html', itemprop="url")
+                            p(itemprop="name") Химчистка руля
 
                     p.header_menu_services_item Тонировка
                         svg(xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none")
                             path(d="M7.5 9L12.5 14L17.5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
                     div.header_menu_services_sublist
-                        a(href='/toning.html')
-                            p Тонировка
-                        a(href='/toning-antihrom.html')
-                            p Антихром
-                        a(href='/prices_toning.html')
-                            p Цены тонировка авто
+                        a(href='/toning.html', itemprop="url")
+                            p(itemprop="name") Тонировка
+                        a(href='/toning-antihrom.html', itemprop="url")
+                            p(itemprop="name") Антихром
+                        a(href='/prices_toning.html', itemprop="url")
+                            p(itemprop="name") Цены тонировка авто
 
                     p.header_menu_services_item Оклейка интерьера
                         svg(xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none")
                             path(d="M7.5 9L12.5 14L17.5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
                     div.header_menu_services_sublist
-                        a(href='/oklejka-interera-avto.html')
-                            p Оклейка интерьера
-                        a(href='/oklejka-monitora-avtomobilya-plenkoj.html')
-                            p Оклейка монитора автомобиля пленкой
-                        a(href='/oklejka-plenkoj-pribornogo-shitka.html')
-                            p Оклейка пленкой приборного щитка
+                        a(href='/oklejka-interera-avto.html', itemprop="url")
+                            p(itemprop="name") Оклейка интерьера
+                        a(href='/oklejka-monitora-avtomobilya-plenkoj.html', itemprop="url")
+                            p(itemprop="name") Оклейка монитора автомобиля пленкой
+                        a(href='/oklejka-plenkoj-pribornogo-shitka.html', itemprop="url")
+                            p(itemprop="name") Оклейка пленкой приборного щитка
 
                     p.header_menu_services_item Полировка
                         svg(xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none")
                             path(d="M7.5 9L12.5 14L17.5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
                     div.header_menu_services_sublist
-                        a(href='/polishing.html')
-                            p Полировка автомобиля
-                        a(href='/polirovka-kuzova.html')
-                            p Полировка кузова
-                        a(href='/polirovka-carapin.html')
-                            p Полировка царапин
-                        a(href='/polirovka-stekla-avtomobilya-ot-carapin.html')
-                            p Полировка стекла автомобиля от царапин
-                        a(href='/polirovka-far.html')
-                            p Полировка фар
-                        a(href='/polirovka-kuzova-avto-keramikoj.html')
-                            p Полировка кузова авто керамикой
-                        a(href='/glubokaya-polirovka-avto.html')
-                            p Глубокая полировка авто
-                        a(href='/glubokaya-polirovka-kuzova.html')
-                            p Глубокая полировка кузова
-                        a(href='/myagkaya-polirovka-kuzova.html')
-                            p Мягкая полировка кузова
-                        a(href='/vosstanovitelnaya-polirovka.html')
-                            p Восстановительная полировка кузова
-                        a(href='/nanesenie-zhidkogo-stekla.html')
-                            p Нанесение жидкого стекла 
-                        a(href='/polirovka-avto-zhidkim-steklom.html')
-                            p Полировка авто жидким стеклом
-                        a(href='/polirovka-kuzova-zhidkim-steklom.html')
-                            p Полировка кузова жидким стеклом
-                        a(href='/polirovka-belogo-kuzova.html')
-                            p Полировка белого кузова 
-                        a(href='/polirovka-chernogo-kuzova.html')
-                            p Полировка черного кузова
-                        a(href='/polirovka-hroma-na-avto.html')
-                            p Полировка хрома на авто
+                        a(href='/polishing.html', itemprop="url")
+                            p(itemprop="name") Полировка автомобиля
+                        a(href='/polirovka-kuzova.html', itemprop="url")
+                            p(itemprop="name") Полировка кузова
+                        a(href='/polirovka-carapin.html', itemprop="url")
+                            p(itemprop="name") Полировка царапин
+                        a(href='/polirovka-stekla-avtomobilya-ot-carapin.html', itemprop="url")
+                            p(itemprop="name") Полировка стекла автомобиля от царапин
+                        a(href='/polirovka-far.html', itemprop="url")
+                            p(itemprop="name") Полировка фар
+                        a(href='/polirovka-kuzova-avto-keramikoj.html', itemprop="url")
+                            p(itemprop="name") Полировка кузова авто керамикой
+                        a(href='/glubokaya-polirovka-avto.html', itemprop="url")
+                            p(itemprop="name") Глубокая полировка авто
+                        p.header_menu_services_sublist_item Полировка кузова
+                            svg(xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none")
+                                path(d="M7.5 9L12.5 14L17.5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round")
+                        div.header_menu_services_sublist_sublist
+                            a(href='/glubokaya-polirovka-kuzova.html', itemprop="url")
+                                p(itemprop="name") Глубокая полировка кузова
+                            a(href='/myagkaya-polirovka-kuzova.html', itemprop="url")
+                                p(itemprop="name") Мягкая полировка кузова
+                        a(href='/vosstanovitelnaya-polirovka.html', itemprop="url")
+                            p(itemprop="name") Восстановительная полировка кузова
+                        a(href='/nanesenie-zhidkogo-stekla.html', itemprop="url")
+                            p(itemprop="name") Нанесение жидкого стекла 
+                        a(href='/polirovka-avto-zhidkim-steklom.html', itemprop="url")
+                            p(itemprop="name") Полировка авто жидким стеклом
+                        a(href='/polirovka-kuzova-zhidkim-steklom.html', itemprop="url")
+                            p(itemprop="name") Полировка кузова жидким стеклом
+                        a(href='/polirovka-belogo-kuzova.html', itemprop="url")
+                            p(itemprop="name") Полировка белого кузова 
+                        a(href='/polirovka-chernogo-kuzova.html', itemprop="url")
+                            p(itemprop="name") Полировка черного кузова
+                        a(href='/polirovka-hroma-na-avto.html', itemprop="url")
+                            p(itemprop="name") Полировка хрома на авто
                                     
 
-                a(href='/#examples')
-                    h4 Наши Работы
-                a(href='/prices.html')
-                    h4 Цены
-                a(href='/contacts.html')
-                    h4 Контакты
+                a(href='/#examples', itemprop="url")
+                    h4(itemprop="name") Наши Работы
+                a(href='/prices.html', itemprop="url")
+                    h4(itemprop="name") Цены
+                a(href='/contacts.html', itemprop="url")
+                    h4(itemprop="name") Контакты
 
             div.mobile
 
