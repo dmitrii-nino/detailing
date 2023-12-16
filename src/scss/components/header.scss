@@ -52,8 +52,8 @@
         transition: ease-in-out .3s;
         &_opened {
             top: 60px;
-            // overflow: hidden;
-            // touch-action: none;
+            overflow: auto;
+            touch-action: initial;
         }
         &_block {
             display: flex;
