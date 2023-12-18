@@ -9,8 +9,12 @@ install nvm on your os
 - mac: `brew install nvm`
 - linux: `https://github.com/nvm-sh/nvm`
 - windows: `https://github.com/coreybutler/nvm-windows`
+
 install node version: `nvm install <version of node>`
+
 using any stable version of node install packages from package.json: `npm install`
+
 run dev script (runs gulp and watches for changes): `npm run dev`
+
 run build script (creates files in ./build directory): `npm run build`
 
