@@ -16,7 +16,7 @@
             "@type": "Country",
             "name": "Россия"
         }
-    }
+    },
     "contactPoint": {
         "@type": "ContactPoint",
         "telephone": "+7(911)923-96-59",
