@@ -1,0 +1,27 @@
+{
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Автомобильный центр Полимер",
+    "url": "https://acpolimer.ru/",
+    "logo": "https://acpolimer.ru/assets/icons/favicon.ico",
+    "description": "Детейлинг автомобиля в Санкт-Петербурге от автомобильного центра “Полимер”. Современное оборудование в СПб, выполнение задач любой сложности, гарантия на все виды услуг для авто, доступные цены и скидки",
+    "telephone": "+7(911)923-96-59",
+    "email": "autocentrpolimer@mail.ru",
+    "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "г. Санкт-Петербург,  ул. Моховая 37 Б",
+        "addressLocality": "Санкт-Петербург",
+        "postalCode": "191028",
+        "addressCountry": {
+            "@type": "Country",
+            "name": "Россия"
+        }
+    }
+    "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+7(911)923-96-59",
+        "contactType": "customer service",
+        "email": "autocentrpolimer@mail.ru",
+        "availableLanguage": "Русский"
+    }
+}

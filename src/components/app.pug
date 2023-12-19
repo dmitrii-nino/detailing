@@ -13,7 +13,8 @@ html(lang="ru-RU")
         link(rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap")
         link(rel="stylesheet" type='text/css' href="./css/style.min.css")
         link(rel="icon" href="./assets/icons/favicon.ico")
-
+        script(type="application/ld+json")
+            include ../js/organizationSchema.json
         block variables
 
         script.
@@ -78,7 +79,8 @@ html(lang="ru-RU")
             }();
 
 
-    body
+    body(itemscope, itemtype="https://schema.org/WebSite")
+        meta(itemprop="url", content="https://acpolimer.ru/")
 
         block content
 
