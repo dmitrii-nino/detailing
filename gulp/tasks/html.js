@@ -15,7 +15,9 @@ export const html = () => {
             // Cжатие HTML файла
             pretty: true,
             // Показывать в терминале какой файл обработан
-            verbose: true
+            verbose: true,
+            // показывает некоторые ошибки 
+            self: true
         }))
         .pipe(app.plugins.replace(/@img\//g, 'img/'))
         .pipe(
