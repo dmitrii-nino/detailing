@@ -2,10 +2,18 @@ extends components/layout
 
 block variables
     -
+        const glassPrimarySlider = [{className: "glass_title", id: 1, img: './assets/img/glass/primary.webp'},
+            {className: "glass_title", id: 2, img: './assets/img/glass/GlassRepairMain/1.webp'}]
+    -
         const glassSteps = [{ className: 'glass_step', id: 1, text: 'Подготавливаем  участок', desc: 'Проверяем наличие скрытых повреждений', img: './assets/img/glass/step_1.webp'},
             { className: 'glass_step', id: 2, text: 'Ремонт скола, трещины', desc: 'Заполняем повреждение полимером и сушим стекло под UV лампами', img: './assets/img/glass/step_2.webp'},
             { className: 'glass_step', id: 3, text: 'Финальная проверка', desc: 'Удаляем излишки полимера', img: './assets/img/glass/step_3.webp'},
             { className: 'glass_step', id: 4, text: 'Выдача автомобиля клиенту', desc: '', img: './assets/img/glass/step_4.webp'}]
+    -
+        const glassExSlider = [{className: "glass_ex_item", id: 1, img: './assets/img/glass/GlassRepairResults/1.webp'},
+            {className: ""glass_ex_item", id: 2, img: './assets/img/glass/GlassRepairResults/2.webp'},
+            {className: ""glass_ex_item", id: 3, img: './assets/img/glass/GlassRepairResults/3.webp'},
+            {className: ""glass_ex_item", id: 4, img: './assets/img/glass/GlassRepairResults/4.webp'}]
     -
         const glassPrices = [{ price: 'от 1 200 ₽', header: 'Скол-глаз', img: './assets/img/glass/type_1.webp' },
             { price: 'от 1 500 ₽', header: 'Скол-звезда', img: './assets/img/glass/type_2.webp' },
@@ -58,8 +66,7 @@ block main
 
     section.main
         h1 Ремонт сколов и трещин на лобовом стекле
-        div.alone
-            img.frame(src='./assets/img/glass/primary.webp')
+        +slipper(glassPrimarySlider)
 
         div.main_content
             p Отремонтируйте
@@ -71,8 +78,8 @@ block main
 
     section
         h2 Результаты
-        div.alone
-            img.frame(src='./assets/img/glass/result.webp')
+        div.examples_item
+            +slipper(glassExSlider)
 
     section
         h2 Как мы работаем
