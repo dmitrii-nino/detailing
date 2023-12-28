@@ -2,13 +2,16 @@ extends components/layout
 
 block variables
     -
+        const exteriorPrimarySlider = [{ className: "exterior_title", id: 1, img: './assets/img/exterior/InteriorMain2/1.webp'},
+            { className: "exterior_title", id: 2, img: './assets/img/exterior/InteriorMain2/2.webp'}]
+    -
         const exteriorSteps = [{ className: 'exterior_step', id: 1, text: 'Начало работы', desc: 'Проверяем наличие вашей машины и комплектации по нашей базе лекал, чтобы пленка идеально подходила под размеры деталей салона', img: './assets/img/exterior/step_1.webp'},
             { className: 'exterior_step', id: 2, text: 'Подготовка материала', desc: 'Плоттер прорезает пленку по лекалам вашего монитора', img: './assets/img/exterior/step_2.webp'},
             { className: 'exterior_step', id: 3, text: 'Оклейка', desc: 'После подготовки материалов, наши мастера оклеивают монитор', img: './assets/img/exterior/step_3.webp'},
             { className: 'exterior_step', id: 4, text: 'Выдача автомобиля клиенту', desc: '', img: './assets/img/exterior/step_4.webp'}]
     -
         const exteriorExSlider = [{className: "exterior_ex_item", id: 1, img: './assets/img/index/exterior_1.webp'},
-            {className: "exterior_ex_item", id: 2, img: './assets/img/index/exterior_2.webp'}]
+            {className: "exterior_ex_item", id: 2, img: './assets/img/exterior/InteriorResults2/1.webp'}]
     -
         const exteriorPrices = [{ price: 'от 1 200 ₽', header: 'Скол-глаз', img: './assets/img/exterior/type_1.webp' },
             { price: 'от 1 500 ₽', header: 'Скол-звезда', img: './assets/img/exterior/type_2.webp' },
@@ -70,8 +73,7 @@ block main
 
     section.main
         h1 Оклейка монитора автомобиля пленкой
-        div.alone
-            img.frame(src='./assets/img/exterior/primary.webp')
+        + slipper(exteriorPrimarySlider)
 
         div.main_content
             p Оклейте монитор автомобиля защитной пленкой
