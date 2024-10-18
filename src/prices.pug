@@ -2,14 +2,14 @@ extends components/layout
 
 block variables
     - const columns = {name: ' ', second: 'Малый класс', business: 'Средний класс', grand: 'Бизнес класс'};
-    - const dataCeramic = [{ name: 'Покрытие кузова керамикой', second: 'от 32 300 ₽', business: 'от 37 800 ₽', grand: 'от 46 200 ₽'}]
+    - const dataCeramic = [{ name: 'Покрытие кузова керамикой', second: 'от 32 200 ₽', business: 'от 37 800 ₽', grand: 'от 46 200 ₽'}]
     - const columnsFilm = {name: ' ', mini: 'Фары', first: 'Минимальный пакет', second: 'Средний пакет', business: 'Максимальный пакет', grand: 'Полная оклейка'};
-    - const dataFilm = [{ name: 'Бронирование защитной пленкой', mini: 'от 5 600 ₽', first: 'от 19 000 ₽', second: 'от 29 000 ₽', business: 'от 59 000 ₽', grand: 'от 190 000 ₽'}]
+    - const dataFilm = [{ name: 'Бронирование защитной пленкой', mini: 'от 6 400 ₽', first: 'от 19 000 ₽', second: 'от 29 000 ₽', business: 'от 59 000 ₽', grand: 'от 170 000 ₽'}]
     - const dataPolishing = [{ name: 'Полировка', second: 'от 26 000 ₽', business: 'от 30 000 ₽', grand: 'от 38 000 ₽'}]
     - const dataDetailing = [{ name: 'Детейлинг автомобиля', second: 'от 26 600 ₽', business: 'от 29 400 ₽', grand: 'от 33 600 ₽'}]
     -
         const dataCleaning = [
-            { name: 'Комплексная химчистка', second: 19200, business: 21600, grand: 24000 },
+            { name: 'Комплексная химчистка', second: 22000, business: 26000, grand: 30000 },
             { name: 'Химчистка потолка + стойки', second: 3360, business: 4080, grand: 4800 },
             { name: 'Химчистка одной стойки (пластик)', second: 240, business: 240, grand: 240 },
             { name: 'Химчистка одной стойки', second: 480, business: 480, grand: 480 },
@@ -46,18 +46,8 @@ block variables
 
     -
         const dataToning = {
-        suncontrol: {
-             group: 'пленка SPECTROL',
-                data: [
-                    {name: 'Евро', first: 5500, business: 7000, grand: 9000},
-                    {name: '1 боковое стекло', first: 1500, business: 2000, grand: 2000},
-                    {name: '1 форточка', first: 750, business: 750, grand: 750},
-                    {name: 'Лобовое стекло', first: 3000, business: 4000, grand: 4000},
-                    {name: 'Заднее стекло', first: 3000, business: 4000, grand: 4000},
-                ]
-            },
         johnson: {
-            group: 'пленка LLUMAR, XPEL',
+            group: 'пленка LLUMAR',
                 data: [
                     {name: 'Евро', first: 7000, business: 8500, grand: 11000},
                     {name: '1 боковое стекло', first: 2000, business: 2500, grand: 2500},
