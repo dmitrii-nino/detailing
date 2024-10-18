@@ -35,3 +35,6 @@ jobs:
         key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
         restore-keys: |
           ${{ runner.os }}-node-
+
+    - name: Ensure fonts directory exists
+      run: mkdir -p src/fonts
