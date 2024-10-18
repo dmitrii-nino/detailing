@@ -4,48 +4,38 @@ block variables
     - const columns = {name: ' ', mini: 'Малый класс', first: 'Первый класс или гольф класс', second: 'Второй средний класс', business: 'Бизнес-класс', grand: 'Представительский класс'};
     -
         const data = {
-            suncontrol: {
-                group: 'пленка SPECTROL',
+        johnson: {
+            group: 'пленка LLUMAR',
                 data: [
-                    {name: 'Евро', mini: 5000, first: 5500, second: 6000, business: 7000, grand: 9000},
-                    {name: '1 боковое стекло', mini: 1500, first: 1500, second: 2000, business: 2000, grand: 2000},
-                    {name: '1 форточка', mini: 750, first: 750, second: 750, business: 750, grand: 750},
-                    {name: 'Лобовое стекло', mini: 3000, first: 3000, second: 4000, business: 4000, grand: 4000},
-                    {name: 'Заднее стекло', mini: 3000, first: 3000, second: 4000, business: 4000, grand: 4000},
+                    {name: 'Евро', first: 7000, business: 8500, grand: 11000},
+                    {name: '1 боковое стекло', first: 2000, business: 2500, grand: 2500},
+                    {name: '1 форточка', first: 1000, business: 1000, grand: 1000},
+                    {name: 'Лобовое стекло', first: 4000, business: 5000, grand: 5000},
+                    {name: 'Заднее стекло', first: 4000, business: 5000, grand: 5000},
                 ]
             },
-            johnson: {
-                group: 'пленка LLUMAR, XPEL',
+        dimention: {
+            group: 'Атермальная пленка',
                 data: [
-                    {name: 'Евро', mini: 6500, first: 7000, second: 7500, business: 8500, grand: 11000},
-                    {name: '1 боковое стекло', mini: 2000, first: 2000, second: 2500, business: 2500, grand: 2500},
-                    {name: '1 форточка', mini: 1000, first: 1000, second: 1000, business: 1000, grand: 1000},
-                    {name: 'Лобовое стекло', mini: 4000, first: 4000, second: 5000, business: 5000, grand: 5000},
-                    {name: 'Заднее стекло', mini: 4000, first: 4000, second: 5000, business: 5000, grand: 5000},
+                    {name: '1 боковое стекло', first: 2000, business: 3000, grand: 3000},
+                    {name: '1 форточка', first: 1000, business: 1000, grand: 1000},
+                    {name: 'Лобовое стекло', first: 5000, business: 6000, grand: 6000},
                 ]
             },
-            dimention: {
-                group: 'Атермальная пленка',
+        armor: {
+            group: 'бронирующая пленка 4 mil',
                 data: [
-                    {name: '1 боковое стекло', mini: 2000, first: 2000, second: 3000, business: 3000, grand: 3000},
-                    {name: '1 форточка', mini: 1000, first: 1000, second: 1000, business: 1000, grand: 1000},
-                    {name: 'Лобовое стекло', mini: 5000, first: 5000, second: 6000, business: 6000, grand: 6000},
+                    {name: '1 боковое стекло', first: 2000, business: 2500, grand: 2500},
+                    {name: '1 форточка', first: 1000, business: 1000, grand: 1000},
                 ]
             },
-            armor: {
-                group: 'бронирующая пленка 4 mil',
+        clear_plex: {
+            group: 'Защитная пленка CLEAR PLEX',
                 data: [
-                    {name: '1 боковое стекло', mini: 2000, first: 2000, second: 2500, business: 2500, grand: 2500},
-                    {name: '1 форточка', mini: 1000, first: 1000, second: 1000, business: 1000, grand: 1000},
+                    {name: 'Лобовое стекло', first: 28000, business: 34000, grand: 34000},
                 ]
             },
-            clear_plex: {
-                group: 'Защитная пленка CLEAR PLEX',
-                data: [
-                    {name: 'Лобовое стекло', mini: 24000, first: 28000, second: 30000, business: 34000, grand: 34000},
-                ]
-            },
-        }
+        };
 
 block main
     script.
