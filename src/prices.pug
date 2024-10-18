@@ -9,103 +9,41 @@ block variables
     - const dataDetailing = [{ name: 'Детейлинг автомобиля', mini: 'от 21 000 ₽', first: 'от 23 800 ₽', second: 'от 26 600 ₽', business: 'от 29 400 ₽', grand: 'от 33 600 ₽'}]
     -
         const dataCleaning = [
-            {name: 'Комплексная химчистка', mini: 12000, first: 14000, second: 16000, business: 18000, grand: 20000},
-            {name: 'Химчистка потолка + стойки', mini: 1600, first: 2200, second: 2800, business: 3400, grand: 4000},
-            {name: 'Химчистка одной стойки (пластик)', mini: 200, first: 200, second: 200, business: 200, grand: 200},
-            {name: 'Химчистка одной стойки', mini: 400, first: 400, second: 400, business: 400, grand: 400},
-            {name: 'Химчистка пола салона', mini: 2200, first: 2800, second: 3400, business: 4000, grand: 4600},
-            {name: 'Химчистка пола водителя', mini: 1400, first: 1600, second: 1800, business: 2000, grand: 2000},
-            {
-                name: 'Химчистка пола (за 1 место, кроме водительского)',
-                mini: 900,
-                first: 1100,
-                second: 1300,
-                business: 1500,
-                grand: 1500
-            },
-            {name: 'Химчистка пола багажника', mini: 1000, first: 1200, second: 1400, business: 1600, grand: 1600},
-            {name: 'Химчистка 1 ковра (тряпка)', mini: 750, first: 750, second: 750, business: 750, grand: 750},
-            {
-                name: 'Химчистка багажного коврика (тряпка)',
-                mini: 1000,
-                first: 1000,
-                second: 1000,
-                business: 1000,
-                grand: 1000
-            },
-            {name: 'Химчистка торпеды', mini: 1000, first: 1200, second: 1400, business: 1600, grand: 2000},
-            {name: 'Химчистка консоли', mini: 600, first: 800, second: 1000, business: 1200, grand: 1200},
-            {name: 'Химчистка дверной карты', mini: 800, first: 1000, second: 1200, business: 1400, grand: 1600},
-            {name: 'Химчистка крышки багажника', mini: 1400, first: 1800, second: 2200, business: 2600, grand: 3000},
-            {name: 'Химчистка багажника', mini: 800, first: 1000, second: 1000, business: 1400, grand: 1600},
-            {name: 'Химчистка 1 сидения', mini: 1000, first: 1400, second: 1600, business: 1800, grand: 1800},
-            {name: 'Химчистка заднего дивана', mini: 1600, first: 1800, second: 2000, business: 2400, grand: 2400},
-            {
-                name: 'Химчистка заднего разделительного сидения',
-                mini: 2200,
-                first: 2400,
-                second: 2600,
-                business: 2800,
-                grand: 3000
-            },
-            {name: 'Химчистка ремня безопасности', mini: 500, first: 500, second: 500, business: 500, grand: 500},
-            {name: 'Химчистка подлокотника', mini: 300, first: 300, second: 300, business: 300, grand: 300},
-            {name: 'Химчистка рулевого колеса', mini: 700, first: 700, second: 700, business: 700, grand: 700},
-            {name: 'Химчистка козырька', mini: 400, first: 400, second: 400, business: 400, grand: 400},
-            {name: 'Химчистка задней полки', mini: 500, first: 500, second: 500, business: 500, grand: 500},
-            {
-                name: 'Химчистка задней (раскладной) полки',
-                mini: 1000,
-                first: 1200,
-                second: 1400,
-                business: 1600,
-                grand: 1600
-            },
-            {name: 'Химчистка ручки АКП', mini: 300, first: 300, second: 300, business: 300, grand: 300},
-            {name: 'Химчистка детского кресла', mini: 2000, first: 2000, second: 2000, business: 2000, grand: 2000},
-            {
-                name: 'Пропитка напольного покрытия защитным средством',
-                mini: 2400,
-                first: 2600,
-                second: 2800,
-                business: 3400,
-                grand: 3800
-            },
-            {
-                name: 'Пропитка ткани салона защитным средством',
-                mini: 2600,
-                first: 3000,
-                second: 3200,
-                business: 3600,
-                grand: 4000
-            },
-            {
-                name: 'Пропитка тканевого сидения защитным средством',
-                mini: 800,
-                first: 800,
-                second: 800,
-                business: 800,
-                grand: 800
-            },
-            {
-                name: 'Пропитка тканевого элемента салона защ. средством',
-                mini: 300,
-                first: 300,
-                second: 300,
-                business: 300,
-                grand: 300
-            },
-            {
-                name: 'Пропитка пола водителя защитным средством',
-                mini: 500,
-                first: 500,
-                second: 500,
-                business: 500,
-                grand: 500
-            },
-            {name: 'Кондиционер кожи салона', mini: 2600, first: 2800, second: 3000, business: 3400, grand: 3900},
-            {name: 'Кондиционер одного сидения', mini: 700, first: 700, second: 700, business: 900, grand: 900}
+            { name: 'Комплексная химчистка', second: 19200, business: 21600, grand: 24000 },
+            { name: 'Химчистка потолка + стойки', second: 3360, business: 4080, grand: 4800 },
+            { name: 'Химчистка одной стойки (пластик)', second: 240, business: 240, grand: 240 },
+            { name: 'Химчистка одной стойки', second: 480, business: 480, grand: 480 },
+            { name: 'Химчистка пола салона', second: 4080, business: 4800, grand: 5520 },
+            { name: 'Химчистка пола водителя', second: 2160, business: 2400, grand: 2400 },
+            { name: 'Химчистка пола (за 1 место, кроме водительского)', second: 1560, business: 1800, grand: 1800 },
+            { name: 'Химчистка пола багажника', second: 1680, business: 1920, grand: 1920 },
+            { name: 'Химчистка 1 ковра (тряпка)', second: 900, business: 900, grand: 900 },
+            { name: 'Химчистка багажного коврика (тряпка)', second: 1200, business: 1200, grand: 1200 },
+            { name: 'Химчистка торпеды', second: 1680, business: 1920, grand: 2400 },
+            { name: 'Химчистка консоли', second: 1200, business: 1440, grand: 1440 },
+            { name: 'Химчистка дверной карты', second: 1440, business: 1680, grand: 1920 },
+            { name: 'Химчистка крышки багажника', second: 2640, business: 3120, grand: 3600 },
+            { name: 'Химчистка багажника', second: 1200, business: 1680, grand: 1920 },
+            { name: 'Химчистка 1 сидения', second: 1920, business: 2160, grand: 2160 },
+            { name: 'Химчистка заднего дивана', second: 2400, business: 2880, grand: 2880 },
+            { name: 'Химчистка заднего разделительного сидения', second: 3120, business: 3360, grand: 3600 },
+            { name: 'Химчистка ремня безопасности', second: 600, business: 600, grand: 600 },
+            { name: 'Химчистка подлокотника', second: 360, business: 360, grand: 360 },
+            { name: 'Химчистка рулевого колеса', second: 840, business: 840, grand: 840 },
+            { name: 'Химчистка козырька', second: 480, business: 480, grand: 480 },
+            { name: 'Химчистка задней полки', second: 600, business: 600, grand: 600 },
+            { name: 'Химчистка задней (раскладной) полки', second: 1680, business: 1920, grand: 1920 },
+            { name: 'Химчистка ручки АКП', second: 360, business: 360, grand: 360 },
+            { name: 'Химчистка детского кресла', second: 2400, business: 2400, grand: 2400 },
+            { name: 'Пропитка напольного покрытия защитным средством', second: 3360, business: 4080, grand: 4560 },
+            { name: 'Пропитка ткани салона защитным средством', second: 3840, business: 4320, grand: 4800 },
+            { name: 'Пропитка тканевого сидения защитным средством', second: 960, business: 960, grand: 960 },
+            { name: 'Пропитка тканевого элемента салона защ. средством', second: 360, business: 360, grand: 360 },
+            { name: 'Пропитка пола водителя защитным средством', second: 600, business: 600, grand: 600 },
+            { name: 'Кондиционер кожи салона', second: 3600, business: 4080, grand: 4680 },
+            { name: 'Кондиционер одного сидения', second: 840, business: 1080, grand: 1080 }
         ]
+
     -
         const dataToning = {
         suncontrol: {
