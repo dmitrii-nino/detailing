@@ -84,7 +84,7 @@ mixin prices(items)
                     h4=pricesList[item.name].header
                     img(src=pricesList[item.name].img alt="#")
                     p!=pricesList[item.name].text
-                    div.prices_item_price!=pricesList[item.name].price
+                    div.prices_item_price!=pricesList[item.name].price || item.price
             - else
                 div(class='prices_item frame')
                     h4=item.header
