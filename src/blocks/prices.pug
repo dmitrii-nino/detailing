@@ -80,23 +80,18 @@
 
 - var polishingMainPrice = ' от 23.400 рублей'
 
-- var getSaleDeadline = function() {
+- function getSaleDeadline() {
     const monthNames = [
-      "января", "февраля", "марта", "апреля", "мая", "июня",
-      "июля", "августа", "сентября", "октября", "ноября", "декабря"
+      "января","февраля","марта","апреля","мая","июня",
+      "июля","августа","сентября","октября","ноября","декабря"
     ];
 
-    // Функция для последнего дня любого месяца:
-    function getLastDayOfMonth(year, monthIndex) {
-      return new Date(year, monthIndex + 1, 0).getDate();
-    }
-
     let now = new Date();
-    let day = now.getDate();         // 1..31
-    let month = now.getMonth();      // 0..11
-    let year = now.getFullYear();    // например, 2025
+    let day = now.getDate();       // 1..31
+    let month = now.getMonth();    // 0..11
+    let year = now.getFullYear();
 
-    // Логика: с 26-го (включительно) переключаемся на следующий месяц:
+    // С 26-го (включительно) переключаемся на следующий месяц
     if (day >= 26) {
       month += 1;
       if (month > 11) {
@@ -105,13 +100,14 @@
       }
     }
 
-    let lastDay = getLastDayOfMonth(year, month);  // 28..31
-    let monthName = monthNames[month];             // "января", "февраля" и т.д.
+    // Находим последний день выбранного месяца:
+    let lastDay = new Date(year, month + 1, 0).getDate(); 
+    let monthName = monthNames[month];
 
     return `до ${lastDay} ${monthName}`;
-  }
+}
 
-// Теперь создаём переменную, которую будем использовать в других файлах
+// Теперь сохраним результат функции в переменную
 - var saleDeadline = getSaleDeadline();
 
 mixin prices(items)
