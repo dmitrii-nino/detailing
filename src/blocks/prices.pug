@@ -80,6 +80,40 @@
 
 - var polishingMainPrice = ' от 23.400 рублей'
 
+- var getSaleDeadline = function() {
+    const monthNames = [
+      "января", "февраля", "марта", "апреля", "мая", "июня",
+      "июля", "августа", "сентября", "октября", "ноября", "декабря"
+    ];
+
+    // Функция для последнего дня любого месяца:
+    function getLastDayOfMonth(year, monthIndex) {
+      return new Date(year, monthIndex + 1, 0).getDate();
+    }
+
+    let now = new Date();
+    let day = now.getDate();         // 1..31
+    let month = now.getMonth();      // 0..11
+    let year = now.getFullYear();    // например, 2025
+
+    // Логика: с 26-го (включительно) переключаемся на следующий месяц:
+    if (day >= 26) {
+      month += 1;
+      if (month > 11) {
+        month = 0;
+        year++;
+      }
+    }
+
+    let lastDay = getLastDayOfMonth(year, month);  // 28..31
+    let monthName = monthNames[month];             // "января", "февраля" и т.д.
+
+    return `до ${lastDay} ${monthName}`;
+  }
+
+// Теперь создаём переменную, которую будем использовать в других файлах
+- var saleDeadline = getSaleDeadline();
+
 mixin prices(items)
     div.prices
         each item in items
