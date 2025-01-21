@@ -91,4 +91,4 @@ mixin prices(items)
                     div(class='frame prices_item_img')
                         img(src=item.img alt="#")
                     p!=item.text
-                    div.prices_item_price!=pricesList[item.name].price
+                    div.prices_item_price!=item.price
