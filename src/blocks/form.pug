@@ -100,10 +100,13 @@ mixin form(step, type)
                     p Мы сообщим вам сроки и полную стоимость, ответим на все вопросы, а также закрепим подарок за указанным номером
 
                     div.row
-                        input.input_check(type='checkbox' id='agree_phone_number' value='agree' checked)
-                        label(for='agree_phone_number')
-                            div(style='display: grid') Заполняя форму, я принимаю
-                                a(target="_blank" href='/privacy_policy.html' style='text-decoration: underline') условия передачи информации
+                        input.input_check(type='checkbox' id='agree_consultation_phone_number' value='agree')
+                        label(for='agree_consultation_phone_number')
+                            div(style='display: grid')
+                              span Даю 
+                                a(target="_blank", href="/personal_data.html", style="text-decoration: underline") согласие на сбор и обработку моих персональных данных 
+                              span в соответствии с 
+                                a(target="_blank", href="/privacy_policy.html", style="text-decoration: underline") политикой конфиденциальности
 
                 div.row
                     button(class='btn prev' onclick=`toPrev('phone_number')`) Назад
