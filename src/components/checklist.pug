@@ -44,19 +44,12 @@ block checklist
                 input(class='input form_input' id='checklist_phone_number' type='tel')
                 span Звонить не будем, обещаем 🙂
 
-                    div.row
-                        input.input_check(type='checkbox' id='agree_phone_number' value='agree' checked)
-                        label(for='agree_phone_number')
-                            div(style='display: grid') Заполняя форму, я принимаю
-                                a(target="_blank" href='/privacy_policy.html' style='text-decoration: underline') условия передачи информации
                 div.row
                     input.input_check(type='checkbox' id='agree_consultation_phone_number' value='agree')
                     label(for='agree_consultation_phone_number')
                         div(style='display: grid')
-                          span Даю 
-                          a(target="_blank", href="/personal_data.html", style="text-decoration: underline") согласие
-                          span  на сбор и обработку моих персональных данных в соответствии с 
-                          a(target="_blank", href="/privacy_policy.html", style="text-decoration: underline") Политикой конфиденциальности
+                          span Даю a(target="_blank", href="/personal_data.html", style="text-decoration: underline") согласие
+                          span  на сбор и обработку моих персональных данных в соответствии с a(target="_blank", href="/privacy_policy.html", style="text-decoration: underline") Политикой конфиденциальности
 
 
             button(class=`btn disabled` disabled id='for_checklist_phone_number' onclick=`onChecklistSubmit()`) Получить
